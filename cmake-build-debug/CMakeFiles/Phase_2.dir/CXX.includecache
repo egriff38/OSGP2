@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/conrad/CPlusPlus/OSGP2/CPU.cpp
+
+/home/conrad/CPlusPlus/OSGP2/Disk.cpp
+
+/home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
+
+/home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp
+
+/home/conrad/CPlusPlus/OSGP2/Loader.cpp
+
+/home/conrad/CPlusPlus/OSGP2/PCB.cpp
+
+/home/conrad/CPlusPlus/OSGP2/Scheduler.cpp
+
+/home/conrad/CPlusPlus/OSGP2/main.cpp
+iostream
+-
+

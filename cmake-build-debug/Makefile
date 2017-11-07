@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/conrad/Clion/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /home/conrad/Clion/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2
+CMAKE_SOURCE_DIR = /home/conrad/CPlusPlus/OSGP2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/conrad/CPlusPlus/OSGP2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupPro
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/conrad/Clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/conrad/Clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/CMakeFiles /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,195 @@ Phase_2/fast:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/build
 .PHONY : Phase_2/fast
 
+CPU.o: CPU.cpp.o
+
+.PHONY : CPU.o
+
+# target to build an object file
+CPU.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.o
+.PHONY : CPU.cpp.o
+
+CPU.i: CPU.cpp.i
+
+.PHONY : CPU.i
+
+# target to preprocess a source file
+CPU.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.i
+.PHONY : CPU.cpp.i
+
+CPU.s: CPU.cpp.s
+
+.PHONY : CPU.s
+
+# target to generate assembly for a file
+CPU.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.s
+.PHONY : CPU.cpp.s
+
+Disk.o: Disk.cpp.o
+
+.PHONY : Disk.o
+
+# target to build an object file
+Disk.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Disk.cpp.o
+.PHONY : Disk.cpp.o
+
+Disk.i: Disk.cpp.i
+
+.PHONY : Disk.i
+
+# target to preprocess a source file
+Disk.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Disk.cpp.i
+.PHONY : Disk.cpp.i
+
+Disk.s: Disk.cpp.s
+
+.PHONY : Disk.s
+
+# target to generate assembly for a file
+Disk.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Disk.cpp.s
+.PHONY : Disk.cpp.s
+
+Dispatcher.o: Dispatcher.cpp.o
+
+.PHONY : Dispatcher.o
+
+# target to build an object file
+Dispatcher.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Dispatcher.cpp.o
+.PHONY : Dispatcher.cpp.o
+
+Dispatcher.i: Dispatcher.cpp.i
+
+.PHONY : Dispatcher.i
+
+# target to preprocess a source file
+Dispatcher.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Dispatcher.cpp.i
+.PHONY : Dispatcher.cpp.i
+
+Dispatcher.s: Dispatcher.cpp.s
+
+.PHONY : Dispatcher.s
+
+# target to generate assembly for a file
+Dispatcher.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Dispatcher.cpp.s
+.PHONY : Dispatcher.cpp.s
+
+Hex_Util.o: Hex_Util.cpp.o
+
+.PHONY : Hex_Util.o
+
+# target to build an object file
+Hex_Util.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Hex_Util.cpp.o
+.PHONY : Hex_Util.cpp.o
+
+Hex_Util.i: Hex_Util.cpp.i
+
+.PHONY : Hex_Util.i
+
+# target to preprocess a source file
+Hex_Util.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Hex_Util.cpp.i
+.PHONY : Hex_Util.cpp.i
+
+Hex_Util.s: Hex_Util.cpp.s
+
+.PHONY : Hex_Util.s
+
+# target to generate assembly for a file
+Hex_Util.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Hex_Util.cpp.s
+.PHONY : Hex_Util.cpp.s
+
+Loader.o: Loader.cpp.o
+
+.PHONY : Loader.o
+
+# target to build an object file
+Loader.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.o
+.PHONY : Loader.cpp.o
+
+Loader.i: Loader.cpp.i
+
+.PHONY : Loader.i
+
+# target to preprocess a source file
+Loader.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.i
+.PHONY : Loader.cpp.i
+
+Loader.s: Loader.cpp.s
+
+.PHONY : Loader.s
+
+# target to generate assembly for a file
+Loader.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.s
+.PHONY : Loader.cpp.s
+
+PCB.o: PCB.cpp.o
+
+.PHONY : PCB.o
+
+# target to build an object file
+PCB.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.o
+.PHONY : PCB.cpp.o
+
+PCB.i: PCB.cpp.i
+
+.PHONY : PCB.i
+
+# target to preprocess a source file
+PCB.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.i
+.PHONY : PCB.cpp.i
+
+PCB.s: PCB.cpp.s
+
+.PHONY : PCB.s
+
+# target to generate assembly for a file
+PCB.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.s
+.PHONY : PCB.cpp.s
+
+Scheduler.o: Scheduler.cpp.o
+
+.PHONY : Scheduler.o
+
+# target to build an object file
+Scheduler.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.o
+.PHONY : Scheduler.cpp.o
+
+Scheduler.i: Scheduler.cpp.i
+
+.PHONY : Scheduler.i
+
+# target to preprocess a source file
+Scheduler.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.i
+.PHONY : Scheduler.cpp.i
+
+Scheduler.s: Scheduler.cpp.s
+
+.PHONY : Scheduler.s
+
+# target to generate assembly for a file
+Scheduler.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.s
+.PHONY : Scheduler.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +348,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Phase_2"
+	@echo "... CPU.o"
+	@echo "... CPU.i"
+	@echo "... CPU.s"
+	@echo "... Disk.o"
+	@echo "... Disk.i"
+	@echo "... Disk.s"
+	@echo "... Dispatcher.o"
+	@echo "... Dispatcher.i"
+	@echo "... Dispatcher.s"
+	@echo "... Hex_Util.o"
+	@echo "... Hex_Util.i"
+	@echo "... Hex_Util.s"
+	@echo "... Loader.o"
+	@echo "... Loader.i"
+	@echo "... Loader.s"
+	@echo "... PCB.o"
+	@echo "... PCB.i"
+	@echo "... PCB.s"
+	@echo "... Scheduler.o"
+	@echo "... Scheduler.i"
+	@echo "... Scheduler.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,1 +1,1 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Phase_2.dir/main.cpp.o  -o Phase_2 
+/usr/bin/c++  -g   CMakeFiles/Phase_2.dir/main.cpp.o CMakeFiles/Phase_2.dir/PCB.cpp.o CMakeFiles/Phase_2.dir/CPU.cpp.o CMakeFiles/Phase_2.dir/Disk.cpp.o CMakeFiles/Phase_2.dir/Dispatcher.cpp.o CMakeFiles/Phase_2.dir/Loader.cpp.o CMakeFiles/Phase_2.dir/Scheduler.cpp.o CMakeFiles/Phase_2.dir/Hex_Util.cpp.o  -o Phase_2 

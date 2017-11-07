@@ -8,84 +8,128 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug"/>
+				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug"/>
+				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug"/>
+				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Phase_2">
-				<Option output="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug"/>
+				<Option output="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Phase_2/fast">
-				<Option output="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug"/>
+				<Option output="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/main.cpp">
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/CPU.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/CMakeLists.txt">
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/CPU.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Disk.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Disk.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Dispatcher.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Hex_Util.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Loader.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Loader.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/PCB.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/PCB.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Scheduler.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Scheduler.h">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/main.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
