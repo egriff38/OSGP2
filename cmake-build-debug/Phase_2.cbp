@@ -120,6 +120,12 @@
 		<Unit filename="/home/conrad/CPlusPlus/OSGP2/PCB.h">
 			<Option target="Phase_2"/>
 		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Ram.cpp">
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Ram.h">
+			<Option target="Phase_2"/>
+		</Unit>
 		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Scheduler.cpp">
 			<Option target="Phase_2"/>
 		</Unit>

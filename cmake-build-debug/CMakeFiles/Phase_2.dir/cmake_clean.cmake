@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Phase_2.dir/Loader.cpp.o"
   "CMakeFiles/Phase_2.dir/Scheduler.cpp.o"
   "CMakeFiles/Phase_2.dir/Hex_Util.cpp.o"
+  "CMakeFiles/Phase_2.dir/Ram.cpp.o"
   "Phase_2.pdb"
   "Phase_2"
 )

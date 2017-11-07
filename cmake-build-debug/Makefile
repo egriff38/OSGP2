@@ -285,6 +285,33 @@ PCB.cpp.s:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.s
 .PHONY : PCB.cpp.s
 
+Ram.o: Ram.cpp.o
+
+.PHONY : Ram.o
+
+# target to build an object file
+Ram.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Ram.cpp.o
+.PHONY : Ram.cpp.o
+
+Ram.i: Ram.cpp.i
+
+.PHONY : Ram.i
+
+# target to preprocess a source file
+Ram.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Ram.cpp.i
+.PHONY : Ram.cpp.i
+
+Ram.s: Ram.cpp.s
+
+.PHONY : Ram.s
+
+# target to generate assembly for a file
+Ram.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Ram.cpp.s
+.PHONY : Ram.cpp.s
+
 Scheduler.o: Scheduler.cpp.o
 
 .PHONY : Scheduler.o
@@ -366,6 +393,9 @@ help:
 	@echo "... PCB.o"
 	@echo "... PCB.i"
 	@echo "... PCB.s"
+	@echo "... Ram.o"
+	@echo "... Ram.i"
+	@echo "... Ram.s"
 	@echo "... Scheduler.o"
 	@echo "... Scheduler.i"
 	@echo "... Scheduler.s"
