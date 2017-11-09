@@ -35,6 +35,9 @@ CMakeFiles/Phase_2.dir/MMU.cpp.o: ../MMU.cpp
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Ram.h
 
+CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.o: ../Mutex_queues.cpp.cpp
+CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.o: ../Mutex_queues.h
+
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../PCB.cpp
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../PCB.h

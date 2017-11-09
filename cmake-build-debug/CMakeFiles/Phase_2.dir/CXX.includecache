@@ -116,6 +116,16 @@ Disk.h
 Ram.h
 /home/conrad/CPlusPlus/OSGP2/Ram.h
 
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp.cpp
+Mutex_queues.h
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+mutex
+-
+queue
+-
+
 /home/conrad/CPlusPlus/OSGP2/PCB.cpp
 iostream
 -

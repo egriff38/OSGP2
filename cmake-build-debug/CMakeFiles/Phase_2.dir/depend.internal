@@ -35,6 +35,9 @@ CMakeFiles/Phase_2.dir/MMU.cpp.o
  /home/conrad/CPlusPlus/OSGP2/MMU.cpp
  /home/conrad/CPlusPlus/OSGP2/MMU.h
  /home/conrad/CPlusPlus/OSGP2/Ram.h
+CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.o
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp.cpp
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
 CMakeFiles/Phase_2.dir/PCB.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Log.h
  /home/conrad/CPlusPlus/OSGP2/PCB.cpp
