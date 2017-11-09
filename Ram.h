@@ -15,6 +15,7 @@
 #define PHASE_2_RAM_H
 #include <mutex>
 #include <vector>
+#include <string>
 
 class Ram
 {
@@ -24,7 +25,7 @@ class Ram
         void write(int address, std::vector<std::string> s);
         const static int SIZE = 1024;
         Ram();
-        ~RAM();
+        ~Ram();
 
     private:
         std::string ram_data[SIZE];
