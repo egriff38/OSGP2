@@ -21,7 +21,14 @@ CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Dispatcher.cpp
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.cpp
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.h
 
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Disk.h
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Loader.cpp
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Loader.h
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Log.h
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../MMU.h
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../PCB.h
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Ram.h
 
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Disk.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../MMU.cpp
@@ -38,7 +45,10 @@ CMakeFiles/Phase_2.dir/Ram.cpp.o: ../Ram.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Scheduler.cpp
 
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Disk.h
+CMakeFiles/Phase_2.dir/main.cpp.o: ../Loader.h
+CMakeFiles/Phase_2.dir/main.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../MMU.h
+CMakeFiles/Phase_2.dir/main.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Ram.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../main.cpp
 

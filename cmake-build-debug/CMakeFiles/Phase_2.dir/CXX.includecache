@@ -73,6 +73,30 @@ string
 -
 
 /home/conrad/CPlusPlus/OSGP2/Loader.cpp
+Loader.h
+/home/conrad/CPlusPlus/OSGP2/Loader.h
+iostream
+-
+stdlib.h
+-
+fstream
+-
+string
+-
+Log.h
+/home/conrad/CPlusPlus/OSGP2/Log.h
+Hex_Util.h
+/home/conrad/CPlusPlus/OSGP2/Hex_Util.h
+
+/home/conrad/CPlusPlus/OSGP2/Loader.h
+Disk.h
+/home/conrad/CPlusPlus/OSGP2/Disk.h
+PCB.h
+/home/conrad/CPlusPlus/OSGP2/PCB.h
+Log.h
+/home/conrad/CPlusPlus/OSGP2/Log.h
+MMU.h
+/home/conrad/CPlusPlus/OSGP2/MMU.h
 
 /home/conrad/CPlusPlus/OSGP2/Log.h
 
@@ -127,6 +151,12 @@ string
 /home/conrad/CPlusPlus/OSGP2/main.cpp
 iostream
 -
+list
+-
+Loader.h
+/home/conrad/CPlusPlus/OSGP2/Loader.h
+PCB.h
+/home/conrad/CPlusPlus/OSGP2/PCB.h
 MMU.h
 /home/conrad/CPlusPlus/OSGP2/MMU.h
 

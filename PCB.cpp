@@ -19,6 +19,7 @@ void print_pcbs(std::list<PCB *> p)
         std::cout << "OutSize:\t" << pcb->out_buf_size << std::endl;
         std::cout << "TempSize:\t" << pcb->temp_buf_size << std::endl;
         std::cout << "Total Size:\t" << pcb->total_size << std::endl;
+        std::cout << "Start Point:\t" << pcb->job_disk_address << std::endl; 
         std::string s;
         switch((int)pcb->state)
         {
