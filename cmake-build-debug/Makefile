@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/conrad/Clion/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/conrad/Clion/bin/cmake/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/conrad/CPlusPlus/OSGP2
+CMAKE_SOURCE_DIR = /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/conrad/CPlusPlus/OSGP2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/conrad/CPlusPlus/OSGP2/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/conrad/Clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/conrad/Clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/CMakeFiles /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshingriffith/Documents/KSU/Fall-2017/CS-3502/groupProject/Phase-2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,33 @@ CPU.s: CPU.cpp.s
 CPU.cpp.s:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.s
 .PHONY : CPU.cpp.s
+
+Cache.o: Cache.cpp.o
+
+.PHONY : Cache.o
+
+# target to build an object file
+Cache.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Cache.cpp.o
+.PHONY : Cache.cpp.o
+
+Cache.i: Cache.cpp.i
+
+.PHONY : Cache.i
+
+# target to preprocess a source file
+Cache.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Cache.cpp.i
+.PHONY : Cache.cpp.i
+
+Cache.s: Cache.cpp.s
+
+.PHONY : Cache.s
+
+# target to generate assembly for a file
+Cache.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Cache.cpp.s
+.PHONY : Cache.cpp.s
 
 Disk.o: Disk.cpp.o
 
@@ -378,6 +405,9 @@ help:
 	@echo "... CPU.o"
 	@echo "... CPU.i"
 	@echo "... CPU.s"
+	@echo "... Cache.o"
+	@echo "... Cache.i"
+	@echo "... Cache.s"
 	@echo "... Disk.o"
 	@echo "... Disk.i"
 	@echo "... Disk.s"
