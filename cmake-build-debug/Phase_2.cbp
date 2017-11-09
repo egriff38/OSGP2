@@ -114,6 +114,9 @@
 		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Loader.h">
 			<Option target="Phase_2"/>
 		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/MMU.h">
+			<Option target="Phase_2"/>
+		</Unit>
 		<Unit filename="/home/conrad/CPlusPlus/OSGP2/PCB.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
