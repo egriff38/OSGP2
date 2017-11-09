@@ -11,22 +11,15 @@
 #include "PCB.h"
 
 /*
- * Dispatcher objects will be created in separate threads - one per CPU. The constructor takes
- * all the needed queues as parameters. When start() is called, the dispatcher will begin to
- * load jobs from the ready queue to the CPU. When the CPU is finished
- * with a job, the dispatcher will determine whether the job is finished or blocked
- * and place it on the appropriate queue, then get another job for the CPU if one is available.
- * If none is available, it will sleep temporarily. If all jobs are completed, it will exit.
+ * The Dispatcher namespace contains only the start function, which gets called from a thread with
+ * all the necessary queues
+ * start: A static function that must me given an mmy, ready_queue, io_queuem, pf_queue, and done_queue
+ * The function will be called in a thread as mentioned before, and its job is to run a cpu and pull
+ * from the ready_queue. When the done_queue is full (at 30), the thread will end. 
  */
 
-class Dispatcher {
-public:
-    Dispatcher(std::priority_queue<PCB> ready_queue, M_queue io_queue, M_queue pf_queue, M_queue done_queue);
-    start();
-private:
-    MMU mmu;
-    PCB pcb;
-    CPU cpu;
+namespace Dispatcher {
+    static void start(MMU *mmu, M_Prio_queue<PCB> *ready_queue,M_queue *io_queue, M_queue *pf_queue, M_queue *done_queue);
 };
 
 #endif //PHASE_2_DISPATCHER_H
