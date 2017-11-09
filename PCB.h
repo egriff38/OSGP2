@@ -26,8 +26,7 @@ struct PCB {
     int job_ram_address;
     int prgm_counter;
     int registers[16];
-    Log *wait_time;
-    Log *comp_time;
+
 
     //Data
     int data_disk_address;
