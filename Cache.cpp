@@ -3,6 +3,7 @@
 //
 
 #include "Cache.h"
+#include <cstdlib>
 
 std::string Cache::read(int address) {
     std::string rd = cache_data[address];
