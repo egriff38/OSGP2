@@ -26,6 +26,7 @@ class Ram
         const static int SIZE = 1024;
         Ram();
         ~Ram();
+        static void testRam();
 
     private:
         std::string ram_data[SIZE];

@@ -1,7 +1,7 @@
 #include <iostream>
-
+#include "MMU.h"
 int main() {
-
+MMU *m = new MMU();
     // Loader, MMU, Dispatchers, scheduler, ready_queue (prio queue), io_queue, and done_queue
     // and page_fault_queue are declared and initialized.
 

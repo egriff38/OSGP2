@@ -22,17 +22,18 @@
 
 #include <iostream>
 
-
+const static int SIZE = 2048;
 class Disk {
 private:
     std::string disk_data[SIZE];
 public:
-    const static int SIZE = 2048;
+
     std::string read(int address);
     void write(int address, std::string data);
     int getSize() const;
     Disk();
     ~Disk();
+    static void testDisk();
 };
 
 
