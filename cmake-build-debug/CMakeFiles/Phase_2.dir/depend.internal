@@ -28,6 +28,7 @@ CMakeFiles/Phase_2.dir/Loader.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Loader.h
  /home/conrad/CPlusPlus/OSGP2/Log.h
  /home/conrad/CPlusPlus/OSGP2/MMU.h
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
  /home/conrad/CPlusPlus/OSGP2/PCB.h
  /home/conrad/CPlusPlus/OSGP2/Ram.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o
@@ -35,9 +36,8 @@ CMakeFiles/Phase_2.dir/MMU.cpp.o
  /home/conrad/CPlusPlus/OSGP2/MMU.cpp
  /home/conrad/CPlusPlus/OSGP2/MMU.h
  /home/conrad/CPlusPlus/OSGP2/Ram.h
-CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.o
- /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp.cpp
- /home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/PCB.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Log.h
  /home/conrad/CPlusPlus/OSGP2/PCB.cpp
@@ -46,12 +46,29 @@ CMakeFiles/Phase_2.dir/Ram.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Ram.cpp
  /home/conrad/CPlusPlus/OSGP2/Ram.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o
- /home/conrad/CPlusPlus/OSGP2/Scheduler.cpp
-CMakeFiles/Phase_2.dir/main.cpp.o
+ /home/conrad/CPlusPlus/OSGP2/CPU.h
+ /home/conrad/CPlusPlus/OSGP2/Cache.h
  /home/conrad/CPlusPlus/OSGP2/Disk.h
+ /home/conrad/CPlusPlus/OSGP2/Dispatcher.h
+ /home/conrad/CPlusPlus/OSGP2/Log.h
+ /home/conrad/CPlusPlus/OSGP2/MMU.h
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+ /home/conrad/CPlusPlus/OSGP2/PCB.h
+ /home/conrad/CPlusPlus/OSGP2/Ram.h
+ /home/conrad/CPlusPlus/OSGP2/Scheduler.cpp
+ /home/conrad/CPlusPlus/OSGP2/Scheduler.h
+CMakeFiles/Phase_2.dir/main.cpp.o
+ /home/conrad/CPlusPlus/OSGP2/CPU.h
+ /home/conrad/CPlusPlus/OSGP2/Cache.h
+ /home/conrad/CPlusPlus/OSGP2/Disk.h
+ /home/conrad/CPlusPlus/OSGP2/Dispatcher.h
  /home/conrad/CPlusPlus/OSGP2/Loader.h
  /home/conrad/CPlusPlus/OSGP2/Log.h
  /home/conrad/CPlusPlus/OSGP2/MMU.h
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
  /home/conrad/CPlusPlus/OSGP2/PCB.h
  /home/conrad/CPlusPlus/OSGP2/Ram.h
+ /home/conrad/CPlusPlus/OSGP2/Scheduler.h
  /home/conrad/CPlusPlus/OSGP2/main.cpp

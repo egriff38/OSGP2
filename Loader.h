@@ -16,10 +16,11 @@
 #include "PCB.h"
 #include "Log.h"
 #include "MMU.h"
+#include "Mutex_queues.cpp"
 
 class Loader {
 public:
-    void init(MMU &mmu, std::list<PCB *> &pcbs);
+    void init(MMU &mmu, M_priority_queue<PCB *> &pcbs);
     Loader();
     ~Loader();
 private:

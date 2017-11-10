@@ -9,7 +9,7 @@
 #include "CPU.h"
 #include "MMU.h"
 #include "PCB.h"
-#include "Mutex_queues.h"
+#include "Mutex_queues.cpp"
 
 /*
  * The Dispatcher namespace contains only the start function, which gets called from a thread with
@@ -20,7 +20,7 @@
  */
 
 namespace Dispatcher {
-    static void start(MMU *mmu, M_Prio_queue<PCB> *ready_queue,M_queue *io_queue, M_queue *pf_queue, M_queue *done_queue);
+    static void start(MMU *mmu, M_priority_queue<PCB*> *ready_queue,M_queue<PCB*> *io_queue, M_queue<PCB*> *pf_queue, M_queue<PCB*> *done_queue);
 };
 
 #endif //PHASE_2_DISPATCHER_H

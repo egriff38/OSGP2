@@ -27,6 +27,7 @@
 #include <queue>
 #include "Scheduler.h"
 #include "Dispatcher.h"
+#include "Mutex_queues.h"
 
 struct free_ram {
     int position;
@@ -40,27 +41,25 @@ struct free_ram {
 
 class Scheduler {
 private:
-    M_queue<PCB> &pcbs;
-    MMU mmu;
+    M_priority_queue<PCB*> *pcbs;
+    M_priority_queue<PCB*> *ready_queue;
+    M_queue<PCB*> *done_queue;
+    MMU *mmu;
     std::list<free_ram> ram_space;
     int jobsAllocated;
-    int jobsCompleted;
-
     enum SCHEDULING_TYPE {FIFO, PRIORITY, SJF};
     const SCHEDULING_TYPE sched_type = SCHEDULING_TYPE::FIFO;
-
     bool get_ram_start(PCB *p);
     void load_pcb(PCB *p);
-    void remove_pcb(PCB *p);
-    void clean_ram_space();
+    void clean_ram_space(M_queue<PCB*> &done_queue);
 
 public:
-    Scheduler(M_queue<PCB> &pcb_list, M_prio_queue<PCB> &ready_queue, MMU &mmu);
+    Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &done_queue, MMU &mmu);
 
-    void lt_sched(bool *still_has_work);
+    void schedule(bool *still_has_work);
     void st_sched(bool *st_still_has_work);
 
-    PCB *lt_get_next_pcb(M_queue<PCB> &pcbs);
+    PCB* lt_get_next_pcb(M_priority_queue<PCB *> &pcbs);
 };
 
 bool comp_fifo(PCB *p1, PCB *p2);

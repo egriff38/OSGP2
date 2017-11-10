@@ -312,32 +312,32 @@ MMU.cpp.s:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/MMU.cpp.s
 .PHONY : MMU.cpp.s
 
-Mutex_queues.cpp.o: Mutex_queues.cpp.cpp.o
+Mutex_queues.o: Mutex_queues.cpp.o
 
-.PHONY : Mutex_queues.cpp.o
+.PHONY : Mutex_queues.o
 
 # target to build an object file
-Mutex_queues.cpp.cpp.o:
-	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.o
-.PHONY : Mutex_queues.cpp.cpp.o
+Mutex_queues.cpp.o:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o
+.PHONY : Mutex_queues.cpp.o
 
-Mutex_queues.cpp.i: Mutex_queues.cpp.cpp.i
+Mutex_queues.i: Mutex_queues.cpp.i
 
-.PHONY : Mutex_queues.cpp.i
+.PHONY : Mutex_queues.i
 
 # target to preprocess a source file
-Mutex_queues.cpp.cpp.i:
-	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.i
-.PHONY : Mutex_queues.cpp.cpp.i
+Mutex_queues.cpp.i:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.i
+.PHONY : Mutex_queues.cpp.i
 
-Mutex_queues.cpp.s: Mutex_queues.cpp.cpp.s
+Mutex_queues.s: Mutex_queues.cpp.s
 
-.PHONY : Mutex_queues.cpp.s
+.PHONY : Mutex_queues.s
 
 # target to generate assembly for a file
-Mutex_queues.cpp.cpp.s:
-	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.s
-.PHONY : Mutex_queues.cpp.cpp.s
+Mutex_queues.cpp.s:
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.s
+.PHONY : Mutex_queues.cpp.s
 
 PCB.o: PCB.cpp.o
 
@@ -477,9 +477,9 @@ help:
 	@echo "... MMU.o"
 	@echo "... MMU.i"
 	@echo "... MMU.s"
-	@echo "... Mutex_queues.cpp.o"
-	@echo "... Mutex_queues.cpp.i"
-	@echo "... Mutex_queues.cpp.s"
+	@echo "... Mutex_queues.o"
+	@echo "... Mutex_queues.i"
+	@echo "... Mutex_queues.s"
 	@echo "... PCB.o"
 	@echo "... PCB.i"
 	@echo "... PCB.s"

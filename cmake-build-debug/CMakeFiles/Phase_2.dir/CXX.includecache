@@ -58,6 +58,18 @@ iostream
 
 /home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
 
+/home/conrad/CPlusPlus/OSGP2/Dispatcher.h
+queue
+-
+CPU.h
+/home/conrad/CPlusPlus/OSGP2/CPU.h
+MMU.h
+/home/conrad/CPlusPlus/OSGP2/MMU.h
+PCB.h
+/home/conrad/CPlusPlus/OSGP2/PCB.h
+Mutex_queues.cpp
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
+
 /home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp
 Hex_Util.h
 /home/conrad/CPlusPlus/OSGP2/Hex_Util.h
@@ -97,6 +109,8 @@ Log.h
 /home/conrad/CPlusPlus/OSGP2/Log.h
 MMU.h
 /home/conrad/CPlusPlus/OSGP2/MMU.h
+Mutex_queues.cpp
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 
 /home/conrad/CPlusPlus/OSGP2/Log.h
 
@@ -116,15 +130,13 @@ Disk.h
 Ram.h
 /home/conrad/CPlusPlus/OSGP2/Ram.h
 
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp.cpp
-Mutex_queues.h
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
-
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 mutex
 -
 queue
 -
+
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
 
 /home/conrad/CPlusPlus/OSGP2/PCB.cpp
 iostream
@@ -157,6 +169,34 @@ string
 -
 
 /home/conrad/CPlusPlus/OSGP2/Scheduler.cpp
+vector
+-
+Scheduler.h
+/home/conrad/CPlusPlus/OSGP2/Scheduler.h
+Log.h
+/home/conrad/CPlusPlus/OSGP2/Log.h
+algorithm
+-
+Mutex_queues.h
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+
+/home/conrad/CPlusPlus/OSGP2/Scheduler.h
+MMU.h
+/home/conrad/CPlusPlus/OSGP2/MMU.h
+PCB.h
+/home/conrad/CPlusPlus/OSGP2/PCB.h
+list
+-
+vector
+-
+queue
+-
+Scheduler.h
+/home/conrad/CPlusPlus/OSGP2/Scheduler.h
+Dispatcher.h
+/home/conrad/CPlusPlus/OSGP2/Dispatcher.h
+Mutex_queues.h
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
 
 /home/conrad/CPlusPlus/OSGP2/main.cpp
 iostream
@@ -169,4 +209,10 @@ PCB.h
 /home/conrad/CPlusPlus/OSGP2/PCB.h
 MMU.h
 /home/conrad/CPlusPlus/OSGP2/MMU.h
+Scheduler.h
+/home/conrad/CPlusPlus/OSGP2/Scheduler.h
+Mutex_queues.h
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+Mutex_queues.cpp
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 

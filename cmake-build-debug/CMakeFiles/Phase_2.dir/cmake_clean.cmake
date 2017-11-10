@@ -10,7 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Phase_2.dir/Ram.cpp.o"
   "CMakeFiles/Phase_2.dir/Cache.cpp.o"
   "CMakeFiles/Phase_2.dir/MMU.cpp.o"
-  "CMakeFiles/Phase_2.dir/Mutex_queues.cpp.cpp.o"
+  "CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o"
   "Phase_2.pdb"
   "Phase_2"
 )

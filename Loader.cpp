@@ -13,7 +13,7 @@
 Loader::Loader() {
 }
 
-void Loader::init(MMU &mmu, std::list<PCB *> &pcbs) {
+void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
 
     // Variables for init function
     int data[10];
@@ -93,7 +93,7 @@ void Loader::init(MMU &mmu, std::list<PCB *> &pcbs) {
                 p->temp_buf_size = data[5];
                 p->total_size = p->job_size + p->in_buf_size + p->out_buf_size + p->temp_buf_size;
                 p->state = PCB::PROCESS_STATUS::NEW;
-                pcbs.push_back(p);
+                pcbs.push(p);
                 counter = 0;
 
             }
