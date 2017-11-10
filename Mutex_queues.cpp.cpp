@@ -14,8 +14,9 @@ T M_queue<T>::pop() {
     mutex.lock();
     T t = data.front();
     data.pop();
-    return t;
     mutex.unlock();
+    return t;
+
 }
 
 template <class T>
