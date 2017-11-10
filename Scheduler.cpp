@@ -13,6 +13,7 @@ Scheduler::Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &r
     this->done_queue = &done_queue;
     this->mmu = &mmu;
     ram_space = std::list<free_ram>();
+    ram_space.push_front(free_ram(0,true));
 }
 
 
