@@ -10,6 +10,9 @@
 
 int main() {
 const int CPU_NUM = 4;
+
+// Loader, MMU, Dispatchers, scheduler, ready_queue (prio queue), io_queue, and done_queue
+// and page_fault_queue are declared and initialized.
 M_priority_queue<PCB*> *pcbs = new M_priority_queue<PCB*>();
 M_priority_queue<PCB*> *ready_queue = new M_priority_queue<PCB*>();
 M_queue<PCB*> *done_queue = new M_queue<PCB*>();
@@ -18,30 +21,29 @@ bool *still_has_work = &temp;
 MMU *m = new MMU();
 Loader *loader = new Loader();
 Scheduler *scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *m);
+
+    // Loader calls init();
     loader->init(*m,*pcbs);
+
+    // Dispatcher threads begin
     for(int i = 0; i < CPU_NUM; i++) {
-        std::thread(Dispatcher::start,m,ready_queue,new M_queue<PCB*>(),new M_queue<PCB*>(),done_queue).detach();
+        std::thread(Dispatcher::start,m,ready_queue,new M_queue<PCB*>(),new M_queue<PCB*>(),done_queue,i).detach();
     }
 
+
+    // Scheduling process starts in main thread
+    // Loop begins for scheduler. Continues while there are still jobs to be done
     while(*still_has_work)
     scheduler->schedule(still_has_work);
 
-    // Loader, MMU, Dispatchers, scheduler, ready_queue (prio queue), io_queue, and done_queue
-    // and page_fault_queue are declared and initialized.
 
-    // Loader calls init();
 
-    // Thread for page fault and io begins
 
-    // Dispatcher threads begin
+    // Thread for page fault and io begins (later)  
 
-    // Scheduling process starts in main thread
 
-    // Loop begins for scheduler. Continues while there are still jobs to be done
 
-    // Calls lt_sched
 
-    // Calls st_sched
 
 
     return 0;
