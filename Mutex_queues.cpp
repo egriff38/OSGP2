@@ -34,7 +34,10 @@ public:
     }
     int getSize()
     {
-        return data.size();
+        mutex.lock();
+        int size = data.size();
+        mutex.unlock();
+        return size;
     }
 
 private:
@@ -61,7 +64,10 @@ public:
         return t;
     }
     int getSize(){
-        return data.size();
+        mutex.lock();
+        int size = data.size();
+        mutex.unlock();
+        return size;
     }
 private:
     std::priority_queue<U> data;
