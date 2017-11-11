@@ -27,6 +27,10 @@ public:
     }
     T pop(){
         mutex.lock();
+        if(data.size() == 0){
+            mutex.unlock();
+            return nullptr;
+            }
         T t = data.front();
         data.pop();
         mutex.unlock();
@@ -58,10 +62,14 @@ public:
     }
     U pop(){
         mutex.lock();
-        U t = data.top();
+        if(data.size() == 0){
+            mutex.unlock();
+            return nullptr;
+        }
+        U u = data.top();
         data.pop();
         mutex.unlock();
-        return t;
+        return u;
     }
     int getSize(){
         mutex.lock();
