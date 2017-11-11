@@ -36,6 +36,8 @@ void Scheduler::schedule(bool *still_has_work) {
         temp->state = PCB::READY;
         ready_queue->push(temp);
         jobsAllocated++;
+        std::cout << jobsAllocated << "\n";
+
     }
 }
 
@@ -148,14 +150,16 @@ void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue){
         while (it != ram_space.end()) {
             if (it->position == temp->job_ram_address)
                 it->is_free = true;
-                }
             it++;
+                }
+
         }
     std::list<free_ram>::iterator it = ram_space.begin();
     while (it != ram_space.end()) {
         if (it->is_free)
             while (std::next(it) != ram_space.end() && std::next(it)->is_free) {
                 ram_space.erase(std::next(it));
+
             }
         it++;
     }

@@ -19,10 +19,10 @@ namespace Dispatcher{
          current = ready_queue->pop();
          if (current != nullptr) {
              current->state = PCB::RUNNING;
-             cpu->load_pcb(current);
-             while (cpu->state.state == PCB::RUNNING)
-                 cpu->Operate();
-             cpu->store_pcb();
+          //   cpu->load_pcb(current);
+            // while (cpu->state.state == PCB::RUNNING)
+            //     cpu->Operate();
+           //  cpu->store_pcb();
              done_queue->push(current);
          }
 
