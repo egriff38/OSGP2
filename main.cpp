@@ -1,13 +1,15 @@
 #include <iostream>
 #include <list>
+#include <thread>
 #include "Loader.h"
 #include "PCB.h"
 #include "MMU.h"
 #include "Scheduler.h"
-#include "Mutex_queues.h"
+#include "Dispatcher.cpp"
 #include "Mutex_queues.cpp"
 
 int main() {
+const int CPU_NUM = 4;
 M_priority_queue<PCB*> *pcbs = new M_priority_queue<PCB*>();
 M_priority_queue<PCB*> *ready_queue = new M_priority_queue<PCB*>();
 M_queue<PCB*> *done_queue = new M_queue<PCB*>();
@@ -17,6 +19,11 @@ MMU *m = new MMU();
 Loader *loader = new Loader();
 Scheduler *scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *m);
     loader->init(*m,*pcbs);
+    for(int i = 0; i < CPU_NUM; i++) {
+        std::thread(Dispatcher::start,m,ready_queue,new M_queue<PCB*>(),new M_queue<PCB*>(),done_queue).detach();
+    }
+
+    while(*still_has_work)
     scheduler->schedule(still_has_work);
 
     // Loader, MMU, Dispatchers, scheduler, ready_queue (prio queue), io_queue, and done_queue
