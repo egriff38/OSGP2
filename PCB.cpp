@@ -52,3 +52,12 @@ void print_pcbs(std::list<PCB *> p)
         std::cout << ("No PCBs to print.") << std::endl;
 
 }
+
+// static bool PCB::compare(const PCB *a, const PCB *b)const {
+//    if(PCB::SORT == PCB::SORTING_METHOD::FIFO)
+//        return true;
+//    else if(PCB::SORT == PCB::SORTING_METHOD::PRIO)
+//        return a->job_pri < b->job_pri;
+//    else
+//        return a->job_size < b->job_size;
+//}

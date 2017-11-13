@@ -125,7 +125,7 @@ bool CPU::SLTI(int S, int val, int D) {
     return true;
 }
 bool CPU::HLT() {
-    this->state.state = state.COMPLETED;
+    this->state->state = state->COMPLETED;
     return true; //end program?
 }
 bool CPU::NOP() {
@@ -245,19 +245,19 @@ void CPU::execute(Op op) {
 }
 
 void CPU::load_pcb(PCB *p) {
-    this->state = *p;
+    this->state = p;
     PC = p->prgm_counter;
-    this->state.state = PCB::RUNNING;
+    this->state->state = PCB::RUNNING;
     for (int i = 0; i < 16; ++i) {
-        this->Register[i] = this->state.registers[i];
+        this->Register[i] = this->state->registers[i];
     }
 }
 PCB* CPU::store_pcb() {
-    PCB* out = &state;
-    if(this->state.state != PCB::COMPLETED) this->state.state = PCB::READY;
+    PCB* out = state;
+    if(this->state->state != PCB::COMPLETED) this->state->state = PCB::READY;
     out->prgm_counter = PC;
     for (int i = 0; i < 16; ++i) {
-        this->state.registers[i] = this->Register[i];
+        this->state->registers[i] = this->Register[i];
     }
     return out;
 }

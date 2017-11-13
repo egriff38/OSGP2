@@ -26,11 +26,11 @@ struct PCB {
     int job_ram_address;
     int prgm_counter;
     int registers[16];
-
-
+    enum SORTING_METHOD{FIFO, PRIO, SJF};
+   static const SORTING_METHOD SORT = PRIO;
     //Data
     int data_disk_address;
-
+  //  static bool compare(const PCB *a, const PCB *b) const;
 };
 
 void print_pcbs(std::list<PCB *> p);

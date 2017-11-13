@@ -25,6 +25,7 @@ namespace Dispatcher{
 
          current = ready_queue->pop();
          if (current != nullptr) {
+             std::cout << "PCB NUM " << current->job_id << "\n";
              std::cout << "Using CPU " << i << "\n";
              current->state = PCB::RUNNING;
           //   cpu->load_pcb(current);
@@ -32,6 +33,7 @@ namespace Dispatcher{
             //     cpu->Operate();
            //  cpu->store_pcb();
              done_queue->push(current);
+             std::cout << "Jobs Completed " << done_queue->getPopped() << "\n\n";
          }
 
          std::this_thread::sleep_for(2ns);

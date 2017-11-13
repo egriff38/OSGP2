@@ -17,7 +17,16 @@ CMakeFiles/Phase_2.dir/Disk.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Disk.cpp
  /home/conrad/CPlusPlus/OSGP2/Disk.h
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o
+ /home/conrad/CPlusPlus/OSGP2/CPU.h
+ /home/conrad/CPlusPlus/OSGP2/Cache.h
+ /home/conrad/CPlusPlus/OSGP2/Disk.h
  /home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
+ /home/conrad/CPlusPlus/OSGP2/Dispatcher.h
+ /home/conrad/CPlusPlus/OSGP2/Log.h
+ /home/conrad/CPlusPlus/OSGP2/MMU.h
+ /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
+ /home/conrad/CPlusPlus/OSGP2/PCB.h
+ /home/conrad/CPlusPlus/OSGP2/Ram.h
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp
  /home/conrad/CPlusPlus/OSGP2/Hex_Util.h
@@ -62,6 +71,7 @@ CMakeFiles/Phase_2.dir/main.cpp.o
  /home/conrad/CPlusPlus/OSGP2/CPU.h
  /home/conrad/CPlusPlus/OSGP2/Cache.h
  /home/conrad/CPlusPlus/OSGP2/Disk.h
+ /home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
  /home/conrad/CPlusPlus/OSGP2/Dispatcher.h
  /home/conrad/CPlusPlus/OSGP2/Loader.h
  /home/conrad/CPlusPlus/OSGP2/Log.h

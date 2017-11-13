@@ -16,7 +16,16 @@ CMakeFiles/Phase_2.dir/Cache.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/Disk.cpp.o: ../Disk.cpp
 CMakeFiles/Phase_2.dir/Disk.cpp.o: ../Disk.h
 
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../CPU.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Cache.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Disk.h
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Dispatcher.cpp
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Dispatcher.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Log.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../MMU.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Mutex_queues.cpp
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../PCB.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Ram.h
 
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.cpp
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.h
@@ -61,6 +70,7 @@ CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Scheduler.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../CPU.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Cache.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Disk.h
+CMakeFiles/Phase_2.dir/main.cpp.o: ../Dispatcher.cpp
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Dispatcher.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Loader.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Log.h

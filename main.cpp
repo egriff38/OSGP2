@@ -21,7 +21,7 @@ bool *still_has_work = &temp;
 MMU *m = new MMU();
 Loader *loader = new Loader();
 Scheduler *scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *m);
-
+std::vector<std::thread> t = std::vector<std::thread>();
     // Loader calls init();
     loader->init(*m,*pcbs);
 
@@ -33,17 +33,11 @@ Scheduler *scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *m);
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done
-    while(*still_has_work)
-    scheduler->schedule(still_has_work);
+    while(*still_has_work || scheduler->getDone() != 30) {
+        scheduler->schedule(still_has_work);
+    }
 
-
-
-
-    // Thread for page fault and io begins (later)  
-
-
-
-
+    // Thread for page fault and io begins (later)
 
 
     return 0;

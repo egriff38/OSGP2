@@ -57,6 +57,22 @@ iostream
 -
 
 /home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
+CPU.h
+/home/conrad/CPlusPlus/OSGP2/CPU.h
+MMU.h
+/home/conrad/CPlusPlus/OSGP2/MMU.h
+thread
+-
+chrono
+-
+atomic
+-
+Mutex_queues.cpp
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
+Dispatcher.h
+/home/conrad/CPlusPlus/OSGP2/Dispatcher.h
+atomic
+-
 
 /home/conrad/CPlusPlus/OSGP2/Dispatcher.h
 queue
@@ -135,6 +151,10 @@ mutex
 -
 queue
 -
+functional
+-
+iostream
+-
 
 /home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
 
@@ -203,6 +223,8 @@ iostream
 -
 list
 -
+thread
+-
 Loader.h
 /home/conrad/CPlusPlus/OSGP2/Loader.h
 PCB.h
@@ -211,8 +233,8 @@ MMU.h
 /home/conrad/CPlusPlus/OSGP2/MMU.h
 Scheduler.h
 /home/conrad/CPlusPlus/OSGP2/Scheduler.h
-Mutex_queues.h
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+Dispatcher.cpp
+/home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
 Mutex_queues.cpp
 /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 

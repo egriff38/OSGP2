@@ -14,6 +14,7 @@ Scheduler::Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &r
     this->mmu = &mmu;
     ram_space = std::list<free_ram>();
     ram_space.push_front(free_ram(0,true));
+    done = 0;
 }
 
 
@@ -23,20 +24,22 @@ void Scheduler::schedule(bool *still_has_work) {
     // Continues until no more jobs can be loaded or there are no more jobs
 
     while (true) {
+        clean_ram_space(*done_queue);
+
         temp = lt_get_next_pcb(*pcbs);
         if (temp == nullptr) {
             *still_has_work = false;
             break;
         }
-        clean_ram_space(*done_queue);
         if (!get_ram_start(temp)) {
+            pcbs->push(temp);
             break;
         }
         load_pcb(temp);
         temp->state = PCB::READY;
         ready_queue->push(temp);
         jobsAllocated++;
-        std::cout << jobsAllocated << "\n";
+  //      std::cout << jobsAllocated << "\n";
 
     }
 }
@@ -144,16 +147,17 @@ void Scheduler::load_pcb(PCB *p) { //puts PCB in RAM and ready_queue deal with s
 void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue){
     PCB *temp;
     free_ram *f;
-    while(done_queue.getSize() != 0){
-     temp = done_queue.pop();
+    while(done_queue.getSize() != 0) {
+        temp = done_queue.pop();
+        done++;
+
         std::list<free_ram>::iterator it = ram_space.begin();
-        while (it != ram_space.end()) {
+        while (it != ram_space.end() && !ram_space.empty()) {
             if (it->position == temp->job_ram_address)
                 it->is_free = true;
             it++;
-                }
-
         }
+    }
     std::list<free_ram>::iterator it = ram_space.begin();
     while (it != ram_space.end()) {
         if (it->is_free)
@@ -165,10 +169,8 @@ void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue){
     }
 }
 
-//returns true if p1 has lower priority than p2 - used for sorting
-bool comp_fifo(PCB *p1, PCB *p2)
-{
-    return true;
+int Scheduler::getDone(){
+    return done;
 }
 
 bool comp_priority(PCB *p1, PCB *p2) {

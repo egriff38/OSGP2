@@ -53,7 +53,7 @@ private:
     bool BLZ(int B, int addr);
     void execute(Op op);
 public:
-    PCB state;
+    PCB *state;
     bool Operate();
     void load_pcb(PCB *p);
     PCB* store_pcb();

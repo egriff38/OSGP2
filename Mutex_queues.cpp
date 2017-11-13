@@ -11,6 +11,8 @@
 
 #include <mutex>
 #include <queue>
+#include <functional>
+#include <iostream>
 
 template <class T>
 class M_queue {
@@ -18,6 +20,7 @@ public:
     M_queue<T>()
     {
         data = std::queue<T>();
+        popped = 0;
     }
     void push(T input)
     {
@@ -33,6 +36,7 @@ public:
             }
         T t = data.front();
         data.pop();
+        popped++;
         mutex.unlock();
         return t;
     }
@@ -44,14 +48,24 @@ public:
         return size;
     }
 
+    int getPopped()
+    {
+        mutex.lock();
+        int s = popped;
+        mutex.unlock();
+        return popped;
+    }
+
 private:
     std::queue<T> data;
     std::mutex mutex;
+    int popped;
 };
 
 template <class U>
 class M_priority_queue {
 public:
+  //  typename compare = std::less<U>;
     M_priority_queue<U>(){
         data = std::priority_queue<U>();
     }

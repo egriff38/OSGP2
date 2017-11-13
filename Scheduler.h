@@ -52,6 +52,7 @@ private:
     bool get_ram_start(PCB *p);
     void load_pcb(PCB *p);
     void clean_ram_space(M_queue<PCB*> &done_queue);
+    int done;
 
 public:
     Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &done_queue, MMU &mmu);
@@ -60,6 +61,8 @@ public:
     void st_sched(bool *st_still_has_work);
 
     PCB* lt_get_next_pcb(M_priority_queue<PCB *> &pcbs);
+
+    int getDone();
 };
 
 bool comp_fifo(PCB *p1, PCB *p2);
