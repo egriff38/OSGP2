@@ -5,8 +5,7 @@
 #include "Log.h"
 #include <algorithm>
 #include "Mutex_queues.h"
-
-// Initalizes the Scheduler and gives it the job list, disk, ram, and dispatcher
+// Initalizes the Scheduler and gives it the job list, disk, ram, and dispatcher.
 Scheduler::Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &done_queue, MMU &mmu){
     pcbs = &pcb_list;
     this->ready_queue = &ready_queue;
