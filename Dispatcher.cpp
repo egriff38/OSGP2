@@ -21,19 +21,28 @@ namespace Dispatcher{
      using namespace std::chrono_literals;
      CPU *cpu = new CPU(new Ram(), production);
      PCB *current;
-     while (done_queue->getSize() != 30) {
+     while (true) {
 
          current = ready_queue->pop();
          if (current != nullptr) {
+             Dispatcher::lock_talk.lock();
              std::cout << "PCB NUM " << current->job_id << "\n";
              std::cout << "Using CPU " << i << "\n";
+             Dispatcher::lock_talk.unlock();
              current->state = PCB::RUNNING;
           //   cpu->load_pcb(current);
             // while (cpu->state.state == PCB::RUNNING)
             //     cpu->Operate();
            //  cpu->store_pcb();
              done_queue->push(current);
+             Dispatcher::lock_talk.lock();
              std::cout << "Jobs Completed " << done_queue->getPopped() << "\n\n";
+            Dispatcher::lock_talk.unlock();
+         }
+         else {
+             Dispatcher::lock_talk.lock();
+             std::cout << "Current = nullptr \n";
+             Dispatcher::lock_talk.unlock();
          }
 
          std::this_thread::sleep_for(2ns);

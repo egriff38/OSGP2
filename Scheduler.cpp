@@ -39,7 +39,9 @@ void Scheduler::schedule(bool *still_has_work) {
         temp->state = PCB::READY;
         ready_queue->push(temp);
         jobsAllocated++;
-  //      std::cout << jobsAllocated << "\n";
+      Dispatcher::lock_talk.lock();
+       std::cout << jobsAllocated << "\n";
+        Dispatcher::lock_talk.unlock();
 
     }
 }
@@ -145,6 +147,9 @@ void Scheduler::load_pcb(PCB *p) { //puts PCB in RAM and ready_queue deal with s
 }
 
 void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue){
+    Dispatcher::lock_talk.lock();
+    std::cout << "Cleaning Ram \n";
+    Dispatcher::lock_talk.unlock();
     PCB *temp;
     free_ram *f;
     while(done_queue.getSize() != 0) {
