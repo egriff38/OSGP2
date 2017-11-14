@@ -13,10 +13,6 @@
 #include <queue>
 #include <functional>
 #include <iostream>
-#include "Scheduler.h"
-
-
-
 
 template <class T>
 class M_queue {
