@@ -13,20 +13,24 @@ const int CPU_NUM = 4;
 
 // Loader, MMU, Dispatchers, scheduler, ready_queue (prio queue), io_queue, and done_queue
 // and page_fault_queue are declared and initialized.
-M_priority_queue<PCB*> *pcbs = new M_priority_queue<PCB*>();
-M_priority_queue<PCB*> *ready_queue = new M_priority_queue<PCB*>();
-M_queue<PCB*> *done_queue = new M_queue<PCB*>();
-auto *still_has_work = new bool(true);
-MMU *m = new MMU();
-Loader *loader = new Loader();
-Scheduler *scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *m);
-std::vector<std::thread> t = std::vector<std::thread>();
+auto pcbs = new M_priority_queue<PCB*>();
+auto ready_queue = new M_priority_queue<PCB*>();
+auto io_queue = new M_queue<PCB*>();
+auto pf_queue = new M_queue<PCB*>();
+auto done_queue = new M_queue<PCB*>();
+auto mmu = new MMU();
+auto still_has_work = new bool(true);
+auto loader = new Loader();
+auto scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *mmu);
+auto threads = std::vector<std::thread>();
+
     // Loader calls init();
-    loader->init(*m,*pcbs);
+    loader->init(*mmu,*pcbs);
 
     // Dispatcher threads begin
     for(int i = 0; i < CPU_NUM; i++) {
-        std::thread(Dispatcher::start,m,ready_queue,new M_queue<PCB*>(),new M_queue<PCB*>(),done_queue,i).detach();
+
+        std::thread(Dispatcher::start,mmu,ready_queue,io_queue,pf_queue,done_queue,i).detach();
     }
 
 
