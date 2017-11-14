@@ -8,155 +8,155 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
+				<Option working_dir="/home/charlie/source/OSGP2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
+				<Option working_dir="/home/charlie/source/OSGP2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
+				<Option working_dir="/home/charlie/source/OSGP2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Phase_2">
-				<Option output="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
+				<Option output="/home/charlie/source/OSGP2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/charlie/source/OSGP2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Phase_2/fast">
-				<Option output="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/conrad/CPlusPlus/OSGP2/cmake-build-debug"/>
+				<Option output="/home/charlie/source/OSGP2/cmake-build-debug/Phase_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/charlie/source/OSGP2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Phase_2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlie/source/OSGP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/CPU.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/CPU.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/CPU.h">
+		<Unit filename="/home/charlie/source/OSGP2/CPU.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Cache.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Cache.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Cache.h">
+		<Unit filename="/home/charlie/source/OSGP2/Cache.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Disk.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Disk.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Disk.h">
+		<Unit filename="/home/charlie/source/OSGP2/Disk.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Dispatcher.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Dispatcher.h">
+		<Unit filename="/home/charlie/source/OSGP2/Dispatcher.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Hex_Util.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Hex_Util.h">
+		<Unit filename="/home/charlie/source/OSGP2/Hex_Util.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Loader.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Loader.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Loader.h">
+		<Unit filename="/home/charlie/source/OSGP2/Loader.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Log.h">
+		<Unit filename="/home/charlie/source/OSGP2/Log.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/MMU.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/MMU.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/MMU.h">
+		<Unit filename="/home/charlie/source/OSGP2/MMU.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Mutex_queues.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h">
+		<Unit filename="/home/charlie/source/OSGP2/Mutex_queues.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/PCB.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/PCB.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/PCB.h">
+		<Unit filename="/home/charlie/source/OSGP2/PCB.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Ram.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Ram.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Ram.h">
+		<Unit filename="/home/charlie/source/OSGP2/Ram.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Scheduler.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/Scheduler.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Scheduler.h">
+		<Unit filename="/home/charlie/source/OSGP2/Scheduler.h">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/main.cpp">
+		<Unit filename="/home/charlie/source/OSGP2/main.cpp">
 			<Option target="Phase_2"/>
 		</Unit>
-		<Unit filename="/home/conrad/CPlusPlus/OSGP2/CMakeLists.txt">
+		<Unit filename="/home/charlie/source/OSGP2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

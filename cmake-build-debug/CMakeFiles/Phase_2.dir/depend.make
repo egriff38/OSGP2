@@ -58,6 +58,7 @@ CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../CPU.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Cache.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Disk.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Dispatcher.h
+CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Mutex_queues.cpp

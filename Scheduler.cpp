@@ -5,6 +5,8 @@
 #include "Log.h"
 #include <algorithm>
 #include "Mutex_queues.h"
+#include "Hex_Util.h"
+
 // Initalizes the Scheduler and gives it the job list, disk, ram, and dispatcher.
 Scheduler::Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &done_queue, MMU &mmu){
     pcbs = &pcb_list;
@@ -13,6 +15,8 @@ Scheduler::Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &r
     this->mmu = &mmu;
     ram_space = std::list<free_ram>();
     ram_space.push_front(free_ram(0,true));
+    for (free_ram i : ram_space)
+        std::cout << Hex_Util::bool_to_string(i.is_free) << std::endl;
     done = 0;
 }
 
