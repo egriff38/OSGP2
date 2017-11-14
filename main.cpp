@@ -37,7 +37,7 @@ std::vector<std::thread> t = std::vector<std::thread>();
     }
 
     // Thread for page fault and io begins (later)
-
+    std::cout<<"Jobs"<<scheduler->getDone()<<"Donezo";
 
     return 0;
 }

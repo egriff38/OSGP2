@@ -1,4 +1,4 @@
-    //
+//
 // Created by Eshin Griffith on 11/3/17.
 //
 
@@ -23,7 +23,9 @@
 
 namespace Dispatcher {
     static std::mutex lock_talk;
-    static void start(MMU *mmu, M_priority_queue<PCB*> *ready_queue,M_queue<PCB*> *io_queue, M_queue<PCB*> *pf_queue, M_queue<PCB*> *done_queue,int i);
+
+    static void start(MMU *mmu, M_priority_queue<PCB *> *ready_queue, M_queue<PCB *> *io_queue, M_queue<PCB *> *pf_queue,
+          M_queue<PCB *> *done_queue, int i);
 };
 
 #endif //PHASE_2_DISPATCHER_H

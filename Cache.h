@@ -15,9 +15,13 @@ class Cache {
 
 public:
     std::string read(int address);
+
     void write(int address, std::string data);
+
     void write(int address, std::vector<std::string> s);
+
     const static int SIZE = 128;
+
     Cache();
 
 

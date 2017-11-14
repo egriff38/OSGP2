@@ -4,6 +4,7 @@
 #include <vector>
 #include "Ram.h"
 #include <mutex>
+#include <cstdlib>
 
 
 std::string Ram::read(int address) {

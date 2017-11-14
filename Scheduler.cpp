@@ -8,13 +8,14 @@
 #include "Hex_Util.h"
 
 // Initalizes the Scheduler and gives it the job list, disk, ram, and dispatcher.
-Scheduler::Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &done_queue, MMU &mmu){
+Scheduler::Scheduler(M_priority_queue<PCB *> &pcb_list, M_priority_queue<PCB *> &ready_queue,
+                     M_queue<PCB *> &done_queue, MMU &mmu) {
     pcbs = &pcb_list;
     this->ready_queue = &ready_queue;
     this->done_queue = &done_queue;
     this->mmu = &mmu;
     ram_space = std::list<free_ram>();
-    ram_space.push_front(free_ram(0,true));
+    ram_space.push_front(free_ram(0, true));
     for (free_ram i : ram_space)
         std::cout << Hex_Util::bool_to_string(i.is_free) << std::endl;
     done = 0;
@@ -42,21 +43,20 @@ void Scheduler::schedule(bool *still_has_work) {
         temp->state = PCB::READY;
         ready_queue->push(temp);
         jobsAllocated++;
-      Dispatcher::lock_talk.lock();
-       std::cout << jobsAllocated << "\n";
-        Dispatcher::lock_talk.unlock();
+        /*Dispatcher::lock_talk.lock();
+        std::cout << jobsAllocated << "\n";
+        Dispatcher::lock_talk.unlock();*/
 
     }
 }
 
 
 //returns pointer to next PCB, returns null pointer if no next PCB
-PCB* Scheduler::lt_get_next_pcb(M_priority_queue<PCB *> &pcbs) {
+PCB *Scheduler::lt_get_next_pcb(M_priority_queue<PCB *> &pcbs) {
     PCB *temp;
-    if(pcbs.getSize() == 0)
+    if (pcbs.getSize() == 0)
         return nullptr;
-    else
-    {
+    else {
         temp = pcbs.pop();
         return temp;
     }
@@ -98,7 +98,8 @@ bool Scheduler::get_ram_start(PCB *p) {
                     p->job_ram_address = current_pos;
                     is_space = true;
                     it->is_free = false;
-                    free_ram *to_be_added = new free_ram(current_pos + p->total_size, true); //new space starts in address after end of p
+                    free_ram *to_be_added = new free_ram(current_pos + p->total_size,
+                                                         true); //new space starts in address after end of p
                     to_be_added->position = current_pos + p->total_size;
                     to_be_added->is_free = true;
                     ram_space.insert(std::next(it), *to_be_added);
@@ -125,7 +126,8 @@ bool Scheduler::get_ram_start(PCB *p) {
                     //set is_free and address, create and insert new space, and return
                     p->job_ram_address = current_pos;
                     it->is_free = false;
-                    free_ram *to_be_added = new free_ram(current_pos + p->total_size + 1, true); //new space starts in address after end of p
+                    free_ram *to_be_added = new free_ram(current_pos + p->total_size + 1,
+                                                         true); //new space starts in address after end of p
                     to_be_added->is_free = true;
                     to_be_added->position = current_pos + p->total_size;
                     ram_space.insert(std::next(it), *to_be_added);
@@ -145,17 +147,17 @@ void Scheduler::load_pcb(PCB *p) { //puts PCB in RAM and ready_queue deal with s
     int disk_start = p->job_disk_address;
     // Put on ram
     for (int i = 0; i < p->total_size; i++) { // may need to be <=
-        mmu->ram_memory(ram_start + i,mmu->disk_memory(disk_start + i));
+        mmu->ram_memory(ram_start + i, mmu->disk_memory(disk_start + i));
     }
 }
 
-void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue){
-    Dispatcher::lock_talk.lock();
-    std::cout << "Cleaning Ram \n";
-    Dispatcher::lock_talk.unlock();
+void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue) {
+    /*Dispatcher::lock_talk.lock();
+    //std::cout << "Cleaning Ram \n";
+    Dispatcher::lock_talk.unlock();*/
     PCB *temp;
     free_ram *f;
-    while(done_queue.getSize() != 0) {
+    while (done_queue.getSize() != 0) {
         temp = done_queue.pop();
         done++;
 
@@ -177,7 +179,7 @@ void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue){
     }
 }
 
-int Scheduler::getDone(){
+int Scheduler::getDone() {
     return done;
 }
 
@@ -185,7 +187,6 @@ bool comp_priority(PCB *p1, PCB *p2) {
     return p1->job_pri > p2->job_pri;
 }
 
-bool comp_sjf(PCB *p1, PCB *p2)
-{
+bool comp_sjf(PCB *p1, PCB *p2) {
     return p1->job_size > p2->job_size;
 }
