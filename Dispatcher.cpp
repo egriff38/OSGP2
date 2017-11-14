@@ -22,7 +22,6 @@ namespace Dispatcher{
      CPU *cpu = new CPU(new Ram(), production);
      PCB *current;
      while (true) {
-
          current = ready_queue->pop();
          if (current != nullptr) {
              Dispatcher::lock_talk.lock();
@@ -34,6 +33,7 @@ namespace Dispatcher{
             // while (cpu->state.state == PCB::RUNNING)
             //     cpu->Operate();
            //  cpu->store_pcb();
+             current->state = PCB::COMPLETED;
              done_queue->push(current);
              Dispatcher::lock_talk.lock();
              std::cout << "Jobs Completed " << done_queue->getPopped() << "\n\n";
