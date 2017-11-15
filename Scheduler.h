@@ -46,7 +46,7 @@ private:
     M_queue<PCB*> *done_queue;
     MMU *mmu;
     std::list<free_ram> ram_space;
-    int jobsAllocated;
+    int const jobsAllocated;
     enum SCHEDULING_TYPE {FIFO, PRIORITY, SJF};
     const SCHEDULING_TYPE sched_type = SCHEDULING_TYPE::FIFO;
     bool get_ram_start(PCB *p);
