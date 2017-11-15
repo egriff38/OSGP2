@@ -15,10 +15,6 @@ bool CPU::Operate() {
         return true;
     }
 
-
-
-}
-
 CPU::CPU(MMU* mmu,mode m) {
     if(m==debug) std::cout<<"--DEBUG--\n";
     for (int i = 0; i < 16; ++i) {
