@@ -15,7 +15,7 @@ std::string Ram::read(int address) {
 
 void Ram::write(int address, std::string data) {
     if (address >= SIZE || address < 0)
-        std::cout << "Using Ram INcorretly\n";
+        std::cout << "Using Ram INcorretly " << address<< "\n ";
         ram_data[address] = data;
 }
 

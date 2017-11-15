@@ -92,7 +92,7 @@ bool Scheduler::get_ram_start(PCB *p) {
                     return is_space;
 
                 } else if ((MMU::RAM_SIZE - it->position) >
-                           p->job_size) { //if we're at the end of the list and there's more than enough space
+                           p->total_size) { //if we're at the end of the list and there's more than enough space
 
                     //set address, insert new space, and return
                     p->job_ram_address = current_pos;

@@ -265,6 +265,7 @@ PCB* CPU::store_pcb() {
     for (int i = 0; i < 16; ++i) {
         this->state->registers[i] = this->Register[i];
     }
+
     return out;
 }
 void CPU::pass(std::string val) {
