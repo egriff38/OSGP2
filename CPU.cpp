@@ -8,14 +8,12 @@
 
 
 bool CPU::Operate() {
-    try {
         std::string instruction = CPU::fetch(this->PC);
         ++PC;
         Op decoded = CPU::decode(instruction);
         CPU::execute(decoded);
         return true;
     }
-    catch (...){std::cout << "Failed at " << state->job_id << " on PC " << PC << "\n"; }
 
 
 
