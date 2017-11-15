@@ -9,6 +9,8 @@
 #include "PCB.h"
 #include <vector>
 #include "Cache.h"
+#include "MMU.h"
+
 struct Op{
     std::string op_type;
     std::string op_code;
@@ -21,6 +23,7 @@ struct Op{
 enum mode{debug,production};
 class CPU {
 private:
+    MMU *mmu;
     int Register[16];
     int PC;
     Cache cache;
@@ -57,14 +60,11 @@ public:
     bool Operate();
     void load_pcb(PCB *p);
     PCB* store_pcb();
-    CPU(Ram* ram,mode);
+    CPU(MMU* mmu,mode);
     int* dump_registers();
     void pass(std::string val);
     std::string fetch(int i);
     Op decode(std::string basic_string);
-
-
-
 };
 
 

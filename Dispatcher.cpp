@@ -20,20 +20,20 @@ namespace Dispatcher {
     static void start(MMU *mmu, M_priority_queue<PCB *> *ready_queue, M_queue<PCB *> *io_queue,
                       M_queue<PCB *> *pf_queue, M_queue<PCB *> *done_queue, int i) {
         using namespace std::chrono_literals;
-        CPU *cpu = new CPU(new Ram(), production);
+        CPU *cpu = new CPU(mmu, production);
         PCB *current;
         while (true) {
             current = ready_queue->pop();
             if (current != nullptr) {
-               /* Dispatcher::lock_talk.lock();
+                Dispatcher::lock_talk.lock();
                 std::cout << "PCB NUM " << current->job_id << "\n";
                 std::cout << "Using CPU " << i << "\n";
-                Dispatcher::lock_talk.unlock();*/
+                Dispatcher::lock_talk.unlock();
                 current->state = PCB::RUNNING;
-                //   cpu->load_pcb(current);
-                // while (cpu->state.state == PCB::RUNNING)
-                //     cpu->Operate();
-                //  cpu->store_pcb();
+                   cpu->load_pcb(current);
+                 while (cpu->state->state == PCB::RUNNING)
+                     cpu->Operate();
+                  cpu->store_pcb();
                 current->state = PCB::COMPLETED;
                 done_queue->push(current);
                 /*Dispatcher::lock_talk.lock();

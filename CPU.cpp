@@ -8,19 +8,26 @@
 
 
 bool CPU::Operate() {
-    std::string instruction = CPU::fetch(this->PC);
-    ++PC;
-    Op decoded = CPU::decode(instruction);
-    CPU::execute(decoded);
-    return true;
+    try {
+        std::string instruction = CPU::fetch(this->PC);
+        ++PC;
+        Op decoded = CPU::decode(instruction);
+        CPU::execute(decoded);
+        return true;
+    }
+    catch (...){std::cout << "Failed at " << state->job_id << " on PC " << PC << "\n"; }
+
+
+
 }
 
-CPU::CPU(Ram* ram,mode m) {
+CPU::CPU(MMU* mmu,mode m) {
     if(m==debug) std::cout<<"--DEBUG--\n";
     for (int i = 0; i < 16; ++i) {
         this->Register[i]=i;
     }
     this->Register[1] = 0;
+    this->mmu = mmu;
 }
 
 bool CPU::RD(int s1, int s2, int address) {
@@ -165,8 +172,8 @@ int *CPU::dump_registers() {
 }
 
 std::string CPU::fetch(int i) {
-//    return this->ram->read(i+state.job_ram_address);
-    return "";
+   return this->cache.read(i);
+
 }
 
 Op CPU::decode(std::string hex) {
@@ -251,6 +258,11 @@ void CPU::load_pcb(PCB *p) {
     for (int i = 0; i < 16; ++i) {
         this->Register[i] = this->state->registers[i];
     }
+    for(int i = state->job_ram_address; i < state->total_size + state->job_ram_address; i++)
+    {
+        cache.write(i - state->job_ram_address,mmu->ram_memory(i));
+    }
+    int x = 2;
 }
 PCB* CPU::store_pcb() {
     PCB* out = state;

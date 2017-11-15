@@ -5,6 +5,7 @@
 #include "Ram.h"
 #include <mutex>
 #include <cstdlib>
+#include <iostream>
 
 
 std::string Ram::read(int address) {
@@ -14,8 +15,8 @@ std::string Ram::read(int address) {
 
 void Ram::write(int address, std::string data) {
     if (address >= SIZE || address < 0)
-        exit(EXIT_FAILURE);
-    ram_data[address] = data;
+        std::cout << "Using Ram INcorretly\n";
+        ram_data[address] = data;
 }
 
 void Ram::write(int address, std::vector<std::string> data) {

@@ -4,8 +4,10 @@
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../CPU.cpp
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../CPU.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Cache.h
+CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Disk.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Log.h
+CMakeFiles/Phase_2.dir/CPU.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Ram.h
 

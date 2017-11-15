@@ -93,6 +93,7 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
                 p->temp_buf_size = data[5];
                 p->total_size = p->job_size + p->in_buf_size + p->out_buf_size + p->temp_buf_size;
                 p->state = PCB::PROCESS_STATUS::NEW;
+                p->prgm_counter = 0;
                 pcbs.push(p);
                 counter = 0;
 
