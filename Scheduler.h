@@ -35,7 +35,7 @@ struct free_ram {
 
     free_ram(int pos, bool is_free) {
         position = pos;
-        is_free = false;
+        this->is_free = is_free;
     }
 };
 
