@@ -27,8 +27,7 @@
 #include "Disk.h"
 #include "Ram.h"
 
-class MMU
-{
+class MMU {
 private:
     std::map<int, bool> *disk_frame_map;
     std::map<int, bool> *ram_frame_map;
@@ -39,16 +38,28 @@ private:
 
 public:
     MMU();
+
     ~MMU();
+
     std::string disk_memory(int address, std::string s = "NULL");
+
     std::string ram_memory(int address, std::string s = "NULL");
-    bool add_page_to_disk(std::string word[],int frame_num);
-    bool add_page_to_ram(std::string word[], int frame_num);
+
+    bool add_page_to_disk(std::vector<std::string> page, int frame_num);
+
+    bool add_page_to_ram(std::vector<std::string> page, int frame_num);
+
     bool remove_page_from_ram(int frame_num);
-    std::string* read_page_from_ram(int frame_num);
-    std::string* read_page_from_disk(int frame_num);
+
+    std::vector<std::string> read_page_from_ram(int frame_num);
+
+    std::vector<std::string> read_page_from_disk(int frame_num);
+
     static const int RAM_SIZE = 1024;
     static const int DISK_SIZE = 2048;
 
 };
+
+
+
 #endif //PHASE_2_MMU_H

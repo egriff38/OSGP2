@@ -56,7 +56,7 @@ std::string MMU::ram_memory(int address, std::string s) {
 
 // Page memory access functions
 
-bool MMU::add_page_to_disk(std::string *word, int frame_num) {
+bool MMU::add_page_to_disk(std::vector<std::string> page, int frame_num) {
     // Check if map location is free
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
@@ -65,7 +65,7 @@ bool MMU::add_page_to_disk(std::string *word, int frame_num) {
     {
         (*disk_frame_map)[frame_num] == true;
         for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
-            disk->write(i, word[i%4]);
+            disk->write(i, page[i%4]);
         disk_mutex.unlock();
         return true;
     }
@@ -75,7 +75,7 @@ bool MMU::add_page_to_disk(std::string *word, int frame_num) {
     }
 }
 
-bool MMU::add_page_to_ram(std::string *word, int frame_num) {
+bool MMU::add_page_to_ram(std::vector<std::string> page, int frame_num) {
     // Check if map location is free
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
@@ -84,7 +84,7 @@ bool MMU::add_page_to_ram(std::string *word, int frame_num) {
     {
         (*ram_frame_map)[frame_num] == true;
         for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
-            ram->write(i, word[i%4]);
+            ram->write(i, page[i%4]);
         ram_mutex.unlock();
         return true;
     }
@@ -94,8 +94,8 @@ bool MMU::add_page_to_ram(std::string *word, int frame_num) {
     }
 }
 
-std::string* MMU::read_page_from_ram(int frame_num) {
-    std::string* output = new std::string[4];
+std::vector<std::string> MMU::read_page_from_ram(int frame_num) {
+    std::vector<std::string> output;
     ram_mutex.lock();
     for (int i = 0; i < 4; i++) {
         output[i] = ram->read(frame_num * 4 + i);
@@ -104,8 +104,8 @@ std::string* MMU::read_page_from_ram(int frame_num) {
     return output;
 }
 
-std::string* MMU::read_page_from_disk(int frame_num) {
-    std::string* output = new std::string[4];
+std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
+    std::vector<std::string> output;
     disk_mutex.lock();
     for (int i = 0; i < 4; i++) {
         output[i] = disk->read(frame_num * 4 + i);

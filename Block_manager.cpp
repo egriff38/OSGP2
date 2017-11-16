@@ -10,7 +10,7 @@ void Block_manager::start(MMU *mmu, M_queue<PCB*> *readyish_queue, M_queue<PCB*>
     bool this_is_true;
     int count = 0;
     PCB *temp;
-    using namespace std::chrono_literals;
+    using namespace std::chrono_literals; //for ns in sleep_for()
 
     while(this_is_true) {
         if (blocked_queue->getSize() != 0) {
@@ -30,7 +30,7 @@ void Block_manager::start(MMU *mmu, M_queue<PCB*> *readyish_queue, M_queue<PCB*>
 }
 
 void Block_manager::clear_io(MMU *mmu, PCB *p) {
-
+    //temp->
 }
 
 void Block_manager::clear_pf(MMU *mmu, PCB *p) {
