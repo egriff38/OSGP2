@@ -4,6 +4,7 @@
 
 #include "MMU.h"
 #include <tuple>
+#include "Hex_Util.h"
 
 
 // Constructor / Deconstructor
@@ -62,9 +63,9 @@ bool MMU::add_page_to_disk(std::vector<std::string> page, int frame_num) {
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
     disk_mutex.lock();
-    if((*disk_frame_map)[frame_num] == false)
+    if((*disk_frame_map).at(frame_num) == false)
     {
-        (*disk_frame_map)[frame_num] == true;
+        (*disk_frame_map).at(frame_num) = true;
         for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
             disk->write(i, page[i%4]);
         disk_mutex.unlock();
@@ -83,7 +84,7 @@ bool MMU::add_page_to_ram(std::vector<std::string> page, int frame_num) {
     ram_mutex.lock();
     if((*ram_frame_map)[frame_num] == false)
     {
-        (*ram_frame_map)[frame_num] == true;
+        (*ram_frame_map)[frame_num] = true;
         for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
             ram->write(i, page[i%4]);
         ram_mutex.unlock();
@@ -115,10 +116,20 @@ std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
     return output;
 }
 
+
 int MMU::get_ram_frame(int page_num, const PCB *p) {
     return std::get<0>(p->page_table.at(page_num));
 }
 
 int MMU::get_disk_frame(int page_num, const PCB *p) {
     return std::get<1>(p->page_table.at(page_num));
+}
+
+void MMU::print_disk_map() {
+    for(int i = 0; i < disk_frame_map->size(); i++)
+    {
+        std::cout << "PAGE #" << i << " " << Hex_Util::bool_to_string(disk_frame_map->at(i)) << "\n";
+    }
+
+
 }

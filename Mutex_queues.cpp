@@ -14,8 +14,7 @@
 
 template<class T>
 class M_queue {
-public:
-    M_queue<T>() {
+public:M_queue<T>() {
         data = std::queue<T>();
         popped = 0;
     }
