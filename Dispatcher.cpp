@@ -12,7 +12,6 @@
 #include <atomic>
 #include "Mutex_queues.cpp"
 #include "Dispatcher.h"
-#include <atomic>
 
 
 namespace Dispatcher {
