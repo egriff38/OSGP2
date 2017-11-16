@@ -22,7 +22,7 @@ namespace Dispatcher {
         using namespace std::chrono_literals;
         CPU *cpu = new CPU(mmu, production);
         PCB *current;
-        bool itstrue  = true
+        bool itstrue  = true;
         while (itstrue) {
             current = ready_queue->pop();
             if (current != nullptr) {
