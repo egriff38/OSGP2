@@ -3,6 +3,7 @@
 //
 
 #include "MMU.h"
+#include "Hex_Util.h"
 
 
 // Constructor / Deconstructor
@@ -61,9 +62,9 @@ bool MMU::add_page_to_disk(std::string *word, int frame_num) {
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
     disk_mutex.lock();
-    if((*disk_frame_map)[frame_num] == false)
+    if((*disk_frame_map).at(frame_num) == false)
     {
-        (*disk_frame_map)[frame_num] == true;
+        (*disk_frame_map).at(frame_num) = true;
         for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
             disk->write(i, word[i%4]);
         disk_mutex.unlock();
@@ -82,7 +83,7 @@ bool MMU::add_page_to_ram(std::string *word, int frame_num) {
     ram_mutex.lock();
     if((*ram_frame_map)[frame_num] == false)
     {
-        (*ram_frame_map)[frame_num] == true;
+        (*ram_frame_map)[frame_num] = true;
         for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
             ram->write(i, word[i%4]);
         ram_mutex.unlock();
@@ -112,4 +113,12 @@ std::string* MMU::read_page_from_disk(int frame_num) {
     }
     disk_mutex.unlock();
     return output;
+}
+
+void MMU::print_disk_map() {
+    for(int i = 0; i < disk_frame_map->size(); i++)
+    {
+        std::cout << "PAGE #" << i << " " << Hex_Util::bool_to_string(disk_frame_map->at(i)) << "\n";
+    }
+
 }

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Phase_2.dir/main.cpp.o"
   "CMakeFiles/Phase_2.dir/PCB.cpp.o"
   "CMakeFiles/Phase_2.dir/CPU.cpp.o"
   "CMakeFiles/Phase_2.dir/Disk.cpp.o"
@@ -11,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Phase_2.dir/Cache.cpp.o"
   "CMakeFiles/Phase_2.dir/MMU.cpp.o"
   "CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o"
+  "CMakeFiles/Phase_2.dir/main.cpp.o"
   "Phase_2.pdb"
   "Phase_2"
 )

@@ -137,6 +137,8 @@ Mutex_queues.cpp
 /home/conrad/CPlusPlus/OSGP2/MMU.cpp
 MMU.h
 /home/conrad/CPlusPlus/OSGP2/MMU.h
+Hex_Util.h
+/home/conrad/CPlusPlus/OSGP2/Hex_Util.h
 
 /home/conrad/CPlusPlus/OSGP2/MMU.h
 iostream
@@ -155,12 +157,14 @@ mutex
 -
 queue
 -
+list
+-
 functional
 -
 iostream
 -
-
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+PCB.h
+/home/conrad/CPlusPlus/OSGP2/PCB.h
 
 /home/conrad/CPlusPlus/OSGP2/PCB.cpp
 iostream
@@ -171,10 +175,10 @@ PCB.h
 /home/conrad/CPlusPlus/OSGP2/PCB.h
 list
 -
-Log.h
-/home/conrad/CPlusPlus/OSGP2/Log.h
 map
 -
+Log.h
+/home/conrad/CPlusPlus/OSGP2/Log.h
 
 /home/conrad/CPlusPlus/OSGP2/Ram.cpp
 vector
@@ -207,8 +211,6 @@ Log.h
 /home/conrad/CPlusPlus/OSGP2/Log.h
 algorithm
 -
-Mutex_queues.h
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
 Hex_Util.h
 /home/conrad/CPlusPlus/OSGP2/Hex_Util.h
 
@@ -227,8 +229,8 @@ Scheduler.h
 /home/conrad/CPlusPlus/OSGP2/Scheduler.h
 Dispatcher.h
 /home/conrad/CPlusPlus/OSGP2/Dispatcher.h
-Mutex_queues.h
-/home/conrad/CPlusPlus/OSGP2/Mutex_queues.h
+Mutex_queues.cpp
+/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 
 /home/conrad/CPlusPlus/OSGP2/main.cpp
 iostream

@@ -179,7 +179,7 @@ void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue) {
 }
 
 int Scheduler::getDone() {
-    int x = 2;  
+    int x = 2;
     return done;
 
 

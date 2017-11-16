@@ -1,3 +1,4 @@
 /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir
 /home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/Phase_2.dir
