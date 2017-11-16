@@ -41,6 +41,7 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
                 //create new PCB with registers and address initialized
                 mmu.add_page_to_disk(page, currentMMUPage);
                 currentPagesForJob = 0;
+                currentMMUPage++;
                 wordCount = 0;
                 for(int j = 0; j < 4; j++)
                     page[j] = "";
@@ -112,8 +113,8 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
             temp = temp.substr(2, std::string::npos);
             if(wordCount == 4)
             {
-                wordCount = 0;
                 mmu.add_page_to_disk(page, currentMMUPage);
+                wordCount = 0;
                 currentPagesForJob++;
                 currentMMUPage++;
                 for(int j = 0; j < 4; j++)
@@ -125,10 +126,6 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
             wordCount++;
         }
     }
-
+mmu.print_disk_map();
     input.close();
-
-    for(int i = 0; i < 2048; i++) {
-        std::cout << mmu.disk_memory(i) << "\n";
     }
-}

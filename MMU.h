@@ -49,5 +49,6 @@ public:
     std::string* read_page_from_disk(int frame_num);
     static const int RAM_SIZE = 1024;
     static const int DISK_SIZE = 2048;
+    void print_disk_map();
 };
 #endif //PHASE_2_MMU_H
