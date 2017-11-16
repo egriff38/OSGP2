@@ -22,7 +22,8 @@ namespace Dispatcher {
         using namespace std::chrono_literals;
         CPU *cpu = new CPU(mmu, production);
         PCB *current;
-        while (true) {
+        bool itstrue  = true
+        while (itstrue) {
             current = ready_queue->pop();
             if (current != nullptr) {
                 Dispatcher::lock_talk.lock();
