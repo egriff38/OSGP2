@@ -3,6 +3,7 @@
 //
 
 #include "MMU.h"
+#include <tuple>
 
 
 // Constructor / Deconstructor
@@ -112,4 +113,12 @@ std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
     }
     disk_mutex.unlock();
     return output;
+}
+
+int MMU::get_ram_frame(int page_num, const PCB *p) {
+    return std::get<0>(p->page_table.at(page_num));
+}
+
+int MMU::get_disk_frame(int page_num, const PCB *p) {
+    return std::get<1>(p->page_table.at(page_num));
 }

@@ -7,6 +7,7 @@
 
 #include <list>
 #include <map>
+#include <tuple>
 #include "Log.h"
 
 
@@ -22,16 +23,13 @@ struct PCB {
     int total_size;
     enum PROCESS_STATUS {RUNNING, READY, PAGE_FAULT, IO_BLOCKED, NEW, COMPLETED};
     enum PROCESS_STATUS state;
-    std::map<int,int> pageTable;
+    std::map<int, std::tuple<int, int, bool, bool>> page_table;
     int job_disk_address;
     int job_ram_address;
     int prgm_counter;
     int registers[16];
     enum SORTING_METHOD{FIFO, PRIO, SJF};
     static const SORTING_METHOD SORT = PRIO;
-    //Data
-    int data_disk_address;
-  //  static bool compare(const PCB *a, const PCB *b) const;
 };
 
 void print_pcbs(std::list<PCB *> p);

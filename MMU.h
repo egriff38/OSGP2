@@ -26,6 +26,7 @@
 #include <mutex>
 #include "Disk.h"
 #include "Ram.h"
+#include "PCB.h"
 
 class MMU {
 private:
@@ -55,11 +56,19 @@ public:
 
     std::vector<std::string> read_page_from_disk(int frame_num);
 
+    static int get_ram_frame(int page_num, const PCB *p);
+    static int get_disk_frame(int page_num, const PCB *p);
+
     static const int RAM_SIZE = 1024;
     static const int DISK_SIZE = 2048;
 
 };
 
+struct blocking_info {
+    PCB* pcb;
+    int frame_num;
+    std::vector<std::string> data;
+};
 
 
 #endif //PHASE_2_MMU_H
