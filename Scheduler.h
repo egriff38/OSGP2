@@ -27,7 +27,7 @@
 #include <queue>
 #include "Scheduler.h"
 #include "Dispatcher.h"
-#include "Mutex_queues.h"
+#include "Mutex_queues.cpp"
 
 struct free_ram {
     int position;
@@ -64,11 +64,5 @@ public:
 
     int getDone();
 };
-
-bool comp_fifo(PCB *p1, PCB *p2);
-
-bool comp_priority(PCB *p1, PCB *p2);
-
-bool comp_sjf(PCB *p1, PCB *p2);
 
 #endif //PHASE_2_SCHEDULER_H
