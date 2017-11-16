@@ -34,15 +34,16 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
     while (getline(input, temp)) {
         lines++;
         build_string = "";
-
         if (temp.length() == 0)
             break;
         if (temp.at(0) == '/' && temp != "// END" && temp != "//END") { // If the line is PCB Data
             if (temp.at(3) == 'J') {// Do this if the line is a PCB Job line
                 //create new PCB with registers and address initialized
-
+                mmu.add_page_to_disk(page, currentMMUPage);
                 currentPagesForJob = 0;
                 wordCount = 0;
+                for(int j = 0; j < 4; j++)
+                    page[j] = "";
 
                 p = new PCB();
                 for (int &j : p->registers) {
@@ -117,6 +118,7 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
                 currentMMUPage++;
                 for(int j = 0; j < 4; j++)
                     page[j] = "";
+
             }
 
             page[wordCount] = temp;
