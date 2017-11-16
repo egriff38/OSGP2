@@ -20,7 +20,9 @@ struct Op{
     int breg;
     int address;
 };
+
 enum mode{debug,production};
+
 class CPU {
 private:
     MMU *mmu;

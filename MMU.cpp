@@ -74,3 +74,42 @@ bool MMU::add_page_to_disk(std::string *word, int frame_num) {
         return false;
     }
 }
+
+bool MMU::add_page_to_ram(std::string *word, int frame_num) {
+    // Check if map location is free
+    // If it is then add the word there, and set the location
+    // in the map to be not free and return true
+    ram_mutex.lock();
+    if((*ram_frame_map)[frame_num] == false)
+    {
+        (*ram_frame_map)[frame_num] == true;
+        for(int i = frame_num * 4; i < frame_num*4 + 4; i++)
+            ram->write(i, word[i%4]);
+        ram_mutex.unlock();
+        return true;
+    }
+    else{
+        ram_mutex.unlock();
+        return false;
+    }
+}
+
+std::string* MMU::read_page_from_ram(int frame_num) {
+    std::string* output = new std::string[4];
+    ram_mutex.lock();
+    for (int i = 0; i < 4; i++) {
+        output[i] = ram->read(frame_num * 4 + i);
+    }
+    ram_mutex.unlock();
+    return output;
+}
+
+std::string* MMU::read_page_from_disk(int frame_num) {
+    std::string* output = new std::string[4];
+    disk_mutex.lock();
+    for (int i = 0; i < 4; i++) {
+        output[i] = disk->read(frame_num * 4 + i);
+    }
+    disk_mutex.unlock();
+    return output;
+}

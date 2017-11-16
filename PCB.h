@@ -5,9 +5,10 @@
 #ifndef PHASE_2_PCB_H
 #define PHASE_2_PCB_H
 
-#include<list>
-#include "Log.h"
+#include <list>
 #include <map>
+#include "Log.h"
+
 
 //Process Control Block - Contains job information
 struct PCB {
@@ -27,7 +28,7 @@ struct PCB {
     int prgm_counter;
     int registers[16];
     enum SORTING_METHOD{FIFO, PRIO, SJF};
-   static const SORTING_METHOD SORT = PRIO;
+    static const SORTING_METHOD SORT = PRIO;
     //Data
     int data_disk_address;
   //  static bool compare(const PCB *a, const PCB *b) const;

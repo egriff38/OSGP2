@@ -45,7 +45,8 @@ public:
     bool add_page_to_disk(std::string word[],int frame_num);
     bool add_page_to_ram(std::string word[], int frame_num);
     bool remove_page_from_ram(int frame_num);
-    std::string* get_page_from_ram(int frame_num) const;
+    std::string* read_page_from_ram(int frame_num);
+    std::string* read_page_from_disk(int frame_num);
     static const int RAM_SIZE = 1024;
     static const int DISK_SIZE = 2048;
 };

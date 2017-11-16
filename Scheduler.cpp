@@ -4,7 +4,6 @@
 #include "Scheduler.h"
 #include "Log.h"
 #include <algorithm>
-#include "Mutex_queues.h"
 #include "Hex_Util.h"
 
 // Initalizes the Scheduler and gives it the job list, disk, ram, and dispatcher.
@@ -181,12 +180,5 @@ void Scheduler::clean_ram_space(M_queue<PCB *> &done_queue) {
 
 int Scheduler::getDone() {
     return done;
-}
 
-bool comp_priority(PCB *p1, PCB *p2) {
-    return p1->job_pri > p2->job_pri;
-}
-
-bool comp_sjf(PCB *p1, PCB *p2) {
-    return p1->job_size > p2->job_size;
 }
