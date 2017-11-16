@@ -20,7 +20,7 @@ struct PCB {
     int out_buf_size;
     int temp_buf_size;
     int total_size;
-    enum PROCESS_STATUS {RUNNING, READY, BLOCKED, NEW, COMPLETED};
+    enum PROCESS_STATUS {RUNNING, READY, PAGE_FAULT, IO_BLOCKED, NEW, COMPLETED};
     enum PROCESS_STATUS state;
     std::map<int,int> pageTable;
     int job_disk_address;
