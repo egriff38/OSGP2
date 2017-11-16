@@ -16,6 +16,7 @@ const int CPU_NUM = 4;
 // and page_fault_queue are declared and initialized.
 auto pcbs = new M_priority_queue<PCB*>();
 auto ready_queue = new M_priority_queue<PCB*>();
+auto readyish_queue = new M_queue<PCB*>;
 auto io_queue = new M_queue<PCB*>();
 auto pf_queue = new M_queue<PCB*>();
 auto done_queue = new M_queue<PCB*>();
@@ -32,6 +33,8 @@ auto threads = std::vector<std::thread>();
 
         std::thread(Dispatcher::start,mmu,ready_queue,io_queue,pf_queue,done_queue,i).detach();
     }
+
+    //Blocking thread will start here
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done

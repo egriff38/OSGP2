@@ -32,14 +32,18 @@ void print_pcbs(std::list<PCB *> p)
                 break;
             }
             case 2: {
-                s = "BLOCKED";
+                s = "PAGE_FAULT";
                 break;
             }
             case 3: {
-                s = "NEW";
+                s = "IO_BLOCKED";
                 break;
             }
             case 4: {
+                s = "NEW";
+                break;
+            }
+            case 5: {
                 s = "COMPLETED";
                 break;
             }
