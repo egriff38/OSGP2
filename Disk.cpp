@@ -27,5 +27,3 @@ Disk::Disk() {
     for (int i = 0; i < SIZE; i++)
         disk_data[i] = "";
 }
-
-Disk::~Disk() {}

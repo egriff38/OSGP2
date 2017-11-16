@@ -61,7 +61,7 @@ public:
 
     static const int RAM_SIZE = 1024;
     static const int DISK_SIZE = 2048;
-
+    void print_disk_map();
 };
 
 struct blocking_info {

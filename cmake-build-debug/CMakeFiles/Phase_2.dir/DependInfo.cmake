@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/conrad/CPlusPlus/OSGP2/Block_manager.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/Phase_2.dir/Block_manager.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/CPU.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/Phase_2.dir/CPU.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Cache.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/Phase_2.dir/Cache.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Disk.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/Phase_2.dir/Disk.cpp.o"

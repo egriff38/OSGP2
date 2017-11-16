@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named LogTests
+
+# Build rule for target.
+LogTests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LogTests
+.PHONY : LogTests
+
+# fast build rule for target.
+LogTests/fast:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/build
+.PHONY : LogTests/fast
+
+#=============================================================================
 # Target rules for targets named Phase_2
 
 # Build rule for target.
@@ -123,12 +136,43 @@ Phase_2/fast:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/build
 .PHONY : Phase_2/fast
 
+Block_manager.o: Block_manager.cpp.o
+
+.PHONY : Block_manager.o
+
+# target to build an object file
+Block_manager.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Block_manager.cpp.o
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Block_manager.cpp.o
+.PHONY : Block_manager.cpp.o
+
+Block_manager.i: Block_manager.cpp.i
+
+.PHONY : Block_manager.i
+
+# target to preprocess a source file
+Block_manager.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Block_manager.cpp.i
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Block_manager.cpp.i
+.PHONY : Block_manager.cpp.i
+
+Block_manager.s: Block_manager.cpp.s
+
+.PHONY : Block_manager.s
+
+# target to generate assembly for a file
+Block_manager.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Block_manager.cpp.s
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Block_manager.cpp.s
+.PHONY : Block_manager.cpp.s
+
 CPU.o: CPU.cpp.o
 
 .PHONY : CPU.o
 
 # target to build an object file
 CPU.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/CPU.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.o
 .PHONY : CPU.cpp.o
 
@@ -138,6 +182,7 @@ CPU.i: CPU.cpp.i
 
 # target to preprocess a source file
 CPU.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/CPU.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.i
 .PHONY : CPU.cpp.i
 
@@ -147,6 +192,7 @@ CPU.s: CPU.cpp.s
 
 # target to generate assembly for a file
 CPU.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/CPU.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/CPU.cpp.s
 .PHONY : CPU.cpp.s
 
@@ -156,6 +202,7 @@ Cache.o: Cache.cpp.o
 
 # target to build an object file
 Cache.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Cache.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Cache.cpp.o
 .PHONY : Cache.cpp.o
 
@@ -165,6 +212,7 @@ Cache.i: Cache.cpp.i
 
 # target to preprocess a source file
 Cache.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Cache.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Cache.cpp.i
 .PHONY : Cache.cpp.i
 
@@ -174,6 +222,7 @@ Cache.s: Cache.cpp.s
 
 # target to generate assembly for a file
 Cache.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Cache.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Cache.cpp.s
 .PHONY : Cache.cpp.s
 
@@ -183,6 +232,7 @@ Disk.o: Disk.cpp.o
 
 # target to build an object file
 Disk.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Disk.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Disk.cpp.o
 .PHONY : Disk.cpp.o
 
@@ -192,6 +242,7 @@ Disk.i: Disk.cpp.i
 
 # target to preprocess a source file
 Disk.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Disk.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Disk.cpp.i
 .PHONY : Disk.cpp.i
 
@@ -201,6 +252,7 @@ Disk.s: Disk.cpp.s
 
 # target to generate assembly for a file
 Disk.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Disk.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Disk.cpp.s
 .PHONY : Disk.cpp.s
 
@@ -210,6 +262,7 @@ Dispatcher.o: Dispatcher.cpp.o
 
 # target to build an object file
 Dispatcher.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Dispatcher.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Dispatcher.cpp.o
 .PHONY : Dispatcher.cpp.o
 
@@ -219,6 +272,7 @@ Dispatcher.i: Dispatcher.cpp.i
 
 # target to preprocess a source file
 Dispatcher.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Dispatcher.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Dispatcher.cpp.i
 .PHONY : Dispatcher.cpp.i
 
@@ -228,6 +282,7 @@ Dispatcher.s: Dispatcher.cpp.s
 
 # target to generate assembly for a file
 Dispatcher.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Dispatcher.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Dispatcher.cpp.s
 .PHONY : Dispatcher.cpp.s
 
@@ -237,6 +292,7 @@ Hex_Util.o: Hex_Util.cpp.o
 
 # target to build an object file
 Hex_Util.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Hex_Util.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Hex_Util.cpp.o
 .PHONY : Hex_Util.cpp.o
 
@@ -246,6 +302,7 @@ Hex_Util.i: Hex_Util.cpp.i
 
 # target to preprocess a source file
 Hex_Util.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Hex_Util.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Hex_Util.cpp.i
 .PHONY : Hex_Util.cpp.i
 
@@ -255,6 +312,7 @@ Hex_Util.s: Hex_Util.cpp.s
 
 # target to generate assembly for a file
 Hex_Util.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Hex_Util.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Hex_Util.cpp.s
 .PHONY : Hex_Util.cpp.s
 
@@ -264,6 +322,7 @@ Loader.o: Loader.cpp.o
 
 # target to build an object file
 Loader.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Loader.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.o
 .PHONY : Loader.cpp.o
 
@@ -273,6 +332,7 @@ Loader.i: Loader.cpp.i
 
 # target to preprocess a source file
 Loader.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Loader.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.i
 .PHONY : Loader.cpp.i
 
@@ -282,6 +342,7 @@ Loader.s: Loader.cpp.s
 
 # target to generate assembly for a file
 Loader.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Loader.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.s
 .PHONY : Loader.cpp.s
 
@@ -291,6 +352,7 @@ MMU.o: MMU.cpp.o
 
 # target to build an object file
 MMU.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/MMU.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/MMU.cpp.o
 .PHONY : MMU.cpp.o
 
@@ -300,6 +362,7 @@ MMU.i: MMU.cpp.i
 
 # target to preprocess a source file
 MMU.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/MMU.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/MMU.cpp.i
 .PHONY : MMU.cpp.i
 
@@ -309,6 +372,7 @@ MMU.s: MMU.cpp.s
 
 # target to generate assembly for a file
 MMU.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/MMU.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/MMU.cpp.s
 .PHONY : MMU.cpp.s
 
@@ -318,6 +382,7 @@ Mutex_queues.o: Mutex_queues.cpp.o
 
 # target to build an object file
 Mutex_queues.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Mutex_queues.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o
 .PHONY : Mutex_queues.cpp.o
 
@@ -327,6 +392,7 @@ Mutex_queues.i: Mutex_queues.cpp.i
 
 # target to preprocess a source file
 Mutex_queues.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Mutex_queues.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.i
 .PHONY : Mutex_queues.cpp.i
 
@@ -336,6 +402,7 @@ Mutex_queues.s: Mutex_queues.cpp.s
 
 # target to generate assembly for a file
 Mutex_queues.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Mutex_queues.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Mutex_queues.cpp.s
 .PHONY : Mutex_queues.cpp.s
 
@@ -345,6 +412,7 @@ PCB.o: PCB.cpp.o
 
 # target to build an object file
 PCB.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/PCB.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.o
 .PHONY : PCB.cpp.o
 
@@ -354,6 +422,7 @@ PCB.i: PCB.cpp.i
 
 # target to preprocess a source file
 PCB.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/PCB.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.i
 .PHONY : PCB.cpp.i
 
@@ -363,6 +432,7 @@ PCB.s: PCB.cpp.s
 
 # target to generate assembly for a file
 PCB.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/PCB.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/PCB.cpp.s
 .PHONY : PCB.cpp.s
 
@@ -372,6 +442,7 @@ Ram.o: Ram.cpp.o
 
 # target to build an object file
 Ram.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Ram.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Ram.cpp.o
 .PHONY : Ram.cpp.o
 
@@ -381,6 +452,7 @@ Ram.i: Ram.cpp.i
 
 # target to preprocess a source file
 Ram.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Ram.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Ram.cpp.i
 .PHONY : Ram.cpp.i
 
@@ -390,6 +462,7 @@ Ram.s: Ram.cpp.s
 
 # target to generate assembly for a file
 Ram.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Ram.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Ram.cpp.s
 .PHONY : Ram.cpp.s
 
@@ -399,6 +472,7 @@ Scheduler.o: Scheduler.cpp.o
 
 # target to build an object file
 Scheduler.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Scheduler.cpp.o
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.o
 .PHONY : Scheduler.cpp.o
 
@@ -408,6 +482,7 @@ Scheduler.i: Scheduler.cpp.i
 
 # target to preprocess a source file
 Scheduler.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Scheduler.cpp.i
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.i
 .PHONY : Scheduler.cpp.i
 
@@ -417,6 +492,7 @@ Scheduler.s: Scheduler.cpp.s
 
 # target to generate assembly for a file
 Scheduler.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Scheduler.cpp.s
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.s
 .PHONY : Scheduler.cpp.s
 
@@ -447,6 +523,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_log.o: main_log.cpp.o
+
+.PHONY : main_log.o
+
+# target to build an object file
+main_log.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/main_log.cpp.o
+.PHONY : main_log.cpp.o
+
+main_log.i: main_log.cpp.i
+
+.PHONY : main_log.i
+
+# target to preprocess a source file
+main_log.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/main_log.cpp.i
+.PHONY : main_log.cpp.i
+
+main_log.s: main_log.cpp.s
+
+.PHONY : main_log.s
+
+# target to generate assembly for a file
+main_log.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/main_log.cpp.s
+.PHONY : main_log.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -455,7 +558,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... LogTests"
 	@echo "... Phase_2"
+	@echo "... Block_manager.o"
+	@echo "... Block_manager.i"
+	@echo "... Block_manager.s"
 	@echo "... CPU.o"
 	@echo "... CPU.i"
 	@echo "... CPU.s"
@@ -492,6 +599,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_log.o"
+	@echo "... main_log.i"
+	@echo "... main_log.s"
 .PHONY : help
 
 
