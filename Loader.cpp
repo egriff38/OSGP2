@@ -121,7 +121,7 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
 
             }
 
-            page[wordCount] = temp;
+            page[wordCount] = temp; //xdf
             wordCount++;
         }
     }
