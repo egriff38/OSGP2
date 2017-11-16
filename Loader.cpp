@@ -17,6 +17,10 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
 
     // Variables for init function
     int data[10];
+    std::string page[4];
+    int wordCount = 0;
+    int currentPagesForJob= 0;
+    int currentMMUPage = 0;
     std::ifstream input("../Program.txt");
     std::string temp;
     std::string store;
@@ -36,11 +40,14 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
         if (temp.at(0) == '/' && temp != "// END" && temp != "//END") { // If the line is PCB Data
             if (temp.at(3) == 'J') {// Do this if the line is a PCB Job line
                 //create new PCB with registers and address initialized
+
+                currentPagesForJob = 0;
+                wordCount = 0;
+
                 p = new PCB();
                 for (int &j : p->registers) {
                     j = -1;
                 }
-                p->job_disk_address = current_position;
 
                 temp = temp.substr(7, std::string::npos);//drop the characters before index 7
 
@@ -102,10 +109,24 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
             // If the data is just raw hexcode, strip off the first few characters and store it as a string
         else if (temp.at(0) != '/') {
             temp = temp.substr(2, std::string::npos);
-            mmu.disk_memory(current_position, temp);
-            current_position++;
+            if(wordCount == 4)
+            {
+                wordCount = 0;
+                mmu.add_page_to_disk(page, currentMMUPage);
+                currentPagesForJob++;
+                currentMMUPage++;
+                for(int j = 0; j < 4; j++)
+                    page[j] = "";
+            }
+
+            page[wordCount] = temp;
+            wordCount++;
         }
     }
 
     input.close();
+
+    for(int i = 0; i < 2048; i++) {
+        std::cout << mmu.disk_memory(i) << "\n";
+    }
 }

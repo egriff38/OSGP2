@@ -28,16 +28,16 @@ auto threads = std::vector<std::thread>();
     loader->init(*mmu,*pcbs);
 
     // Dispatcher threads begin
-    for(int i = 0; i < CPU_NUM; i++) {
-
-        std::thread(Dispatcher::start,mmu,ready_queue,io_queue,pf_queue,done_queue,i).detach();
-    }
+//    for(int i = 0; i < CPU_NUM; i++) {
+//
+//        std::thread(Dispatcher::start,mmu,ready_queue,io_queue,pf_queue,done_queue,i).detach();
+//    }
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done
-    while(*still_has_work || scheduler->getDone() != 30) {
-        scheduler->schedule(still_has_work);
-    }
+//    while(*still_has_work || scheduler->getDone() != 30) {
+//        scheduler->schedule(still_has_work);
+//    }
 
 
 
