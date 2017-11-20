@@ -64,9 +64,9 @@ public:
     void print_disk_map();
 };
 
-struct blocking_info {
+struct blocking_info { //stored here because all classes that use it have MMU access
     PCB* pcb;
-    int frame_num;
+    int page_num;
     std::vector<std::string> data;
 };
 

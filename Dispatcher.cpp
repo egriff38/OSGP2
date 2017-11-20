@@ -16,8 +16,8 @@
 
 namespace Dispatcher {
 
-    static void start(MMU *mmu, M_priority_queue<PCB *> *ready_queue, M_queue<PCB *> *io_queue,
-                      M_queue<PCB *> *pf_queue, M_queue<PCB *> *done_queue, int i) {
+    static void start(MMU *mmu, M_priority_queue<PCB *> *ready_queue, M_queue<blocking_info*> *blocked_queue,
+                      M_queue<PCB *> *done_queue, int i) {
         using namespace std::chrono_literals;
         CPU *cpu = new CPU(mmu, production);
         PCB *current;

@@ -7,11 +7,12 @@
 
 #include "MMU.h"
 #include "Mutex_queues.cpp"
+#include <tuple>
 
 namespace Block_manager {
-    void start(MMU *mmu, M_queue<PCB*> *readyish_queue, M_queue<PCB*> *io_queue, M_queue<PCB*> *pf_queue);
-    void clear_io(MMU *mmu, PCB *p);
-    void clear_pf(MMU *mmu, PCB *p);
+    void start(MMU *mmu, M_queue<PCB*> *readyish_queue, M_queue<blocking_info*> *blocked_queue);
+    void clear_io(MMU *mmu, blocking_info *b);
+    void clear_pf(MMU *mmu, blocking_info *b);
 };
 
 #endif //PHASE_2_BLOCK_MANAGER_H
