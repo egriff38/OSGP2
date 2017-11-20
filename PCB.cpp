@@ -5,6 +5,13 @@
 
 #include <iostream>
 #include "PCB.h"
+#include "Hex_Util.h"
+
+
+PCB::PCB(){
+    this->page_table = std::map<int,std::tuple<int,int,bool,bool> >();
+
+}
 
 //Prints out the PCB information
 void print_pcbs(std::list<PCB *> p)
@@ -54,6 +61,20 @@ void print_pcbs(std::list<PCB *> p)
 
     if (p.empty())
         std::cout << ("No PCBs to print.") << std::endl;
+
+}
+
+
+void PCB::printPageTable() {
+   std::cout << "JOBID " << this->job_id << std::endl;
+    for(int i = 0; i < page_table.size(); i++)
+    {
+        std::cout << "Disk Frame " << std::get<0>(page_table[i]) << "\n";
+        std::cout << "Ram Frame " << std::get<1>(page_table[i]) << "\n";
+        std::cout << "Disk Frame Exists " << Hex_Util::bool_to_string(std::get<2>(page_table[i])) << "\n";
+        std::cout << "Ram Frame Exists " <<  Hex_Util::bool_to_string(std::get<3>(page_table[i])) << "\n";
+
+    }
 
 }
 

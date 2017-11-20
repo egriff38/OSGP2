@@ -21,10 +21,17 @@
 class Loader {
 public:
     void init(MMU &mmu, M_priority_queue<PCB *> &pcbs);
+    PCB* strip_meta_data( std::string temp_data, PCB *pcb);
+    PCB* strip_job_meta_data(PCB *pcb, std::string temp_data);
+    PCB* strip_data_meta_data(PCB *pcb, std::string temp_data);
+    void stripData(PCB *pcb, std::vector<std::string> page);
+    void updatePCBData(MMU *mmu, PCB *pcb, int &current_MMU_page, int &current_disk_page, int &word_count, std::string temp_data);
+    void addPCB(MMU *mmu, M_priority_queue<PCB *> &pcbs, PCB *pcb, int &current_MMU_page, int &current_pcb_page, int &word_count);
     Loader();
     ~Loader();
 private:
     const std::string PROGRAM_FILE;
+     std::vector<std::string> current_data;
 };
 
 #endif //PHASE_2_LOADER_H

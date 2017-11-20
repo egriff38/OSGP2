@@ -29,7 +29,9 @@ struct PCB {
     int prgm_counter;
     int registers[16];
     enum SORTING_METHOD{FIFO, PRIO, SJF};
-    static const SORTING_METHOD SORT = PRIO;
+    static const SORTING_METHOD SORT = FIFO;
+    PCB();
+    void printPageTable();
 };
 
 void print_pcbs(std::list<PCB *> p);
