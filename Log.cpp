@@ -17,12 +17,23 @@ void Log::appendLog(std::string name, std::string text) {
     loglock.unlock();
 }
 
-void Log::publish(std::string fileName, Log::Pubstyle p) {
+void Log::increment(std::string, double val){
+
+}
+
+void Log::publish() {
     loglock.lock();
-    std::ofstream ostrm (fileName, std::ios::binary);
-    ostrm << 123 << "abc" << '\n';
+    std::ofstream ostrm ("../src/ProgramTranslate.txt", std::ios::binary);
+    ostrm << Summary() << '\n';
     ostrm << logMap["RamDump"] << '\n';
-    std::cout<< "ERROR: NOT DEFINED!";
+    loglock.unlock();
+}
+
+void Log::print() {
+    loglock.lock();
+
+    std::cout << Summary() << '\n';
+    for(auto k:logMap) std::cout << k.first << std::endl << k.second << '\n';
     loglock.unlock();
 }
 
@@ -30,3 +41,16 @@ Log::Log() {
     logMap = std::map<std::string, std::string> ();
 }
 
+std::string Log::Summary() {
+    return fmt::format(R"(Summary
+----------------------
+Total runtime: {0}
+Average runtime: {1}
+Average completion period:
+Average wait time:
+cache density:
+Ram density:
+PF/IO density:
+)", "Butt","Hole");
+
+}

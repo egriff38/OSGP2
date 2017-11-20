@@ -6,10 +6,7 @@
 #include "Log.h"
 
 int main(){
-    std::cout <<
-R"(
-RAM USE CSV:
-{RAM}
-)";
+   auto log = new Log();
+    log->print();
 
 }
