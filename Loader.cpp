@@ -17,7 +17,7 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
 
     // Variables for init function
     int data[10];
-    std::vector<std::string> page = std::vector<std::string>();
+    std::vector<std::string> page = std::vector<std::string>(4);
     int wordCount = 0;
     int currentPagesForJob= 0;
     int currentMMUPage = 0;
