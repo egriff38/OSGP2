@@ -22,7 +22,7 @@ int main() {
     auto mmu = new MMU();
     auto still_has_work = new bool(true);
     auto loader = new Loader();
-    auto scheduler = new Scheduler(*pcbs, *ready_queue, *done_queue, *mmu);
+    auto scheduler = new Scheduler(*pcbs, *ready_queue, *readyish_queue, *done_queue, *mmu);
     auto threads = std::vector<std::thread>();
     // Loader calls init();
     loader->init(*mmu, *pcbs);

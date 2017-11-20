@@ -7,10 +7,11 @@
 #include "Hex_Util.h"
 
 // Initalizes the Scheduler and gives it the job list, disk, ram, and dispatcher.
-Scheduler::Scheduler(M_priority_queue<PCB *> &pcb_list, M_priority_queue<PCB *> &ready_queue,
+Scheduler::Scheduler(M_priority_queue<PCB *> &pcb_list, M_priority_queue<PCB *> &ready_queue, M_queue<PCB*> &readyish_queue,
                      M_queue<PCB *> &done_queue, MMU &mmu) {
     pcbs = &pcb_list;
     this->ready_queue = &ready_queue;
+    this->readyish_queue = &readyish_queue;
     this->done_queue = &done_queue;
     this->mmu = &mmu;
     ram_space = std::list<free_ram>();
@@ -28,6 +29,10 @@ void Scheduler::schedule(bool *still_has_work) {
 
     while (true) {
         clean_ram_space(*done_queue);
+
+        while (readyish_queue->getSize() > 0) {
+            ready_queue->push(readyish_queue->pop());
+        }
 
         temp = lt_get_next_pcb(*pcbs);
         if (temp == nullptr) {
