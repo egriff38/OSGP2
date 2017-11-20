@@ -125,11 +125,11 @@ int MMU::get_disk_frame(int page_num, const PCB *p) {
     return std::get<1>(p->page_table.at(page_num));
 }
 
-void MMU::print_disk_map() {
-    for(int i = 0; i < disk_frame_map->size(); i++)
-    {
-        std::cout << "PAGE #" << i << " " << Hex_Util::bool_to_string(disk_frame_map->at(i)) << "\n";
+void MMU::print_disk_map(bool page_mode) {
+    for(int i = 0; i < disk_frame_map->size(); i++) {
+        if (page_mode)
+            std::cout << "PAGE #" << i << " " << Hex_Util::bool_to_string(disk_frame_map->at(i)) << "\n";
+        else
+            std::cout << disk_memory(i) << "\n";
     }
-
-
 }
