@@ -79,7 +79,7 @@ bool MMU::add_page_to_disk(std::vector<std::string> page, int frame_num) {
     }
 }
 
-int MMU::add_page_to_ram(std::vector<std::string> page) {
+int* MMU::add_page_to_ram(std::vector<std::string> page) {
     // Check if map location is free
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
@@ -89,7 +89,7 @@ int MMU::add_page_to_ram(std::vector<std::string> page) {
      ram->write(*a*4 + i, page[i]);
     }
     ram_mutex.unlock();
-    return *a;
+    return a;
 }
 
 std::vector<std::string> MMU::read_page_from_ram(int frame_num) {

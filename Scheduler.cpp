@@ -44,6 +44,9 @@ void Scheduler::schedule(bool *still_has_work) {
             else
                 *still_has_work  = false;
         }
+    else{
+        // add sleep here     
+        }
 }
 
 
@@ -60,10 +63,18 @@ PCB *Scheduler::lt_get_next_pcb(M_priority_queue<PCB *> &pcbs) {
 
 
 void Scheduler::load_pcb(PCB *p) { //puts PCB in RAM and ready_queue deal with sorting laternt ram_start = p->job_ram_address;
-    for(int i = 0; i < INITIAL_NUM_OF_FRAMES; i++){
-
+    int *a;
+    for (int i = 0; i < INITIAL_NUM_OF_FRAMES; i++) {
+        a = mmu->add_page_to_ram(mmu->read_page_from_disk(std::get<0>(p->page_table[i])));
+        if(a != nullptr) {
+            std::get<1>(p->page_table[i]) = *a;
+            std::get<2>(p->page_table[i]) = true;
+        }
+        else
+            break;
     }
 }
+
 
 void Scheduler::clean_ram_space() {
     /*Dispatcher::lock_talk.lock();
@@ -76,8 +87,8 @@ void Scheduler::clean_ram_space() {
         done++;
         for(auto s : temp->page_table)
         {
-            if(std::get<3>(s.second)){
-                mmu->free_ram_frames->push(std::get<1>(s.second));
+            if(std::get<2>(s.second)){
+                mmu->free_ram_frames->push(&(std::get<1>(s.second)));
             }
         }
     }
