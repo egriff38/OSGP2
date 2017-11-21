@@ -18,8 +18,9 @@ MMU::MMU() {
     for(int i = 0; i < 512; i++)
     {
         (*disk_frame_map)[i] = false;
+        int *num = new int(i);
         if(i < 256) {
-            free_ram_frames->push(&i);
+            free_ram_frames->push(num);
         }
     }
 }
@@ -85,8 +86,12 @@ int* MMU::add_page_to_ram(std::vector<std::string> page) {
     // in the map to be not free and return true
     ram_mutex.lock();
     int *a = free_ram_frames->pop();
-    for(int i = *a * 4; i < *a*4 + 4; i++){
-     ram->write(*a*4 + i, page[i]);
+    if (a == nullptr) {
+        std::cout << "Nullptr!" << std::endl;
+    } else {
+        for(int i = (*a) * 4; i < (*a)*4 + 4; i++) {
+            ram->write((*a) * 4 + i, page[i]);
+        }
     }
     ram_mutex.unlock();
     return a;
