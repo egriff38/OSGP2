@@ -28,18 +28,15 @@ int main() {
     loader->init(*mmu, *pcbs);
 
     // Dispatcher threads begin
-//    for(int i = 0; i < CPU_NUM; i++) {
-//
-//        std::thread(Dispatcher::start,mmu,ready_queue,blocked_queue,done_queue,i).detach();
-//    }
+
 
     //Blocking thread will start here
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done
-//    while(*still_has_work || scheduler->getDone() != 30) {
-//        scheduler->schedule(still_has_work);
-//    }
+  while(*still_has_work || scheduler->getDone() != 30) {
+      scheduler->schedule(still_has_work);
+ }
 
 
 

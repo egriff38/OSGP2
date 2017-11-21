@@ -11,11 +11,13 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Dispatcher.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Hex_Util.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Loader.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Loader.cpp.o"
+  "/home/conrad/CPlusPlus/OSGP2/Log.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Log.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/MMU.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/MMU.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Mutex_queues.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/PCB.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/PCB.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Ram.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Ram.cpp.o"
   "/home/conrad/CPlusPlus/OSGP2/Scheduler.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/Scheduler.cpp.o"
+  "/home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o"
   "/home/conrad/CPlusPlus/OSGP2/main_log.cpp" "/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles/LogTests.dir/main_log.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

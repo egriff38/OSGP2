@@ -23,7 +23,7 @@ struct PCB {
     int total_size;
     enum PROCESS_STATUS {RUNNING, READY, PAGE_FAULT, IO_BLOCKED, NEW, COMPLETED};
     enum PROCESS_STATUS state;
-    std::map<int, std::tuple<int, int, bool, bool>> page_table;
+    std::map<int, std::tuple<int, int, bool>> page_table;
     int job_disk_address;
     int job_ram_address;
     int prgm_counter;

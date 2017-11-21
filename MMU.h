@@ -49,7 +49,7 @@ public:
 
     bool add_page_to_disk(std::vector<std::string> page, int frame_num);
 
-    bool add_page_to_ram(std::vector<std::string> page, int frame_num);
+    int* add_page_to_ram(std::vector<std::string> page);
 
     bool remove_page_from_ram(int frame_num);
 
@@ -63,7 +63,7 @@ public:
     static const int RAM_SIZE = 1024;
     static const int DISK_SIZE = 2048;
     void print_disk_map(bool s = true);
-    M_queue<int> *free_ram_frames;
+    M_queue<int*> *free_ram_frames;
 };
 
 struct blocking_info { //stored here because all classes that use it have MMU access

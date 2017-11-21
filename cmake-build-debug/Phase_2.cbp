@@ -186,6 +186,10 @@
 			<Option target="LogTests"/>
 			<Option target="Phase_2"/>
 		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Log.cpp">
+			<Option target="LogTests"/>
+			<Option target="Phase_2"/>
+		</Unit>
 		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Log.h">
 			<Option target="LogTests"/>
 			<Option target="Phase_2"/>
@@ -223,6 +227,14 @@
 			<Option target="Phase_2"/>
 		</Unit>
 		<Unit filename="/home/conrad/CPlusPlus/OSGP2/Scheduler.h">
+			<Option target="LogTests"/>
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc">
+			<Option target="LogTests"/>
+			<Option target="Phase_2"/>
+		</Unit>
+		<Unit filename="/home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.h">
 			<Option target="LogTests"/>
 			<Option target="Phase_2"/>
 		</Unit>

@@ -57,9 +57,33 @@ include CMakeFiles/LogTests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/LogTests.dir/flags.make
 
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o: CMakeFiles/LogTests.dir/flags.make
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o: ../fmt-4.0.0/fmt/format.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o -c /home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc
+
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc > CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.i
+
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc -o CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.s
+
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.requires:
+
+.PHONY : CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.requires
+
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.provides: CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.requires
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.provides.build
+.PHONY : CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.provides
+
+CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.provides.build: CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o
+
+
 CMakeFiles/LogTests.dir/PCB.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/PCB.cpp.o: ../PCB.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LogTests.dir/PCB.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LogTests.dir/PCB.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/PCB.cpp.o -c /home/conrad/CPlusPlus/OSGP2/PCB.cpp
 
 CMakeFiles/LogTests.dir/PCB.cpp.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/LogTests.dir/PCB.cpp.o.provides.build: CMakeFiles/LogTests.dir/PCB.cp
 
 CMakeFiles/LogTests.dir/CPU.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/CPU.cpp.o: ../CPU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LogTests.dir/CPU.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LogTests.dir/CPU.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/CPU.cpp.o -c /home/conrad/CPlusPlus/OSGP2/CPU.cpp
 
 CMakeFiles/LogTests.dir/CPU.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/LogTests.dir/CPU.cpp.o.provides.build: CMakeFiles/LogTests.dir/CPU.cp
 
 CMakeFiles/LogTests.dir/Disk.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Disk.cpp.o: ../Disk.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LogTests.dir/Disk.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LogTests.dir/Disk.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Disk.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Disk.cpp
 
 CMakeFiles/LogTests.dir/Disk.cpp.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/LogTests.dir/Disk.cpp.o.provides.build: CMakeFiles/LogTests.dir/Disk.
 
 CMakeFiles/LogTests.dir/Dispatcher.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Dispatcher.cpp.o: ../Dispatcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LogTests.dir/Dispatcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LogTests.dir/Dispatcher.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Dispatcher.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
 
 CMakeFiles/LogTests.dir/Dispatcher.cpp.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/LogTests.dir/Dispatcher.cpp.o.provides.build: CMakeFiles/LogTests.dir
 
 CMakeFiles/LogTests.dir/Loader.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Loader.cpp.o: ../Loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LogTests.dir/Loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LogTests.dir/Loader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Loader.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Loader.cpp
 
 CMakeFiles/LogTests.dir/Loader.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/LogTests.dir/Loader.cpp.o.provides.build: CMakeFiles/LogTests.dir/Loa
 
 CMakeFiles/LogTests.dir/Scheduler.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Scheduler.cpp.o: ../Scheduler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LogTests.dir/Scheduler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LogTests.dir/Scheduler.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Scheduler.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Scheduler.cpp
 
 CMakeFiles/LogTests.dir/Scheduler.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/LogTests.dir/Scheduler.cpp.o.provides.build: CMakeFiles/LogTests.dir/
 
 CMakeFiles/LogTests.dir/Hex_Util.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Hex_Util.cpp.o: ../Hex_Util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LogTests.dir/Hex_Util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LogTests.dir/Hex_Util.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Hex_Util.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp
 
 CMakeFiles/LogTests.dir/Hex_Util.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/LogTests.dir/Hex_Util.cpp.o.provides.build: CMakeFiles/LogTests.dir/H
 
 CMakeFiles/LogTests.dir/Ram.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Ram.cpp.o: ../Ram.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LogTests.dir/Ram.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LogTests.dir/Ram.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Ram.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Ram.cpp
 
 CMakeFiles/LogTests.dir/Ram.cpp.i: cmake_force
@@ -249,9 +273,33 @@ CMakeFiles/LogTests.dir/Ram.cpp.o.provides: CMakeFiles/LogTests.dir/Ram.cpp.o.re
 CMakeFiles/LogTests.dir/Ram.cpp.o.provides.build: CMakeFiles/LogTests.dir/Ram.cpp.o
 
 
+CMakeFiles/LogTests.dir/Log.cpp.o: CMakeFiles/LogTests.dir/flags.make
+CMakeFiles/LogTests.dir/Log.cpp.o: ../Log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/LogTests.dir/Log.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Log.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Log.cpp
+
+CMakeFiles/LogTests.dir/Log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LogTests.dir/Log.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/conrad/CPlusPlus/OSGP2/Log.cpp > CMakeFiles/LogTests.dir/Log.cpp.i
+
+CMakeFiles/LogTests.dir/Log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LogTests.dir/Log.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/conrad/CPlusPlus/OSGP2/Log.cpp -o CMakeFiles/LogTests.dir/Log.cpp.s
+
+CMakeFiles/LogTests.dir/Log.cpp.o.requires:
+
+.PHONY : CMakeFiles/LogTests.dir/Log.cpp.o.requires
+
+CMakeFiles/LogTests.dir/Log.cpp.o.provides: CMakeFiles/LogTests.dir/Log.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Log.cpp.o.provides.build
+.PHONY : CMakeFiles/LogTests.dir/Log.cpp.o.provides
+
+CMakeFiles/LogTests.dir/Log.cpp.o.provides.build: CMakeFiles/LogTests.dir/Log.cpp.o
+
+
 CMakeFiles/LogTests.dir/Cache.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Cache.cpp.o: ../Cache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LogTests.dir/Cache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LogTests.dir/Cache.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Cache.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Cache.cpp
 
 CMakeFiles/LogTests.dir/Cache.cpp.i: cmake_force
@@ -275,7 +323,7 @@ CMakeFiles/LogTests.dir/Cache.cpp.o.provides.build: CMakeFiles/LogTests.dir/Cach
 
 CMakeFiles/LogTests.dir/MMU.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/MMU.cpp.o: ../MMU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/LogTests.dir/MMU.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LogTests.dir/MMU.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/MMU.cpp.o -c /home/conrad/CPlusPlus/OSGP2/MMU.cpp
 
 CMakeFiles/LogTests.dir/MMU.cpp.i: cmake_force
@@ -299,7 +347,7 @@ CMakeFiles/LogTests.dir/MMU.cpp.o.provides.build: CMakeFiles/LogTests.dir/MMU.cp
 
 CMakeFiles/LogTests.dir/Mutex_queues.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Mutex_queues.cpp.o: ../Mutex_queues.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LogTests.dir/Mutex_queues.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/LogTests.dir/Mutex_queues.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Mutex_queues.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 
 CMakeFiles/LogTests.dir/Mutex_queues.cpp.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/LogTests.dir/Mutex_queues.cpp.o.provides.build: CMakeFiles/LogTests.d
 
 CMakeFiles/LogTests.dir/Block_manager.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/Block_manager.cpp.o: ../Block_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LogTests.dir/Block_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/LogTests.dir/Block_manager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/Block_manager.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Block_manager.cpp
 
 CMakeFiles/LogTests.dir/Block_manager.cpp.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/LogTests.dir/Block_manager.cpp.o.provides.build: CMakeFiles/LogTests.
 
 CMakeFiles/LogTests.dir/main_log.cpp.o: CMakeFiles/LogTests.dir/flags.make
 CMakeFiles/LogTests.dir/main_log.cpp.o: ../main_log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/LogTests.dir/main_log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/LogTests.dir/main_log.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LogTests.dir/main_log.cpp.o -c /home/conrad/CPlusPlus/OSGP2/main_log.cpp
 
 CMakeFiles/LogTests.dir/main_log.cpp.i: cmake_force
@@ -371,6 +419,7 @@ CMakeFiles/LogTests.dir/main_log.cpp.o.provides.build: CMakeFiles/LogTests.dir/m
 
 # Object files for target LogTests
 LogTests_OBJECTS = \
+"CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o" \
 "CMakeFiles/LogTests.dir/PCB.cpp.o" \
 "CMakeFiles/LogTests.dir/CPU.cpp.o" \
 "CMakeFiles/LogTests.dir/Disk.cpp.o" \
@@ -379,6 +428,7 @@ LogTests_OBJECTS = \
 "CMakeFiles/LogTests.dir/Scheduler.cpp.o" \
 "CMakeFiles/LogTests.dir/Hex_Util.cpp.o" \
 "CMakeFiles/LogTests.dir/Ram.cpp.o" \
+"CMakeFiles/LogTests.dir/Log.cpp.o" \
 "CMakeFiles/LogTests.dir/Cache.cpp.o" \
 "CMakeFiles/LogTests.dir/MMU.cpp.o" \
 "CMakeFiles/LogTests.dir/Mutex_queues.cpp.o" \
@@ -388,6 +438,7 @@ LogTests_OBJECTS = \
 # External object files for target LogTests
 LogTests_EXTERNAL_OBJECTS =
 
+LogTests: CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o
 LogTests: CMakeFiles/LogTests.dir/PCB.cpp.o
 LogTests: CMakeFiles/LogTests.dir/CPU.cpp.o
 LogTests: CMakeFiles/LogTests.dir/Disk.cpp.o
@@ -396,6 +447,7 @@ LogTests: CMakeFiles/LogTests.dir/Loader.cpp.o
 LogTests: CMakeFiles/LogTests.dir/Scheduler.cpp.o
 LogTests: CMakeFiles/LogTests.dir/Hex_Util.cpp.o
 LogTests: CMakeFiles/LogTests.dir/Ram.cpp.o
+LogTests: CMakeFiles/LogTests.dir/Log.cpp.o
 LogTests: CMakeFiles/LogTests.dir/Cache.cpp.o
 LogTests: CMakeFiles/LogTests.dir/MMU.cpp.o
 LogTests: CMakeFiles/LogTests.dir/Mutex_queues.cpp.o
@@ -403,7 +455,7 @@ LogTests: CMakeFiles/LogTests.dir/Block_manager.cpp.o
 LogTests: CMakeFiles/LogTests.dir/main_log.cpp.o
 LogTests: CMakeFiles/LogTests.dir/build.make
 LogTests: CMakeFiles/LogTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable LogTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable LogTests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LogTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -411,6 +463,7 @@ CMakeFiles/LogTests.dir/build: LogTests
 
 .PHONY : CMakeFiles/LogTests.dir/build
 
+CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/PCB.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/CPU.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Disk.cpp.o.requires
@@ -419,6 +472,7 @@ CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Loader.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Scheduler.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Hex_Util.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Ram.cpp.o.requires
+CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Log.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Cache.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/MMU.cpp.o.requires
 CMakeFiles/LogTests.dir/requires: CMakeFiles/LogTests.dir/Mutex_queues.cpp.o.requires

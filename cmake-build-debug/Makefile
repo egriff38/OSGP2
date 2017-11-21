@@ -346,6 +346,36 @@ Loader.cpp.s:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Loader.cpp.s
 .PHONY : Loader.cpp.s
 
+Log.o: Log.cpp.o
+
+.PHONY : Log.o
+
+# target to build an object file
+Log.cpp.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Log.cpp.o
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Log.cpp.o
+.PHONY : Log.cpp.o
+
+Log.i: Log.cpp.i
+
+.PHONY : Log.i
+
+# target to preprocess a source file
+Log.cpp.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Log.cpp.i
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Log.cpp.i
+.PHONY : Log.cpp.i
+
+Log.s: Log.cpp.s
+
+.PHONY : Log.s
+
+# target to generate assembly for a file
+Log.cpp.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/Log.cpp.s
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Log.cpp.s
+.PHONY : Log.cpp.s
+
 MMU.o: MMU.cpp.o
 
 .PHONY : MMU.o
@@ -496,6 +526,36 @@ Scheduler.cpp.s:
 	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Scheduler.cpp.s
 .PHONY : Scheduler.cpp.s
 
+fmt-4.0.0/fmt/format.o: fmt-4.0.0/fmt/format.cc.o
+
+.PHONY : fmt-4.0.0/fmt/format.o
+
+# target to build an object file
+fmt-4.0.0/fmt/format.cc.o:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o
+.PHONY : fmt-4.0.0/fmt/format.cc.o
+
+fmt-4.0.0/fmt/format.i: fmt-4.0.0/fmt/format.cc.i
+
+.PHONY : fmt-4.0.0/fmt/format.i
+
+# target to preprocess a source file
+fmt-4.0.0/fmt/format.cc.i:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.i
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.i
+.PHONY : fmt-4.0.0/fmt/format.cc.i
+
+fmt-4.0.0/fmt/format.s: fmt-4.0.0/fmt/format.cc.s
+
+.PHONY : fmt-4.0.0/fmt/format.s
+
+# target to generate assembly for a file
+fmt-4.0.0/fmt/format.cc.s:
+	$(MAKE) -f CMakeFiles/LogTests.dir/build.make CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.s
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.s
+.PHONY : fmt-4.0.0/fmt/format.cc.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -581,6 +641,9 @@ help:
 	@echo "... Loader.o"
 	@echo "... Loader.i"
 	@echo "... Loader.s"
+	@echo "... Log.o"
+	@echo "... Log.i"
+	@echo "... Log.s"
 	@echo "... MMU.o"
 	@echo "... MMU.i"
 	@echo "... MMU.s"
@@ -596,6 +659,9 @@ help:
 	@echo "... Scheduler.o"
 	@echo "... Scheduler.i"
 	@echo "... Scheduler.s"
+	@echo "... fmt-4.0.0/fmt/format.o"
+	@echo "... fmt-4.0.0/fmt/format.i"
+	@echo "... fmt-4.0.0/fmt/format.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
