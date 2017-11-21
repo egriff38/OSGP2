@@ -77,7 +77,7 @@ void Loader::updatePCBData(MMU *mmu, PCB *pcb, int &current_MMU_page, int &curre
    int b = current_pcb_page;
     temp_data = temp_data.substr(2, std::string::npos);
     if(word_count == 4){
-        pcb->page_table[current_pcb_page] = (std::make_tuple(current_MMU_page,-1,true,false));
+        pcb->page_table[current_pcb_page] = (std::make_tuple(current_MMU_page,-1,false));
         mmu->add_page_to_disk(current_data,current_MMU_page);
         current_MMU_page++;
         current_pcb_page++;
@@ -92,7 +92,7 @@ void Loader::updatePCBData(MMU *mmu, PCB *pcb, int &current_MMU_page, int &curre
 void Loader::addPCB(MMU *mmu ,M_priority_queue<PCB *> &pcbs, PCB *pcb, int &current_MMU_page, int &current_pcb_page, int &word_count) {
     if(word_count != 0){
         mmu->add_page_to_disk(current_data,current_MMU_page);
-        pcb->page_table[current_pcb_page] = (std::make_tuple(current_MMU_page,-1,true,false));
+        pcb->page_table[current_pcb_page] = (std::make_tuple(current_MMU_page,-1,false));
         current_MMU_page++;
         current_pcb_page++;//ds
     }

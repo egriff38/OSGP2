@@ -9,7 +9,7 @@
 
 
 PCB::PCB(){
-    this->page_table = std::map<int,std::tuple<int,int,bool,bool> >();
+    this->page_table = std::map<int,std::tuple<int,int,bool> >();
 
 }
 
@@ -71,8 +71,7 @@ void PCB::printPageTable() {
     {
         std::cout << "Disk Frame " << std::get<0>(page_table[i]) << "\n";
         std::cout << "Ram Frame " << std::get<1>(page_table[i]) << "\n";
-        std::cout << "Disk Frame Exists " << Hex_Util::bool_to_string(std::get<2>(page_table[i])) << "\n";
-        std::cout << "Ram Frame Exists " <<  Hex_Util::bool_to_string(std::get<3>(page_table[i])) << "\n";
+        std::cout << "Ram Frame Exists " << Hex_Util::bool_to_string(std::get<2>(page_table[i])) << "\n";
 
     }
 

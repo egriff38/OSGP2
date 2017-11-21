@@ -14,12 +14,12 @@ MMU::MMU() {
     ram = new Ram();
     disk_frame_map = new std::map<int, bool>();
     ram_frame_map = new std::map<int, bool>();
-    free_ram_frames = new M_queue<int>();
+    free_ram_frames = new M_queue<int*>();
     for(int i = 0; i < 512; i++)
     {
         (*disk_frame_map)[i] = false;
         if(i < 256) {
-            free_ram_frames->push(i);
+            free_ram_frames->push(&i);
         }
     }
 }
@@ -84,12 +84,12 @@ int MMU::add_page_to_ram(std::vector<std::string> page) {
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
     ram_mutex.lock();
-    int a = free_ram_frames->pop();
-    for(int i = a * 4; i < a*4 + 4; i++){
-     ram->write(a*4 + i, page[i]);
+    int *a = free_ram_frames->pop();
+    for(int i = *a * 4; i < *a*4 + 4; i++){
+     ram->write(*a*4 + i, page[i]);
     }
     ram_mutex.unlock();
-    return a; 
+    return *a;
 }
 
 std::vector<std::string> MMU::read_page_from_ram(int frame_num) {
