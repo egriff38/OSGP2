@@ -45,7 +45,7 @@ void Scheduler::schedule(bool *still_has_work) {
                 *still_has_work  = false;
         }
     else{
-        // add sleep here     
+        // add sleep here
         }
 }
 
