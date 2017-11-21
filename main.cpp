@@ -8,6 +8,7 @@
 #include "Dispatcher.h"
 #include "Mutex_queues.cpp"
 #include "CPU.h"
+#include "Block_manager.h"
 
 int main() {
     const int CPU_NUM = 4;
@@ -28,9 +29,14 @@ int main() {
     loader->init(*mmu, *pcbs);
 
     // Dispatcher threads begin
+    for (int i = 0; i < CPU_NUM; i++) {
+        std::thread(Dispatcher::start, mmu, ready_queue, blocked_queue, done_queue, 1).detach();
+    }
 
 
-    //Blocking thread will start here
+    //Blocking thread begins
+    std::thread(Block_manager::start, mmu, readyish_queue, blocked_queue).detach();
+
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done

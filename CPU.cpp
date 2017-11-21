@@ -183,9 +183,8 @@ int *CPU::dump_registers() {
 std::string CPU::fetch(int addr, std::string wr) {
     //page and offset vector
     std::vector<int> a = {addr / 4, addr % 4};
-    //is it in page table?
-    bool exists = this->state->page_table.count(a[0]) == 1;
-    bool isValid = std::get<2>(this->state->page_table[a[0]]);
+    bool exists = this->state->page_table.count(a[0]) > 0; //checks for entry with matching key in page table
+    bool isValid = std::get<2>(this->state->page_table[a[0]]); //checks valid bit
 
     if(addr<state->job_size+state->in_buf_size) {
         //check the cache
