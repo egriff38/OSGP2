@@ -28,7 +28,8 @@ private:
     MMU *mmu;
     int Register[16];
     int PC;
-    Cache cache;
+    Cache d_cache;
+    Cache i_cache;
     bool RD(int s1, int s2, int address);
     bool WR(int s1, int s2, int address);
     bool ST(int addr, int breg, int dreg);
@@ -56,17 +57,20 @@ private:
     bool BNZ(int B, int addr);
     bool BGZ(int B, int addr);
     bool BLZ(int B, int addr);
+
+    std::string fetch(int i, std::string wr="");
+    Op decode(std::string basic_string);
     void execute(Op op);
+
+    void pass(std::string val);
 public:
+    int page_trip;
     PCB *state;
     bool Operate();
     void load_pcb(PCB *p);
     PCB* store_pcb();
     CPU(MMU* mmu,mode);
     int* dump_registers();
-    void pass(std::string val);
-    std::string fetch(int i);
-    Op decode(std::string basic_string);
 };
 
 

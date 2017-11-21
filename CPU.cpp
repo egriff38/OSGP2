@@ -9,42 +9,57 @@
 
 bool CPU::Operate() {
         std::string instruction = CPU::fetch(this->PC);
-        ++PC;
-        Op decoded = CPU::decode(instruction);
-        CPU::execute(decoded);
+        if(instruction!="") {
+            ++PC;
+            Op decoded = CPU::decode(instruction);
+            CPU::execute(decoded);
+        }
         return true;
     }
 
 CPU::CPU(MMU* mmu,mode m) {
     if(m==debug) std::cout<<"--DEBUG--\n";
+
     for (int i = 0; i < 16; ++i) {
         this->Register[i]=i;
     }
     this->Register[1] = 0;
+    this->d_cache = Cache ();
+    this->i_cache = Cache ();
     this->mmu = mmu;
 }
 
 bool CPU::RD(int s1, int s2, int address) {
     /*if(address==0)Register[s1] = Hex_Util::hex_to_decimal(cache.read(Register[s2] / 4));
     else Register[s1] = Hex_Util::hex_to_decimal(cache.read((address) / 4));*/
+    std::string a;
+    if(address==0)
+        a = fetch(Register[s2] / 4);
+    else
+        a = fetch(address / 4);
+
+    if(a != "") Register[s1] = Hex_Util::hex_to_decimal(a);
+    else state->state = PCB::IO_BLOCKED;
+
     return true;
 }
 
 bool CPU::WR(int s1, int s2, int address) {
-//    if(this->cpumode==debug) return false;
-//    Debug::debug(Debug::OUTPUT,"_Job "+std::to_string(state.job_id)+" outputs "+std::to_string(Register[s1]));
-    /*cache.write(address/4, Hex_Util::decimal_to_hex(Register[s1]));*/
+    if(fetch(address/4,Hex_Util::decimal_to_hex(Register[s1]))=="")state->state = PCB::IO_BLOCKED;
     return true;
 }
 
 bool CPU::ST(int addr, int breg, int dreg) {/*
     if(addr==0) cache.write(Register[dreg]/4, Hex_Util::decimal_to_hex(Register[breg]));
     else cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));*/
+    if(addr==0) fetch(Register[dreg]/4, Hex_Util::decimal_to_hex(Register[breg]));
+    else fetch(addr/4, Hex_Util::decimal_to_hex(Register[breg]));
     return true;
 }
 
 bool CPU::LW(int addr, int breg, int dreg) {
     /*cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));*/
+    fetch(addr/4,Hex_Util::decimal_to_hex(Register[breg]));
     return true;
 }
 
@@ -165,8 +180,62 @@ int *CPU::dump_registers() {
     return Register;
 }
 
-std::string CPU::fetch(int i) {
-   /*return this->cache.read(i);*/
+std::string CPU::fetch(int addr, std::string wr) {
+    //page and offset vector
+    std::vector<int> a = {addr / 4, addr % 4};
+    //is it in page table?
+    bool exists = this->state->page_table.count(a[0]) == 1;
+    bool isValid = std::get<2>(this->state->page_table[a[0]]);
+
+    if(addr<state->job_size+state->in_buf_size) {
+        //check the cache
+        auto cache = i_cache;
+        if (addr > state->job_size) {
+            cache = d_cache;
+            addr -= state->job_size;
+        }
+        //cache vector (may be different for data)
+        std::vector<int> b = {addr / 4, addr % 4};
+
+        //check the cache
+        std::string instr = cache.read_data(b[0])[b[1]];
+        if (instr != "") return instr;
+
+        //check ram... if exists and if valid bit
+        if (exists && isValid) {
+            //write page to cache
+            int frame = std::get<1>(state->page_table[a[0]]);
+            cache.write_data(b[0], mmu->read_page_from_ram(frame));
+            //return that cache with offset
+            return cache.read_data(b[0])[b[1]];
+        }
+    }
+    // if we failed to be in read-only range, we need to go straight to the RAM
+    else if (exists && isValid) {
+        int frame = std::get<1>(state->page_table[a[0]]);
+        auto page = mmu->read_page_from_ram(frame);
+        //Is there a string to be written? If so overwrite what was there and return your query string (guarenteed not to be empty)
+        if(wr!=""){
+            page[a[1]] = wr;
+            mmu->add_page_to_ram(page,frame);
+            return wr;
+        }
+        //else return the value
+        return page[a[1]];
+
+
+    }
+    /*
+     * If the address either:
+     * 1. was in the Read Only range, failed to be in the cache, and failed to be in the ram, or
+     * 2. was not in the Read Only range, and failed to be in the ram
+     * then we resort to a page fault, with the faulty *page* written to page_trip cpu member.
+     * The methods in the CPU are designed to change the state to IO_BLOCKED if called from an I/O operation.
+     */
+
+    this->state->state = PCB::PAGE_FAULT;
+    this->page_trip = a[0];
+    return "";
 
 }
 
