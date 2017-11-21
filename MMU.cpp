@@ -14,11 +14,13 @@ MMU::MMU() {
     ram = new Ram();
     disk_frame_map = new std::map<int, bool>();
     ram_frame_map = new std::map<int, bool>();
+    free_ram_frames = new M_queue<int>();
     for(int i = 0; i < 512; i++)
     {
         (*disk_frame_map)[i] = false;
-        if(i < 256)
-            (*ram_frame_map)[i] = false;
+        if(i < 256) {
+            free_ram_frames->push(i);
+        }
     }
 }
 
