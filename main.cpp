@@ -30,7 +30,7 @@ int main() {
 
     // Dispatcher threads begin
     for (int i = 0; i < CPU_NUM; i++) {
-        std::thread(Dispatcher::start, mmu, ready_queue, blocked_queue, done_queue, 1).detach();
+        std::thread(Dispatcher::start, mmu, ready_queue, blocked_queue, done_queue, i).detach();
     }
 
 

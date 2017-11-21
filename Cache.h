@@ -14,23 +14,19 @@ class Cache {
 
 
 public:
-    std::vector<std::string> read_instructions(int page_num);
     std::vector<std::string> read_data(int page_num);
 
-    void write_instructions(int page_num, std::vector<std::string> data);
-    void write_data(int page_num, std::vector<std::string> data);
+    void write_data(int page_num, std::vector<std::string> input);
 
     void clear_cache();
 
-    const static int INSTRUCTION_CACHE_SIZE = 6; //both in pages
-    const static int DATA_CACHE_SIZE = 6;
+    const static int CACHE_SIZE = 6;
 
     Cache();
 
 
 private:
-    std::map<int, std::pair<int, std::vector<std::string>>> instruction_words;
-    std::map<int, std::pair<int, std::vector<std::string>>> data_words;
+    std::map<int, std::pair<int, std::vector<std::string>>> data;
 };
 
 
