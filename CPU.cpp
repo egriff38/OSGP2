@@ -25,26 +25,26 @@ CPU::CPU(MMU* mmu,mode m) {
 }
 
 bool CPU::RD(int s1, int s2, int address) {
-    if(address==0)Register[s1] = Hex_Util::hex_to_decimal(cache.read(Register[s2] / 4));
-    else Register[s1] = Hex_Util::hex_to_decimal(cache.read((address) / 4));
+    /*if(address==0)Register[s1] = Hex_Util::hex_to_decimal(cache.read(Register[s2] / 4));
+    else Register[s1] = Hex_Util::hex_to_decimal(cache.read((address) / 4));*/
     return true;
 }
 
 bool CPU::WR(int s1, int s2, int address) {
 //    if(this->cpumode==debug) return false;
 //    Debug::debug(Debug::OUTPUT,"_Job "+std::to_string(state.job_id)+" outputs "+std::to_string(Register[s1]));
-    cache.write(address/4, Hex_Util::decimal_to_hex(Register[s1]));
+    /*cache.write(address/4, Hex_Util::decimal_to_hex(Register[s1]));*/
     return true;
 }
 
-bool CPU::ST(int addr, int breg, int dreg) {
+bool CPU::ST(int addr, int breg, int dreg) {/*
     if(addr==0) cache.write(Register[dreg]/4, Hex_Util::decimal_to_hex(Register[breg]));
-    else cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));
+    else cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));*/
     return true;
 }
 
 bool CPU::LW(int addr, int breg, int dreg) {
-    cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));
+    /*cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));*/
     return true;
 }
 
@@ -166,7 +166,7 @@ int *CPU::dump_registers() {
 }
 
 std::string CPU::fetch(int i) {
-   return this->cache.read(i);
+   /*return this->cache.read(i);*/
 
 }
 
@@ -254,7 +254,7 @@ void CPU::load_pcb(PCB *p) {
     }
     for(int i = state->job_ram_address; i < state->total_size + state->job_ram_address; i++)
     {
-        cache.write(i - state->job_ram_address,mmu->ram_memory(i));
+        /*cache.write(i - state->job_ram_address,mmu->ram_memory(i));*/
     }
     int x = 2;
 }
