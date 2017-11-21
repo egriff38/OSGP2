@@ -30,18 +30,12 @@ namespace Dispatcher {
                 std::cout << "Using CPU " << i << "\n";
                 Dispatcher::lock_talk.unlock();
                 current->state = PCB::RUNNING;
-                cpu->load_pcb(current);
-                while (cpu->state->state == PCB::RUNNING)
-                    cpu->Operate();
-                current = cpu->store_pcb();
-                if(current->state==PCB::COMPLETED) done_queue->push(current);
-                else if(current->state==PCB::IO_BLOCKED || current->state == PCB::PAGE_FAULT){
-                    auto a = new blocking_info();
-                    a -> pcb = current;
-                    a -> page_num = cpu->page_trip;
-                    blocked_queue->push(a);
-
-                }
+                   cpu->load_pcb(current);
+                 while (cpu->state->state == PCB::RUNNING)
+                     cpu->Operate();
+                  cpu->store_pcb();
+                current->state = PCB::COMPLETED;
+                done_queue->push(current);
                 /*Dispatcher::lock_talk.lock();
                 std::cout << "Jobs Completed " << done_queue->getPopped() << "\n\n";
                 Dispatcher::lock_talk.unlock();*/
