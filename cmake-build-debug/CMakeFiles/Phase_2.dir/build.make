@@ -57,9 +57,33 @@ include CMakeFiles/Phase_2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Phase_2.dir/flags.make
 
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o: CMakeFiles/Phase_2.dir/flags.make
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o: ../fmt-4.0.0/fmt/format.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o -c /home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc
+
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc > CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.i
+
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/conrad/CPlusPlus/OSGP2/fmt-4.0.0/fmt/format.cc -o CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.s
+
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.requires:
+
+.PHONY : CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.requires
+
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.provides: CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.requires
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.provides.build
+.PHONY : CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.provides
+
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.provides.build: CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o
+
+
 CMakeFiles/Phase_2.dir/PCB.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../PCB.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Phase_2.dir/PCB.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Phase_2.dir/PCB.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/PCB.cpp.o -c /home/conrad/CPlusPlus/OSGP2/PCB.cpp
 
 CMakeFiles/Phase_2.dir/PCB.cpp.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/Phase_2.dir/PCB.cpp.o.provides.build: CMakeFiles/Phase_2.dir/PCB.cpp.
 
 CMakeFiles/Phase_2.dir/CPU.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../CPU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Phase_2.dir/CPU.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Phase_2.dir/CPU.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/CPU.cpp.o -c /home/conrad/CPlusPlus/OSGP2/CPU.cpp
 
 CMakeFiles/Phase_2.dir/CPU.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/Phase_2.dir/CPU.cpp.o.provides.build: CMakeFiles/Phase_2.dir/CPU.cpp.
 
 CMakeFiles/Phase_2.dir/Disk.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Disk.cpp.o: ../Disk.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Phase_2.dir/Disk.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Phase_2.dir/Disk.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Disk.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Disk.cpp
 
 CMakeFiles/Phase_2.dir/Disk.cpp.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/Phase_2.dir/Disk.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Disk.cp
 
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Dispatcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Phase_2.dir/Dispatcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Phase_2.dir/Dispatcher.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Dispatcher.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Dispatcher.cpp
 
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/Phase_2.dir/Dispatcher.cpp.o.provides.build: CMakeFiles/Phase_2.dir/D
 
 CMakeFiles/Phase_2.dir/Loader.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Phase_2.dir/Loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Phase_2.dir/Loader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Loader.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Loader.cpp
 
 CMakeFiles/Phase_2.dir/Loader.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/Phase_2.dir/Loader.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Loade
 
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Scheduler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Phase_2.dir/Scheduler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Phase_2.dir/Scheduler.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Scheduler.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Scheduler.cpp
 
 CMakeFiles/Phase_2.dir/Scheduler.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/Phase_2.dir/Scheduler.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Sc
 
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Phase_2.dir/Hex_Util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Phase_2.dir/Hex_Util.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Hex_Util.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Hex_Util.cpp
 
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/Phase_2.dir/Hex_Util.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Hex
 
 CMakeFiles/Phase_2.dir/Ram.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Ram.cpp.o: ../Ram.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Phase_2.dir/Ram.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Phase_2.dir/Ram.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Ram.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Ram.cpp
 
 CMakeFiles/Phase_2.dir/Ram.cpp.i: cmake_force
@@ -249,9 +273,33 @@ CMakeFiles/Phase_2.dir/Ram.cpp.o.provides: CMakeFiles/Phase_2.dir/Ram.cpp.o.requ
 CMakeFiles/Phase_2.dir/Ram.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Ram.cpp.o
 
 
+CMakeFiles/Phase_2.dir/Log.cpp.o: CMakeFiles/Phase_2.dir/flags.make
+CMakeFiles/Phase_2.dir/Log.cpp.o: ../Log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Phase_2.dir/Log.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Log.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Log.cpp
+
+CMakeFiles/Phase_2.dir/Log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Phase_2.dir/Log.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/conrad/CPlusPlus/OSGP2/Log.cpp > CMakeFiles/Phase_2.dir/Log.cpp.i
+
+CMakeFiles/Phase_2.dir/Log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Phase_2.dir/Log.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/conrad/CPlusPlus/OSGP2/Log.cpp -o CMakeFiles/Phase_2.dir/Log.cpp.s
+
+CMakeFiles/Phase_2.dir/Log.cpp.o.requires:
+
+.PHONY : CMakeFiles/Phase_2.dir/Log.cpp.o.requires
+
+CMakeFiles/Phase_2.dir/Log.cpp.o.provides: CMakeFiles/Phase_2.dir/Log.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Phase_2.dir/build.make CMakeFiles/Phase_2.dir/Log.cpp.o.provides.build
+.PHONY : CMakeFiles/Phase_2.dir/Log.cpp.o.provides
+
+CMakeFiles/Phase_2.dir/Log.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Log.cpp.o
+
+
 CMakeFiles/Phase_2.dir/Cache.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Cache.cpp.o: ../Cache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Phase_2.dir/Cache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Phase_2.dir/Cache.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Cache.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Cache.cpp
 
 CMakeFiles/Phase_2.dir/Cache.cpp.i: cmake_force
@@ -275,7 +323,7 @@ CMakeFiles/Phase_2.dir/Cache.cpp.o.provides.build: CMakeFiles/Phase_2.dir/Cache.
 
 CMakeFiles/Phase_2.dir/MMU.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../MMU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Phase_2.dir/MMU.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Phase_2.dir/MMU.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/MMU.cpp.o -c /home/conrad/CPlusPlus/OSGP2/MMU.cpp
 
 CMakeFiles/Phase_2.dir/MMU.cpp.i: cmake_force
@@ -299,7 +347,7 @@ CMakeFiles/Phase_2.dir/MMU.cpp.o.provides.build: CMakeFiles/Phase_2.dir/MMU.cpp.
 
 CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: ../Mutex_queues.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 
 CMakeFiles/Phase_2.dir/Mutex_queues.cpp.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o.provides.build: CMakeFiles/Phase_2.dir
 
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Block_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Phase_2.dir/Block_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Phase_2.dir/Block_manager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/Block_manager.cpp.o -c /home/conrad/CPlusPlus/OSGP2/Block_manager.cpp
 
 CMakeFiles/Phase_2.dir/Block_manager.cpp.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/Phase_2.dir/Block_manager.cpp.o.provides.build: CMakeFiles/Phase_2.di
 
 CMakeFiles/Phase_2.dir/main.cpp.o: CMakeFiles/Phase_2.dir/flags.make
 CMakeFiles/Phase_2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Phase_2.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Phase_2.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Phase_2.dir/main.cpp.o -c /home/conrad/CPlusPlus/OSGP2/main.cpp
 
 CMakeFiles/Phase_2.dir/main.cpp.i: cmake_force
@@ -371,6 +419,7 @@ CMakeFiles/Phase_2.dir/main.cpp.o.provides.build: CMakeFiles/Phase_2.dir/main.cp
 
 # Object files for target Phase_2
 Phase_2_OBJECTS = \
+"CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o" \
 "CMakeFiles/Phase_2.dir/PCB.cpp.o" \
 "CMakeFiles/Phase_2.dir/CPU.cpp.o" \
 "CMakeFiles/Phase_2.dir/Disk.cpp.o" \
@@ -379,6 +428,7 @@ Phase_2_OBJECTS = \
 "CMakeFiles/Phase_2.dir/Scheduler.cpp.o" \
 "CMakeFiles/Phase_2.dir/Hex_Util.cpp.o" \
 "CMakeFiles/Phase_2.dir/Ram.cpp.o" \
+"CMakeFiles/Phase_2.dir/Log.cpp.o" \
 "CMakeFiles/Phase_2.dir/Cache.cpp.o" \
 "CMakeFiles/Phase_2.dir/MMU.cpp.o" \
 "CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o" \
@@ -388,6 +438,7 @@ Phase_2_OBJECTS = \
 # External object files for target Phase_2
 Phase_2_EXTERNAL_OBJECTS =
 
+Phase_2: CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o
 Phase_2: CMakeFiles/Phase_2.dir/PCB.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/CPU.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/Disk.cpp.o
@@ -396,6 +447,7 @@ Phase_2: CMakeFiles/Phase_2.dir/Loader.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/Scheduler.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/Hex_Util.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/Ram.cpp.o
+Phase_2: CMakeFiles/Phase_2.dir/Log.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/Cache.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/MMU.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o
@@ -403,7 +455,7 @@ Phase_2: CMakeFiles/Phase_2.dir/Block_manager.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/main.cpp.o
 Phase_2: CMakeFiles/Phase_2.dir/build.make
 Phase_2: CMakeFiles/Phase_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Phase_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/conrad/CPlusPlus/OSGP2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable Phase_2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Phase_2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -411,6 +463,7 @@ CMakeFiles/Phase_2.dir/build: Phase_2
 
 .PHONY : CMakeFiles/Phase_2.dir/build
 
+CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/PCB.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/CPU.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Disk.cpp.o.requires
@@ -419,6 +472,7 @@ CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Loader.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Scheduler.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Hex_Util.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Ram.cpp.o.requires
+CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Log.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Cache.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/MMU.cpp.o.requires
 CMakeFiles/Phase_2.dir/requires: CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o.requires

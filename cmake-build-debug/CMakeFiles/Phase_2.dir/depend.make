@@ -9,6 +9,8 @@ CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Ram.h
+CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../CPU.cpp
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../CPU.h
@@ -17,12 +19,17 @@ CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Disk.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../MMU.h
+CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/CPU.cpp.o: ../Ram.h
+CMakeFiles/Phase_2.dir/CPU.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/CPU.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/Cache.cpp.o: ../Cache.cpp
 CMakeFiles/Phase_2.dir/Cache.cpp.o: ../Cache.h
 CMakeFiles/Phase_2.dir/Cache.cpp.o: ../Log.h
+CMakeFiles/Phase_2.dir/Cache.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Cache.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/Disk.cpp.o: ../Disk.cpp
 CMakeFiles/Phase_2.dir/Disk.cpp.o: ../Disk.h
@@ -37,6 +44,8 @@ CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../Ram.h
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Dispatcher.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.cpp
 CMakeFiles/Phase_2.dir/Hex_Util.cpp.o: ../Hex_Util.h
@@ -50,22 +59,37 @@ CMakeFiles/Phase_2.dir/Loader.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/Loader.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/Loader.cpp.o: ../Ram.h
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Loader.cpp.o: ../fmt-4.0.0/fmt/format.h
+
+CMakeFiles/Phase_2.dir/Log.cpp.o: ../Log.cpp
+CMakeFiles/Phase_2.dir/Log.cpp.o: ../Log.h
+CMakeFiles/Phase_2.dir/Log.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Log.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Disk.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../MMU.cpp
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../MMU.h
+CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/MMU.cpp.o: ../Ram.h
+CMakeFiles/Phase_2.dir/MMU.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/MMU.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: ../PCB.h
+CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o: ../fmt-4.0.0/fmt/format.h
 
+CMakeFiles/Phase_2.dir/PCB.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../PCB.cpp
 CMakeFiles/Phase_2.dir/PCB.cpp.o: ../PCB.h
+CMakeFiles/Phase_2.dir/PCB.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/PCB.cpp.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/Ram.cpp.o: ../Ram.cpp
 CMakeFiles/Phase_2.dir/Ram.cpp.o: ../Ram.h
@@ -82,11 +106,15 @@ CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Ram.h
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Scheduler.cpp
 CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../Scheduler.h
+CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/Scheduler.cpp.o: ../fmt-4.0.0/fmt/format.h
+
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o: ../fmt-4.0.0/fmt/format.h
 
 CMakeFiles/Phase_2.dir/main.cpp.o: ../CPU.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Cache.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Disk.h
-CMakeFiles/Phase_2.dir/main.cpp.o: ../Dispatcher.cpp
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Dispatcher.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Loader.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Log.h
@@ -95,5 +123,7 @@ CMakeFiles/Phase_2.dir/main.cpp.o: ../Mutex_queues.cpp
 CMakeFiles/Phase_2.dir/main.cpp.o: ../PCB.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Ram.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../Scheduler.h
+CMakeFiles/Phase_2.dir/main.cpp.o: ../fmt-4.0.0/fmt/format.cc
+CMakeFiles/Phase_2.dir/main.cpp.o: ../fmt-4.0.0/fmt/format.h
 CMakeFiles/Phase_2.dir/main.cpp.o: ../main.cpp
 

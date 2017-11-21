@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Phase_2.dir/fmt-4.0.0/fmt/format.cc.o"
   "CMakeFiles/Phase_2.dir/PCB.cpp.o"
   "CMakeFiles/Phase_2.dir/CPU.cpp.o"
   "CMakeFiles/Phase_2.dir/Disk.cpp.o"
@@ -7,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Phase_2.dir/Scheduler.cpp.o"
   "CMakeFiles/Phase_2.dir/Hex_Util.cpp.o"
   "CMakeFiles/Phase_2.dir/Ram.cpp.o"
+  "CMakeFiles/Phase_2.dir/Log.cpp.o"
   "CMakeFiles/Phase_2.dir/Cache.cpp.o"
   "CMakeFiles/Phase_2.dir/MMU.cpp.o"
   "CMakeFiles/Phase_2.dir/Mutex_queues.cpp.o"

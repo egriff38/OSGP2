@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/LogTests.dir/fmt-4.0.0/fmt/format.cc.o"
   "CMakeFiles/LogTests.dir/PCB.cpp.o"
   "CMakeFiles/LogTests.dir/CPU.cpp.o"
   "CMakeFiles/LogTests.dir/Disk.cpp.o"
@@ -7,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LogTests.dir/Scheduler.cpp.o"
   "CMakeFiles/LogTests.dir/Hex_Util.cpp.o"
   "CMakeFiles/LogTests.dir/Ram.cpp.o"
+  "CMakeFiles/LogTests.dir/Log.cpp.o"
   "CMakeFiles/LogTests.dir/Cache.cpp.o"
   "CMakeFiles/LogTests.dir/MMU.cpp.o"
   "CMakeFiles/LogTests.dir/Mutex_queues.cpp.o"
