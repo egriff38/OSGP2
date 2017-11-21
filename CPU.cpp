@@ -25,12 +25,14 @@ CPU::CPU(MMU* mmu,mode m) {
 }
 
 bool CPU::RD(int s1, int s2, int address) {
+    this->state->log->increment();
     if(address==0)Register[s1] = Hex_Util::hex_to_decimal(cache.read(Register[s2] / 4));
     else Register[s1] = Hex_Util::hex_to_decimal(cache.read((address) / 4));
     return true;
 }
 
 bool CPU::WR(int s1, int s2, int address) {
+    this->state->log->increment();
 //    if(this->cpumode==debug) return false;
 //    Debug::debug(Debug::OUTPUT,"_Job "+std::to_string(state.job_id)+" outputs "+std::to_string(Register[s1]));
     cache.write(address/4, Hex_Util::decimal_to_hex(Register[s1]));
@@ -38,12 +40,14 @@ bool CPU::WR(int s1, int s2, int address) {
 }
 
 bool CPU::ST(int addr, int breg, int dreg) {
+    this->state->log->increment();
     if(addr==0) cache.write(Register[dreg]/4, Hex_Util::decimal_to_hex(Register[breg]));
     else cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));
     return true;
 }
 
 bool CPU::LW(int addr, int breg, int dreg) {
+    this->state->log->increment();
     cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));
     return true;
 }

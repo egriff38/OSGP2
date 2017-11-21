@@ -9,6 +9,7 @@
 #include <string>
 #include "Log.h"
 #include "Hex_Util.h"
+#include "Log.h"
 
 Loader::Loader() {
 }
@@ -95,6 +96,8 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
                 p->state = PCB::PROCESS_STATUS::NEW;
                 p->prgm_counter = 0;
                 pcbs.push(p);
+                p->log = new Log(p->job_id);
+                p->log->w_start();
                 counter = 0;
 
             }

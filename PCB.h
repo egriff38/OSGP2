@@ -26,6 +26,7 @@ struct PCB {
     int job_ram_address;
     int prgm_counter;
     int registers[16];
+    Log* log;
     enum SORTING_METHOD{FIFO, PRIO, SJF};
    static const SORTING_METHOD SORT = PRIO;
     //Data

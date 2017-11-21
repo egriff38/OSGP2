@@ -8,6 +8,7 @@
 #include "Dispatcher.cpp"
 #include "Mutex_queues.cpp"
 #include "CPU.h"
+#include "Log.h"
 
 int main() {
 const int CPU_NUM = 4;
@@ -24,13 +25,14 @@ auto still_has_work = new bool(true);
 auto loader = new Loader();
 auto scheduler = new Scheduler(*pcbs,*ready_queue,*done_queue, *mmu);
 auto threads = std::vector<std::thread>();
+auto main_log = new Log(0);
     // Loader calls init();
     loader->init(*mmu,*pcbs);
 
     // Dispatcher threads begin
     for(int i = 0; i < CPU_NUM; i++) {
 
-        std::thread(Dispatcher::start,mmu,ready_queue,io_queue,pf_queue,done_queue,i).detach();
+        std::thread(Dispatcher::start,mmu,ready_queue,io_queue,pf_queue,done_queue,main_log,i).detach();
     }
 
     // Scheduling process starts in main thread
@@ -44,6 +46,7 @@ auto threads = std::vector<std::thread>();
 
 
     // Thread for page fault and io begins (later)
+    main_log->publish();
     std::cout << scheduler->getDone()<<" Finish";
 
     return 0;
