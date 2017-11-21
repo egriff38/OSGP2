@@ -41,6 +41,17 @@ void Cache::write_data(int page_num, std::vector<std::string> data) {
     }
 }
 
+void Cache::clear_cache() {
+    std::vector<std::string> ev = {"", "", "", ""};
+    instruction_words.clear();
+    data_words.clear();
+
+    for (int i = 0; i < INSTRUCTION_CACHE_SIZE; i++)
+        instruction_words[i] = std::make_pair(-1, ev);
+    for (int i = 0; i < DATA_CACHE_SIZE; i++)
+        data_words[i] = std::make_pair(-1, ev);
+}
+
 Cache::Cache() {
     std::vector<std::string> ev = {"", "", "", ""};
     for (int i = 0; i < INSTRUCTION_CACHE_SIZE; i++)

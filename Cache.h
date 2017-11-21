@@ -20,6 +20,8 @@ public:
     void write_instructions(int page_num, std::vector<std::string> data);
     void write_data(int page_num, std::vector<std::string> data);
 
+    void clear_cache();
+
     const static int INSTRUCTION_CACHE_SIZE = 6; //both in pages
     const static int DATA_CACHE_SIZE = 6;
 
