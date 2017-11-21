@@ -31,11 +31,9 @@ void Scheduler::schedule(bool *still_has_work) {
         while (readyish_queue->getSize() > 0) {
             ready_queue->push(readyish_queue->pop());
         }
-
         if(*still_has_work){
             temp = lt_get_next_pcb(*pcbs);
             if (temp != nullptr) {
-                *still_has_work = false;
                 load_pcb(temp );
                 temp->state = PCB::READY;
                 ready_queue->push(temp);
@@ -60,7 +58,6 @@ PCB *Scheduler::lt_get_next_pcb(M_priority_queue<PCB *> &pcbs) {
         return temp;
     }
 }
-
 
 void Scheduler::load_pcb(PCB *p) { //puts PCB in RAM and ready_queue deal with sorting laternt ram_start = p->job_ram_address;
     int *a;
