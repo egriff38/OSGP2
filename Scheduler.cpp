@@ -36,7 +36,7 @@ void Scheduler::schedule(bool *still_has_work) {
             temp = lt_get_next_pcb(*pcbs);
             if (temp != nullptr) {
                 *still_has_work = false;
-                load_pcb(temp );
+                load_pcb(temp, MMU *mmu);
                 temp->state = PCB::READY;
                 ready_queue->push(temp);
                 jobsAllocated++;
