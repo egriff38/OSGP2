@@ -37,9 +37,9 @@ int main() {
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done
-//    while(*still_has_work || scheduler->getDone() != 30) {
-//        scheduler->schedule(still_has_work);
-//    }
+  while(*still_has_work || scheduler->getDone() != 30) {
+      scheduler->schedule(still_has_work);
+ }
 
 
 
