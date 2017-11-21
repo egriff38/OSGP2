@@ -30,7 +30,7 @@ void Block_manager::start(MMU *mmu, M_queue<PCB *> *readyish_queue, M_queue<bloc
 
 void Block_manager::clear_io(MMU *mmu, blocking_info *b) {
     if (b->data.size() == 0) { //read
-        mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)), std::get<0>(b->pcb->page_table.at(b->page_num)));
+        mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)));
     } else if (b->data.size() == 4) { //write
         mmu->add_page_to_disk(b->data, std::get<0>(b->pcb->page_table.at(b->page_num)));
     } else { //wrong size
@@ -39,5 +39,5 @@ void Block_manager::clear_io(MMU *mmu, blocking_info *b) {
 }
 
 void Block_manager::clear_pf(MMU *mmu, blocking_info *b) {
-    mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)), std::get<0>(b->pcb->page_table.at(b->page_num)));
+    mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)));
 }
