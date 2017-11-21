@@ -24,8 +24,7 @@ void Log::increment(){
 void Log::publish() {
     loglock.lock();
     for (auto it=logMap.begin(); it!=logMap.end(); ++it)
-        ostrm << it->first << '\n' << it->second << '\n';
-    //ostrm << logMap["RamDump"] << '\n';
+        ostrm << it->second << '\n';
     ostrm.close();
     loglock.unlock();
 }
@@ -58,25 +57,41 @@ void Log::c_stop() {
     comp_time = ( std::clock() - c_timer ) / (double) CLOCKS_PER_SEC;
 }
 
+void Log::used(int i) {
+    cpu_used = i;
+}
+
 Log::Log(int id) {
     logMap = std::map<std::string, std::string> ();
     wait_time = 0.0;
     comp_time = 0.0;
     log_id = id;
     count = 0;
+    cpu_used = 0;
+    mode = CSV;
 }
 
 std::string Log::Summary() {
-    return fmt::format(R"(Summary for Job {0}
+    if (mode == TXT)
+    {
+                    return fmt::format(R"(Summary for Job {0}
 ----------------------
 Total runtime:  {1}
 Average runtime: {2}
 Average completion period: {3}
 Average wait time: {4}
 I/O Count: {5}
+CPU Used: {6}
 cache density:
 Ram density:
 PF/IO density:
-)", log_id, (wait_time+comp_time),(wait_time+comp_time), comp_time, wait_time, count);
+)", log_id, (wait_time+comp_time),(wait_time+comp_time), comp_time, wait_time, count, cpu_used);
+    }
+
+    else if (mode == CSV)
+    {
+        return fmt::format(R"({0},{1},{2},{3},{4},{5})", log_id,(wait_time+comp_time), comp_time, wait_time, count, cpu_used);
+    }
+
 
 }

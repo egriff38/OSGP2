@@ -35,6 +35,7 @@ namespace Dispatcher {
                    cpu->load_pcb(current);
                 current->log->w_stop();
                 current->log->c_start();
+                current->log->used(i);
                  while (cpu->state->state == PCB::RUNNING)
                      cpu->Operate();
                   cpu->store_pcb();

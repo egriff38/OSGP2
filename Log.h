@@ -13,7 +13,7 @@
 
 class Log{
 public:
-    enum Pubstyle{RAM_CSV,RAMDUMP};
+    enum pub_type{TXT, CSV, RAM_CSV, RAMDUMP};
     void appendLog(std::string name, std::string text);
     void increment();
     void publish();
@@ -23,18 +23,21 @@ public:
     void w_stop();
     void c_start();
     void c_stop();
+    void used (int i);
     Log(int id);
 
 private:
     std::mutex loglock;
     std::map<std::string,std::string> logMap;
-    std::ofstream ostrm {("../LogFile.txt")};
+    std::ofstream ostrm {("../Logs/LogFile.csv")};
     std::string Summary();
     std::clock_t w_timer;
     std::clock_t c_timer;
     double wait_time;
     double comp_time;
+    pub_type mode;
     int log_id;
     int count;
+    int cpu_used;
 };
 #endif //PHASE_2_LOG_H

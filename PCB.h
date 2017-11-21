@@ -28,7 +28,7 @@ struct PCB {
     int registers[16];
     Log* log;
     enum SORTING_METHOD{FIFO, PRIO, SJF};
-   static const SORTING_METHOD SORT = PRIO;
+   static const SORTING_METHOD SORT = SJF;
     //Data
     int data_disk_address;
   //  static bool compare(const PCB *a, const PCB *b) const;
