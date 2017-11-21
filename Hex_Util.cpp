@@ -7,6 +7,7 @@
 #include <bitset>
 #include <iostream>
 #include <cmath>
+#include <string>
 
 // Converts HEX to Binary
 std::string Hex_Util::hex_to_binary(std::string hex_input) {
@@ -248,3 +249,35 @@ std::string Hex_Util::bool_to_string(bool s) {
         return "False";
 }
 
+//int Hex_Util::convert_string_to_decimal(std::string s) {
+//    int base = 1;
+//    int return_value = 0;
+//    for(int i = s.size() - 1; i >= 0; i-- )
+//    {
+//
+//    }
+//}
+
+
+
+std::vector<int> Hex_Util::parseIntsFromString(std::string temp) {
+    std::string::size_type sz;
+    std::vector<std::string> stringsToBeParsed = std::vector<std::string>();
+    std::vector<int> parsedStrings = std::vector<int>();
+    std::string buildString = "";
+    for(int i = 0; i < temp.size(); i++)
+    {
+     if(temp.at(i) == ' ')
+     {
+         stringsToBeParsed.push_back(buildString);
+         buildString = "";
+     }
+        else{
+         buildString += temp.at(i);
+     }
+    }
+    stringsToBeParsed.push_back(buildString);
+    for(int i = 0 ; i < stringsToBeParsed.size(); i++){     parsedStrings.push_back(hex_to_decimal(stringsToBeParsed[i]));
+    }
+    return parsedStrings;
+}

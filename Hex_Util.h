@@ -9,8 +9,9 @@
 #ifndef PHASE_2_HEX_UTIL_H
 #define PHASE_2_HEX_UTIL_H
 #include<string>
-namespace Hex_Util
-{
+#include <vector>
+
+namespace Hex_Util {
 
     // Hex to Binary
     std::string hex_to_binary(std::string hex_input); //converts Hex values to 32-bit binary long
@@ -18,11 +19,13 @@ namespace Hex_Util
 
     // Hex to Decimal
     int hex_to_decimal(std::string hex_input);
+
     int hex_char_to_decimal(char hexChar);
 
 
     // Binary to Hex
     std::string binary_to_hex(std::string bin_input);
+
     char four_bits_to_hex(std::string binary);
 
     // Binary to Decimal
@@ -36,6 +39,10 @@ namespace Hex_Util
     // String to decimal
 
     std::string bool_to_string(bool s);
-};
 
+    // Parsing
+
+    std::vector<int> parseIntsFromString(std::string temp);
+
+};
 #endif //PHASE_2_HEX_UTIL_H

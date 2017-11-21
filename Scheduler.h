@@ -50,17 +50,16 @@ private:
     int jobsAllocated;
     enum SCHEDULING_TYPE {FIFO, PRIORITY, SJF};
     const SCHEDULING_TYPE sched_type = SCHEDULING_TYPE::FIFO;
-    bool get_ram_start(PCB *p);
     void load_pcb(PCB *p);
-    void clean_ram_space(M_queue<PCB*> &done_queue);
+    void clean_ram_space();
     int done;
+    const int INITIAL_NUM_OF_FRAMES = 4;
 
 public:
     Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &readyish_queue, M_queue<PCB*> &done_queue, MMU &mmu);
 
     void schedule(bool *still_has_work);
     void st_sched(bool *st_still_has_work);
-
     PCB* lt_get_next_pcb(M_priority_queue<PCB *> &pcbs);
 
     int getDone();
