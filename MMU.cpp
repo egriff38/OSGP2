@@ -103,7 +103,7 @@ std::vector<std::string> MMU::read_page_from_ram(int frame_num) {
 }
 
 std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
-    std::vector<std::string> output;
+    std::vector<std::string> output = std::vector<std::string>(4);
     disk_mutex.lock();
     for (int i = 0; i < 4; i++) {
         output[i] = disk->read(frame_num * 4 + i);
