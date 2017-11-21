@@ -49,7 +49,7 @@ public:
 
     bool add_page_to_disk(std::vector<std::string> page, int frame_num);
 
-    bool add_page_to_ram(std::vector<std::string> page, int frame_num);
+    int add_page_to_ram(std::vector<std::string> page);
 
     bool remove_page_from_ram(int frame_num);
 
