@@ -92,7 +92,7 @@ int* MMU::add_page_to_ram(std::vector<std::string> page, int frame) {
     if (a == nullptr) {
         std::cout << "Nullptr!" << std::endl;
     } else {
-        for(int i = (*a) * 4; i < (*a)*4 + 4; i++) {
+        for(int i = 0; i < 4; i++) {
             ram->write((*a) * 4 + i, page[i]);
         }
     }
