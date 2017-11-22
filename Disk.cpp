@@ -18,7 +18,7 @@ void Disk::write(int address, std::string data) {
 // Reads string data from the array address
 std::string Disk::read(int address) {
     if (address >= SIZE || address < 0)
-        throw std::invalid_argument("Disk write is out of bounds");
+        throw std::invalid_argument("Disk read is out of bounds " + std::to_string(address));
     return disk_data[address];
 }
 

@@ -359,4 +359,6 @@ Mutex_queues.cpp
 /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp
 CPU.h
 /home/conrad/CPlusPlus/OSGP2/CPU.h
+Block_manager.h
+/home/conrad/CPlusPlus/OSGP2/Block_manager.h
 

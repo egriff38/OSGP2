@@ -112,6 +112,8 @@ std::vector<std::string> MMU::read_page_from_ram(int frame_num) {
 
 std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
     std::vector<std::string> output = std::vector<std::string>(4);
+    if(frame_num < 0)
+      throw  std::invalid_argument("read_page_from_disk in MMU.cpp " + std::to_string(frame_num));
     disk_mutex.lock();
     for (int i = 0; i < 4; i++) {
         output[i] = disk->read(frame_num * 4 + i);
@@ -122,11 +124,11 @@ std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
 
 
 int MMU::get_ram_frame(int page_num, const PCB *p) {
-    return std::get<0>(p->page_table.at(page_num));
+    return std::get<1>(p->page_table.at(page_num));
 }
 
 int MMU::get_disk_frame(int page_num, const PCB *p) {
-    return std::get<1>(p->page_table.at(page_num));
+    return std::get<0>(p->page_table.at(page_num));
 }
 
 void MMU::print_disk_map(bool page_mode) {
