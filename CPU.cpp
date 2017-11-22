@@ -320,15 +320,10 @@ void CPU::load_pcb(PCB *p) {
     for (int i = 0; i < 16; ++i) {
         this->Register[i] = this->state->registers[i];
     }
-    for(int i = state->job_ram_address; i < state->total_size + state->job_ram_address; i++)
-    {
-        /*cache.write(i - state->job_ram_address,mmu->ram_memory(i));*/
-    }
-    int x = 2;
+
 }
 PCB* CPU::store_pcb() {
     PCB* out = state;
-    if(this->state->state != PCB::COMPLETED) this->state->state = PCB::READY;
     out->prgm_counter = PC;
     for (int i = 0; i < 16; ++i) {
         this->state->registers[i] = this->Register[i];
