@@ -7,25 +7,28 @@
 #include <chrono>
 
 void Block_manager::start(MMU *mmu, M_queue<PCB *> *readyish_queue, M_queue<blocking_info*> *blocked_queue) {
-    bool this_is_true;
+    bool this_is_true = true;
     int count = 0;
     blocking_info *temp;
     using namespace std::chrono_literals; //for ns in sleep_for()
 
     while (this_is_true) {
-        if (blocked_queue->getSize() != 0) {
-            temp = blocked_queue->pop();
+        temp = blocked_queue->pop();
+        if (temp != nullptr) {
             if (temp->pcb->state == PCB::PROCESS_STATUS::PAGE_FAULT) {
                 clear_pf(mmu, temp);
             } else if (temp->pcb->state == PCB::PROCESS_STATUS::IO_BLOCKED) {
                 clear_io(mmu, temp);
             } else
                 std::cout << "Block_manager error: received non-blocked PCB " + temp->pcb->job_id << std::endl;
+
+            readyish_queue->push(temp->pcb);
         }
-        readyish_queue->push(temp->pcb);
+
+        std::this_thread::sleep_for(2ns);
     }
 
-    std::this_thread::sleep_for(2ns);
+
 }
 
 void Block_manager::clear_io(MMU *mmu, blocking_info *b) {

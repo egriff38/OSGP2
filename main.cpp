@@ -25,6 +25,8 @@ int main() {
     auto loader = new Loader();
     auto scheduler = new Scheduler(*pcbs, *ready_queue, *readyish_queue, *done_queue, *mmu);
     auto threads = std::vector<std::thread>();
+
+
     // Loader calls init();
     loader->init(*mmu, *pcbs);
 
@@ -42,13 +44,8 @@ int main() {
     // Loop begins for scheduler. Continues while there are still jobs to be done
   while(done_queue->getSize() < 30) {
       scheduler->schedule();
- }
+  }
 
-
-
-
-
-    // Thread for page fault and io begins (later)
     std::cout << done_queue->getSize() << " Finish";
 
     return 0;
