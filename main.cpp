@@ -40,7 +40,7 @@ int main() {
 
     // Scheduling process starts in main thread
     // Loop begins for scheduler. Continues while there are still jobs to be done
-  while(scheduler->getDone() < 30) {
+  while(done_queue->getSize() < 30) {
       scheduler->schedule();
  }
 
@@ -49,7 +49,7 @@ int main() {
 
 
     // Thread for page fault and io begins (later)
-    std::cout << scheduler->getDone() << " Finish";
+    std::cout << done_queue->getSize() << " Finish";
 
     return 0;
 }

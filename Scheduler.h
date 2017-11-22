@@ -61,7 +61,6 @@ public:
     void schedule();
     PCB* lt_get_next_pcb(M_priority_queue<PCB *> &pcbs);
 
-    int getDone();
 };
 
 #endif //PHASE_2_SCHEDULER_H

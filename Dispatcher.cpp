@@ -33,7 +33,15 @@ namespace Dispatcher {
                 while (cpu->state->state == PCB::RUNNING)
                     cpu->Operate();
                 current = cpu->store_pcb();
-                if(current->state==PCB::COMPLETED) done_queue->push(current);
+                if(current->state==PCB::COMPLETED){
+                    for(auto s : current->page_table)
+                    {
+                        if(std::get<2>(s.second)){
+                            mmu->free_ram_frames->push(&(std::get<1>(s.second)));
+                        }
+                    }
+                    done_queue->push(current);
+                }
                 else if(current->state==PCB::IO_BLOCKED || current->state == PCB::PAGE_FAULT){
                     auto a = new blocking_info();
                     a -> pcb = current;

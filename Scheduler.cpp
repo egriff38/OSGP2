@@ -27,11 +27,11 @@ Scheduler::Scheduler(M_priority_queue<PCB *> &pcb_list, M_priority_queue<PCB *> 
 void Scheduler::schedule() {
     PCB *temp;
     // Continues until no more jobs can be loaded or there are no more jobs
-        clean_ram_space();
+//        clean_ram_space();
         while (readyish_queue->getSize() > 0) {
             ready_queue->push(readyish_queue->pop());
         }
-        if(getDone() < 30){
+        if(done_queue->getSize() < 30){
             temp = lt_get_next_pcb(*pcbs);
             if (temp != nullptr) {
                 load_pcb(temp );
@@ -79,17 +79,6 @@ void Scheduler::clean_ram_space() {
     while (done_queue->getSize() != 0) {
         temp = done_queue->pop();
         done++;
-        for(auto s : temp->page_table)
-        {
-            if(std::get<2>(s.second)){
-                mmu->free_ram_frames->push(&(std::get<1>(s.second)));
-            }
-        }
+
     }
-}
-
-int Scheduler::getDone() {
-    return done;
-
-
 }
