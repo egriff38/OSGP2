@@ -45,5 +45,7 @@ void Block_manager::clear_io(MMU *mmu, blocking_info *b) {
 }
 
 void Block_manager::clear_pf(MMU *mmu, blocking_info *b) {
-    mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)));
+
+    int* frame_num = mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)));
+    std::get<1>(b->pcb->page_table[b->page_num]) = *frame_num;
 }
