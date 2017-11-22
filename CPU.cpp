@@ -204,7 +204,8 @@ std::string CPU::fetch(int addr, std::string wr) {
         if (exists && isValid) {
             //write page to cache
             int frame = std::get<1>(state->page_table[a[0]]);
-            cache.write_data(b[0], mmu->read_page_from_ram(frame));
+            auto page = mmu->read_page_from_ram(frame);
+            cache.write_data(b[0],page);
             //return that cache with offset
             std::string instr2 = cache.read_data(b[0])[b[1]];
             return instr2;
@@ -326,6 +327,8 @@ void CPU::load_pcb(PCB *p) {
 PCB* CPU::store_pcb() {
     PCB* out = state;
     out->prgm_counter = PC;
+    i_cache.clear_cache();
+    d_cache.clear_cache();
     for (int i = 0; i < 16; ++i) {
         this->state->registers[i] = this->Register[i];
     }
