@@ -1,6 +1,11 @@
 //
 // Created by Charlie McDermitt on 11/8/17.
 //
+//
+// Defines mutex-protected queue (M_queue) and priority queue (M_priority_queue) classes
+// The classes are wrappers around STL container classes
+// push(), pop(), and getSize() are implemented for each
+//
 
 #ifndef PHASE_2_MUTEX_QUEUES_H
 #define PHASE_2_MUTEX_QUEUES_H

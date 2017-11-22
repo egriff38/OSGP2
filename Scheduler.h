@@ -58,8 +58,7 @@ private:
 public:
     Scheduler(M_priority_queue<PCB*> &pcb_list, M_priority_queue<PCB*> &ready_queue, M_queue<PCB*> &readyish_queue, M_queue<PCB*> &done_queue, MMU &mmu);
 
-    void schedule(bool *still_has_work);
-    void st_sched(bool *st_still_has_work);
+    void schedule();
     PCB* lt_get_next_pcb(M_priority_queue<PCB *> &pcbs);
 
     int getDone();
