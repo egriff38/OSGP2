@@ -19,7 +19,8 @@ std::vector<std::string> Cache::read_data(int page_num) {
 
 void Cache::write_data(int page_num, std::vector<std::string> input) {
     int cache_page_num = std::get<0>(data[page_num % CACHE_SIZE]);
-    if (cache_page_num == page_num) { //if the page isn't already in the cache
+    if (cache_page_num != page_num) { //if the page isn't already in the cache
+        std::get<0>(data[page_num % CACHE_SIZE]) = page_num;
         std::get<1>(data[page_num % CACHE_SIZE]) = input;
     }
 }

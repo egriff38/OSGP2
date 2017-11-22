@@ -206,7 +206,8 @@ std::string CPU::fetch(int addr, std::string wr) {
             int frame = std::get<1>(state->page_table[a[0]]);
             cache.write_data(b[0], mmu->read_page_from_ram(frame));
             //return that cache with offset
-            return cache.read_data(b[0])[b[1]];
+            std::string instr2 = cache.read_data(b[0])[b[1]];
+            return instr2;
         }
     }
     // if we failed to be in read-only range, we need to go straight to the RAM

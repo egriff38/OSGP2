@@ -53,6 +53,7 @@ namespace Dispatcher {
                 std::cout << "Jobs Completed " << done_queue->getPopped() << "\n\n";
                 Dispatcher::lock_talk.unlock();*/
             } else {
+                std::cout << "OH NO A NULLPTR" << std::endl;
                 /*Dispatcher::lock_talk.lock();
                 std::cout << "Current = nullptr \n";
                 Dispatcher::lock_talk.unlock();*/
