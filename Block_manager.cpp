@@ -47,5 +47,12 @@ void Block_manager::clear_io(MMU *mmu, blocking_info *b) {
 void Block_manager::clear_pf(MMU *mmu, blocking_info *b) {
 
     int* frame_num = mmu->add_page_to_ram(mmu->read_page_from_disk(mmu->get_disk_frame(b->page_num, b->pcb)));
-    std::get<1>(b->pcb->page_table[b->page_num]) = *frame_num;
+    if(frame_num == nullptr){
+        throw std::invalid_argument(" FrameNum is null\nblocking_info\nPage_num " + std::to_string(b->page_num)
+        + "\nPCB Num " + std::to_string(b->pcb->job_id));
+    }
+    if(frame_num != nullptr) {
+        std::get<1>(b->pcb->page_table[b->page_num]) = *frame_num;
+        std::get<2>(b->pcb->page_table[b->page_num]) = true;
+    }
 }

@@ -38,6 +38,9 @@ private:
     std::mutex ram_mutex;
     std::mutex disk_mutex;
 
+    // Temporary Debugging Variables
+    int ram_pages_used;
+
 public:
     MMU();
 

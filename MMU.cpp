@@ -23,6 +23,7 @@ MMU::MMU() {
             free_ram_frames->push(num);
         }
     }
+    ram_pages_used = 0;
 }
 
 MMU::~MMU(){}
@@ -95,8 +96,12 @@ int* MMU::add_page_to_ram(std::vector<std::string> page, int frame) {
         for(int i = 0; i < 4; i++) {
             ram->write((*a) * 4 + i, page[i]);
         }
+        ram_pages_used++;
+        std::cout << "Ram pages used " << ram_pages_used << std::endl;
     }
+
     ram_mutex.unlock();
+
     return a;
 }
 
@@ -111,10 +116,11 @@ std::vector<std::string> MMU::read_page_from_ram(int frame_num) {
 }
 
 std::vector<std::string> MMU::read_page_from_disk(int frame_num) {
+
+    disk_mutex.lock();
     std::vector<std::string> output = std::vector<std::string>(4);
     if(frame_num < 0)
-      throw  std::invalid_argument("read_page_from_disk in MMU.cpp " + std::to_string(frame_num));
-    disk_mutex.lock();
+        throw  std::invalid_argument("read_page_from_disk in MMU.cpp " + std::to_string(frame_num));
     for (int i = 0; i < 4; i++) {
         output[i] = disk->read(frame_num * 4 + i);
     }
