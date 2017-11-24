@@ -4,6 +4,7 @@
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Block_manager.cpp
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Block_manager.h
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Disk.h
+CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Hex_Util.h
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Log.h
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../MMU.h
 CMakeFiles/Phase_2.dir/Block_manager.cpp.o: ../Mutex_queues.cpp

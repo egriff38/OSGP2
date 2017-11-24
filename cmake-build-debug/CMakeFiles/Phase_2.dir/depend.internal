@@ -5,6 +5,7 @@ CMakeFiles/Phase_2.dir/Block_manager.cpp.o
  /home/conrad/CPlusPlus/OSGP2/Block_manager.cpp
  /home/conrad/CPlusPlus/OSGP2/Block_manager.h
  /home/conrad/CPlusPlus/OSGP2/Disk.h
+ /home/conrad/CPlusPlus/OSGP2/Hex_Util.h
  /home/conrad/CPlusPlus/OSGP2/Log.h
  /home/conrad/CPlusPlus/OSGP2/MMU.h
  /home/conrad/CPlusPlus/OSGP2/Mutex_queues.cpp

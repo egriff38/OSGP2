@@ -11,7 +11,7 @@
 #include "Block_manager.h"
 
 int main() {
-    const int CPU_NUM = 1;
+    const int CPU_NUM = 4;
 
 // Loader, MMU, Dispatchers, scheduler, ready_queue (prio queue), io_queue, and done_queue
 // and are declared and initialized.

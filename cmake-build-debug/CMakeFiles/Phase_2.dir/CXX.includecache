@@ -9,6 +9,8 @@
 /home/conrad/CPlusPlus/OSGP2/Block_manager.cpp
 Block_manager.h
 /home/conrad/CPlusPlus/OSGP2/Block_manager.h
+Hex_Util.h
+/home/conrad/CPlusPlus/OSGP2/Hex_Util.h
 thread
 -
 chrono

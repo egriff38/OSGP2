@@ -18,7 +18,7 @@ struct PCB {
     int job_size;
     int job_pri;
     int in_buf_size;
-    int out_buf_size;
+    int out_buf_size;  
     int temp_buf_size;
     int total_size;
     enum PROCESS_STATUS {RUNNING, READY, PAGE_FAULT, IO_BLOCKED, NEW, COMPLETED};
@@ -29,7 +29,7 @@ struct PCB {
     int prgm_counter;
     int registers[16];
     enum SORTING_METHOD{FIFO, PRIO, SJF};
-    static const SORTING_METHOD SORT = FIFO;
+    static const SORTING_METHOD SORT = PRIO;
     PCB();
     void printPageTable();
     int s1;
