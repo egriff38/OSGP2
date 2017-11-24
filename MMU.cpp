@@ -20,10 +20,12 @@ MMU::MMU() {
         (*disk_frame_map)[i] = false;
         int *num = new int(i);
         if(i < 256) {
+            if(*num == -1) throw std::invalid_argument("What???!!");
             free_ram_frames->push(num);
         }
     }
-    ram_pages_used = 0;
+    usedFrames = 0;
+
 }
 
 MMU::~MMU(){}
@@ -86,18 +88,24 @@ int* MMU::add_page_to_ram(std::vector<std::string> page, int frame) {
     // If it is then add the word there, and set the location
     // in the map to be not free and return true
     int *a;
+    int o;
     ram_mutex.lock();
+    a = &frame;
+    o = free_ram_frames->getSize();
+    if(frame==-1){
+        a = free_ram_frames->pop();
+        usedFrames++;
+    }
 
-    if(frame==-1) a = free_ram_frames->pop();
     else a = &frame;
+
     if (a == nullptr) {
         std::cout << "Nullptr! in add_page_to_ram" << std::endl;
-    } else {
+    }
+    else {
         for(int i = 0; i < 4; i++) {
             ram->write((*a) * 4 + i, page[i]);
         }
-        ram_pages_used++;
-        std::cout << "Ram pages used " << ram_pages_used << std::endl;
     }
 
     ram_mutex.unlock();

@@ -32,6 +32,10 @@ struct PCB {
     static const SORTING_METHOD SORT = FIFO;
     PCB();
     void printPageTable();
+    int s1;
+    int s2;
+    int address;
+    bool read_IO;
 };
 
 void print_pcbs(std::list<PCB *> p);

@@ -13,6 +13,8 @@ bool CPU::Operate() {
             ++PC;
             Op decoded = CPU::decode(instruction);
             CPU::execute(decoded);
+            if(state->state == PCB::PAGE_FAULT)
+                --PC;
         }
         return true;
     }
@@ -33,19 +35,37 @@ bool CPU::RD(int s1, int s2, int address) {
     /*if(address==0)Register[s1] = Hex_Util::hex_to_decimal(cache.read(Register[s2] / 4));
     else Register[s1] = Hex_Util::hex_to_decimal(cache.read((address) / 4));*/
     std::string a;
-    if(address==0)
+    if(address==0) {
         a = fetch(Register[s2] / 4);
-    else
+        Register[s1] = Hex_Util::hex_to_decimal(a);
+    }
+    else {
         a = fetch(address / 4);
-
-    if(a != "") Register[s1] = Hex_Util::hex_to_decimal(a);
-    else state->state = PCB::IO_BLOCKED;
+        if(state->state != PCB::PAGE_FAULT) {
+            state->state = PCB::IO_BLOCKED;
+            state->s1 = s1;
+            state->s2 = s2;
+            state->address = Hex_Util::hex_to_decimal(a);
+            state->read_IO = true;
+        }
+    }
 
     return true;
 }
 
 bool CPU::WR(int s1, int s2, int address) {
-    if(fetch(address/4,Hex_Util::decimal_to_hex(Register[s1]))=="")state->state = PCB::IO_BLOCKED;
+    std::string s = (fetch(address/4,Hex_Util::decimal_to_hex(Register[s1])));
+    int addr = mmu->get_ram_frame(address/4/4,state);
+    int off = (address/4) % 4;
+    if(s == "") {
+        state->state = PCB::PAGE_FAULT;
+        return true;
+    }
+        state->state = PCB::IO_BLOCKED;
+        state->s1  = s1;
+        state->s2 = Hex_Util::hex_to_decimal(s);
+        state->address = addr*4 + off;
+        state->read_IO = false;
     return true;
 }
 
@@ -186,41 +206,41 @@ std::string CPU::fetch(int addr, std::string wr) {
     bool exists = this->state->page_table.count(a[0]) > 0; //checks for entry with matching key in page table
     bool isValid = std::get<2>(this->state->page_table[a[0]]); //checks valid bit
 
-    if(addr<state->job_size+state->in_buf_size) {
-        //check the cache
-        auto cache = i_cache;
-        if (addr > state->job_size) {
-            cache = d_cache;
-            addr -= state->job_size;
-        }
-        //cache vector (may be different for data)
-        std::vector<int> b = {addr / 4, addr % 4};
-
-        //check the cache
-        std::string instr = cache.read_data(b[0])[b[1]];
-        if (instr != "") return instr;
-
-        //check ram... if exists and if valid bit
-        if (exists && isValid) {
-            //write page to cache
-            int frame = std::get<1>(state->page_table[a[0]]);
-            auto page = mmu->read_page_from_ram(frame);
-            cache.write_data(b[0],page);
-            //return that cache with offset
-            std::string instr2 = cache.read_data(b[0])[b[1]];
-            return instr2;
-        }
-    }
+//    if(addr<state->job_size+state->in_buf_size) {
+//        //check the cache
+//        auto cache = i_cache;
+//        if (addr > state->job_size) {
+//            cache = d_cache;
+//            addr -= state->job_size;
+//        }
+//        //cache vector (may be different for data)
+//        std::vector<int> b = {addr / 4, addr % 4};
+//
+//        //check the cache
+//        std::string instr = cache.read_data(b[0])[b[1]];
+//        if (instr != "") return instr;
+//
+//        //check ram... if exists and if valid bit
+//        if (exists && isValid) {
+//            //write page to cache
+//            int frame = std::get<1>(state->page_table[a[0]]);
+//            auto page = mmu->read_page_from_ram(frame);
+//            cache.write_data(b[0],page);
+//            //return that cache with offset
+//            std::string instr2 = cache.read_data(b[0])[b[1]];
+//            return instr2;
+//        }
+//    }
     // if we failed to be in read-only range, we need to go straight to the RAM
-    else if (exists && isValid) {
+     if (exists && isValid) {
         int frame = std::get<1>(state->page_table[a[0]]);
         auto page = mmu->read_page_from_ram(frame);
         //Is there a string to be written? If so overwrite what was there and return your query string (guarenteed not to be empty)
-        if(wr!=""){
-            page[a[1]] = wr;
-            mmu->add_page_to_ram(page,frame);
-            return wr;
-        }
+//        if(wr!=""){
+//            page[a[1]] = wr;
+//            mmu->add_page_to_ram(page,frame);
+//            return wr;
+//        }
         //else return the value
         return page[a[1]];
 
@@ -310,8 +330,10 @@ void CPU::execute(Op op) {
         else if(op.op_code=="14")CPU::JMP(op.address);
     }else
     if(op.op_type=="11"){
-        if(op.op_code=="00")CPU::RD(op.sreg1,op.sreg2,op.address);
-        else if(op.op_code=="01")CPU::WR(op.sreg1,op.sreg2,op.address);
+        if(op.op_code=="00")
+            CPU::RD(op.sreg1,op.sreg2,op.address);
+        else if(op.op_code=="01")
+            CPU::WR(op.sreg1,op.sreg2,op.address);
     }
 }
 
@@ -330,7 +352,7 @@ PCB* CPU::store_pcb() {
     i_cache.clear_cache();
     d_cache.clear_cache();
     for (int i = 0; i < 16; ++i) {
-        this->state->registers[i] = this->Register[i];
+        out->registers[i] = this->Register[i];
     }
 
     return out;

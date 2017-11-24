@@ -38,8 +38,6 @@ private:
     std::mutex ram_mutex;
     std::mutex disk_mutex;
 
-    // Temporary Debugging Variables
-    int ram_pages_used;
 
 public:
     MMU();
@@ -67,6 +65,7 @@ public:
     static const int DISK_SIZE = 2048;
     void print_disk_map(bool s = true);
     M_queue<int*> *free_ram_frames;
+    int usedFrames;
 };
 
 struct blocking_info { //stored here because all classes that use it have MMU access

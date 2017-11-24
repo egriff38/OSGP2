@@ -37,7 +37,7 @@ void Loader::init(MMU &mmu, M_priority_queue<PCB *> &pcbs) {
             }
         }
     }
-    mmu.print_disk_map(false);
+
 }
 
 PCB* Loader::strip_meta_data(std::string temp_data, PCB *pcb) {

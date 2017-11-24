@@ -10,6 +10,7 @@
 
 PCB::PCB(){
     this->page_table = std::map<int,std::tuple<int,int,bool> >();
+    this->prgm_counter= 0;
 }
 
 //Prints out the PCB information
