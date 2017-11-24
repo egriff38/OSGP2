@@ -100,7 +100,8 @@ int* MMU::add_page_to_ram(std::vector<std::string> page, int frame) {
     else a = &frame;
 
     if (a == nullptr) {
-        std::cout << "Nullptr! in add_page_to_ram" << std::endl;
+        ram_mutex.unlock();
+        return a;
     }
     else {
         for(int i = 0; i < 4; i++) {

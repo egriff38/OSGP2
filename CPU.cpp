@@ -206,31 +206,31 @@ std::string CPU::fetch(int addr, std::string wr) {
     bool exists = this->state->page_table.count(a[0]) > 0; //checks for entry with matching key in page table
     bool isValid = std::get<2>(this->state->page_table[a[0]]); //checks valid bit
 
-//    if(addr<state->job_size+state->in_buf_size) {
-//        //check the cache
-//        auto cache = i_cache;
-//        if (addr > state->job_size) {
-//            cache = d_cache;
-//            addr -= state->job_size;
-//        }
-//        //cache vector (may be different for data)
-//        std::vector<int> b = {addr / 4, addr % 4};
-//
-//        //check the cache
-//        std::string instr = cache.read_data(b[0])[b[1]];
-//        if (instr != "") return instr;
-//
-//        //check ram... if exists and if valid bit
-//        if (exists && isValid) {
-//            //write page to cache
-//            int frame = std::get<1>(state->page_table[a[0]]);
-//            auto page = mmu->read_page_from_ram(frame);
-//            cache.write_data(b[0],page);
-//            //return that cache with offset
-//            std::string instr2 = cache.read_data(b[0])[b[1]];
-//            return instr2;
-//        }
-//    }
+    if(addr<state->job_size+state->in_buf_size) {
+        //check the cache
+        auto cache = i_cache;
+        if (addr > state->job_size) {
+            cache = d_cache;
+            addr -= state->job_size;
+        }
+        //cache vector (may be different for data)
+        std::vector<int> b = {addr / 4, addr % 4};
+
+        //check the cache
+        std::string instr = cache.read_data(b[0])[b[1]];
+        if (instr != "") return instr;
+
+        //check ram... if exists and if valid bit
+        if (exists && isValid) {
+            //write page to cache
+            int frame = std::get<1>(state->page_table[a[0]]);
+            auto page = mmu->read_page_from_ram(frame);
+            cache.write_data(b[0],page);
+            //return that cache with offset
+            std::string instr2 = cache.read_data(b[0])[b[1]];
+            return instr2;
+        }
+    }
     // if we failed to be in read-only range, we need to go straight to the RAM
      if (exists && isValid) {
         int frame = std::get<1>(state->page_table[a[0]]);

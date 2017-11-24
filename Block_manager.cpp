@@ -22,8 +22,10 @@ void Block_manager::start(MMU *mmu, M_queue<PCB *> *readyish_queue, M_queue<bloc
                 clear_io(mmu, temp);
             } else
                 std::cout << "Block_manager error: received non-blocked PCB " + temp->pcb->job_id << std::endl;
-
+            if(temp->pcb->state == PCB::READY)
             readyish_queue->push(temp->pcb);
+            else
+                blocked_queue->push(temp);
         }
 
         std::this_thread::sleep_for(2ns);
@@ -53,7 +55,7 @@ if(b->pcb->read_IO){
 else{
     mmu->ram_memory(b->pcb->address, Hex_Util::decimal_to_hex(b->pcb->s2));
 }
-    //b->pcb->prgm_counter++;
+b->pcb->state = PCB::READY;
 }
 
 void Block_manager::clear_pf(MMU *mmu, blocking_info *b) {
@@ -68,5 +70,6 @@ void Block_manager::clear_pf(MMU *mmu, blocking_info *b) {
             throw std::invalid_argument("NO NO NO frame num cannot be -1");
         std::get<1>(b->pcb->page_table[b->page_num]) = *frame_num;
         std::get<2>(b->pcb->page_table[b->page_num]) = true;
+        b->pcb->state = PCB::READY;
     }
 }
