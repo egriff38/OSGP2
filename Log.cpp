@@ -17,15 +17,15 @@ void Log::appendLog(std::string name, std::string text) {
     loglock.unlock();
 }
 
-void Log::increment(std::string, double val){
-
+void Log::increment(){
+    ++count;
 }
 
 void Log::publish() {
     loglock.lock();
-    std::ofstream ostrm ("../src/ProgramTranslate.txt", std::ios::binary);
-    ostrm << Summary() << '\n';
-    ostrm << logMap["RamDump"] << '\n';
+    for (auto it=logMap.begin(); it!=logMap.end(); ++it)
+        ostrm << it->second << '\n';
+    ostrm.close();
     loglock.unlock();
 }
 
@@ -37,20 +37,62 @@ void Log::print() {
     loglock.unlock();
 }
 
-Log::Log() {
+std::string Log::pull_met() {
+    return Summary();
+}
+
+void Log::w_start() {
+    w_timer = clock();
+}
+
+void Log::w_stop() {
+    wait_time += ( std::clock() - w_timer ) / (double) CLOCKS_PER_SEC;
+}
+
+void Log::c_start() {
+    c_timer = clock();
+}
+
+void Log::c_stop() {
+    comp_time += ( std::clock() - c_timer ) / (double) CLOCKS_PER_SEC;
+}
+
+void Log::used(int i) {
+    cpu_used = i;
+}
+
+Log::Log(int id) {
     logMap = std::map<std::string, std::string> ();
+    wait_time = 0.0;
+    comp_time = 0.0;
+    log_id = id;
+    count = 0;
+    cpu_used = 0;
+    mode = CSV;
 }
 
 std::string Log::Summary() {
-    return fmt::format(R"(Summary
+    if (mode == TXT)
+    {
+        return fmt::format(R"(
+Summary for Job {0}
 ----------------------
-Total runtime: {0}
-Average runtime: {1}
-Average completion period:
-Average wait time:
+Total runtime:  {1}
+Average runtime: {2}
+Average completion period: {3}
+Average wait time: {4}
+I/O Count: {5}
+CPU Used: {6}
 cache density:
 Ram density:
 PF/IO density:
-)", "Butt","Hole");
+)", log_id, (wait_time+comp_time),(wait_time+comp_time), comp_time, wait_time, count, cpu_used);
+    }
+
+    else if (mode == CSV)
+    {
+        return fmt::format(R"({0},{1},{2},{3},{4},{5})", log_id,(wait_time+comp_time), comp_time, wait_time, count, cpu_used);
+    }
+
 
 }

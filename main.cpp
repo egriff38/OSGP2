@@ -2,6 +2,7 @@
 #include <list>
 #include <thread>
 #include "Loader.h"
+#include "Log.h"
 #include "PCB.h"
 #include "MMU.h"
 #include "Scheduler.h"
@@ -25,14 +26,14 @@ int main() {
     auto loader = new Loader();
     auto scheduler = new Scheduler(*pcbs, *ready_queue, *readyish_queue, *done_queue, *mmu);
     auto threads = std::vector<std::thread>();
-
+    auto main_log = new Log(0);
 
     // Loader calls init();
     loader->init(*mmu, *pcbs);
 
     // Dispatcher threads begin
     for (int i = 0; i < CPU_NUM; i++) {
-        std::thread(Dispatcher::start, mmu, ready_queue, blocked_queue, done_queue, i).detach();
+        std::thread(Dispatcher::start, mmu, ready_queue, blocked_queue, done_queue, i, main_log).detach();
     }
 
 
@@ -45,7 +46,7 @@ int main() {
   while(done_queue->getSize() < 30) {
       scheduler->schedule();
   }
-
+    main_log->publish();
     std::cout << done_queue->getSize() << " Finish";
 
     return 0;

@@ -99,6 +99,8 @@ void Loader::addPCB(MMU *mmu ,M_priority_queue<PCB *> &pcbs, PCB *pcb, int &curr
     current_pcb_page = 0;
     word_count = 0;
     pcbs.push(pcb);
+    pcb->log = new Log(pcb->job_id);
+    pcb->log->w_start();
 }
 
 

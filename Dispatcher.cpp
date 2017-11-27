@@ -16,7 +16,7 @@
 
 namespace Dispatcher {
 
-    void start(MMU *mmu, M_priority_queue<PCB*> *ready_queue, M_queue<blocking_info*> *blocked_queue, M_queue<PCB*> *done_queue, int i) {
+    void start(MMU *mmu, M_priority_queue<PCB*> *ready_queue, M_queue<blocking_info*> *blocked_queue, M_queue<PCB*> *done_queue, int i, Log* m_log) {
         using namespace std::chrono_literals;
         CPU *cpu = new CPU(mmu, production);
         PCB *current;
@@ -31,11 +31,16 @@ namespace Dispatcher {
                 Dispatcher::lock_talk.unlock();
                 current->state = PCB::RUNNING;
                 cpu->load_pcb(current);
+                current->log->w_stop();
+                current->log->c_start();
+                current->log->used(i);
                 while (cpu->state->state == PCB::RUNNING)
                     cpu->Operate();
                 current = cpu->store_pcb();
+                current->log->c_stop();
                 if(current->state==PCB::COMPLETED){
                     std::cout << "Finishing PCB " << cpu->state->job_id << "\n";
+                    m_log->appendLog(std::to_string(current->job_id), current->log->pull_met());
                     for(auto s : current->page_table)
                     {
                         if(std::get<2>(s.second)){
@@ -51,6 +56,7 @@ namespace Dispatcher {
                 }
                 else if(current->state==PCB::IO_BLOCKED || current->state == PCB::PAGE_FAULT){
                //     std::cout << "Unloading job " << current->job_id << "\n";
+                    current->log->w_start();
                     auto a = new blocking_info();
                     a -> pcb = current;
                     a -> page_num = cpu->page_trip;

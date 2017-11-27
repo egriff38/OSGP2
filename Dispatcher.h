@@ -10,6 +10,7 @@
 #include "MMU.h"
 #include "PCB.h"
 #include "Mutex_queues.cpp"
+#include "Log.h"
 
 #include <mutex>
 #include <tuple>
@@ -25,7 +26,7 @@
 namespace Dispatcher {
     static std::mutex lock_talk;
 
-    void start(MMU *mmu, M_priority_queue<PCB*> *ready_queue, M_queue<blocking_info*> *blocked_queue, M_queue<PCB*> *done_queue, int i);
+    void start(MMU *mmu, M_priority_queue<PCB*> *ready_queue, M_queue<blocking_info*> *blocked_queue, M_queue<PCB*> *done_queue, int i, Log* m_log);
 
 
 };
