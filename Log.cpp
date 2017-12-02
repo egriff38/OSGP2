@@ -17,8 +17,12 @@ void Log::appendLog(std::string name, std::string text) {
     loglock.unlock();
 }
 
-void Log::increment(){
+void Log::upIO(){
     ++count;
+}
+
+void Log::upPF(){
+    ++pagefault;
 }
 
 void Log::publish() {
@@ -68,6 +72,7 @@ Log::Log(int id) {
     log_id = id;
     count = 0;
     cpu_used = 0;
+    pagefault = 0;
     mode = CSV;
 }
 
@@ -83,15 +88,13 @@ Average completion period: {3}
 Average wait time: {4}
 I/O Count: {5}
 CPU Used: {6}
-cache density:
-Ram density:
-PF/IO density:
-)", log_id, (wait_time+comp_time),(wait_time+comp_time), comp_time, wait_time, count, cpu_used);
+Page Faults: {7}
+)", log_id, (wait_time+comp_time),(wait_time+comp_time), comp_time, wait_time, count, cpu_used, pagefault);
     }
 
     else if (mode == CSV)
     {
-        return fmt::format(R"({0},{1},{2},{3},{4},{5})", log_id,(wait_time+comp_time), comp_time, wait_time, count, cpu_used);
+        return fmt::format(R"({0},{1},{2},{3},{4},{5},{6})", log_id,(wait_time+comp_time), comp_time, wait_time, count, cpu_used, pagefault);
     }
 
 

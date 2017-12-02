@@ -37,6 +37,8 @@ namespace Dispatcher {
                 while (cpu->state->state == PCB::RUNNING)
                     cpu->Operate();
                 current = cpu->store_pcb();
+                if(current->state == PCB::PAGE_FAULT)
+                    current->log->upPF();
                 current->log->c_stop();
                 if(current->state==PCB::COMPLETED){
                     std::cout << "Finishing PCB " << cpu->state->job_id << "\n";
@@ -56,6 +58,7 @@ namespace Dispatcher {
                 }
                 else if(current->state==PCB::IO_BLOCKED || current->state == PCB::PAGE_FAULT){
                //     std::cout << "Unloading job " << current->job_id << "\n";
+
                     current->log->w_start();
                     auto a = new blocking_info();
                     a -> pcb = current;

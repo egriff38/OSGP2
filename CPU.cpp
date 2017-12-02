@@ -35,6 +35,7 @@ bool CPU::RD(int s1, int s2, int address) {
     /*if(address==0)Register[s1] = Hex_Util::hex_to_decimal(cache.read(Register[s2] / 4));
     else Register[s1] = Hex_Util::hex_to_decimal(cache.read((address) / 4));*/
     std::string a;
+    state->log->upIO();
     if(address==0) {
         a = fetch(Register[s2] / 4);
         Register[s1] = Hex_Util::hex_to_decimal(a);
@@ -57,6 +58,7 @@ bool CPU::WR(int s1, int s2, int address) {
     std::string s = (fetch(address/4,Hex_Util::decimal_to_hex(Register[s1])));
     int addr = mmu->get_ram_frame(address/4/4,state);
     int off = (address/4) % 4;
+    state->log->upIO();
     if(s == "") {
         state->state = PCB::PAGE_FAULT;
         return true;
@@ -72,6 +74,7 @@ bool CPU::WR(int s1, int s2, int address) {
 bool CPU::ST(int addr, int breg, int dreg) {/*
     if(addr==0) cache.write(Register[dreg]/4, Hex_Util::decimal_to_hex(Register[breg]));
     else cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));*/
+    state->log->upIO();
     if(addr==0) fetch(Register[dreg]/4, Hex_Util::decimal_to_hex(Register[breg]));
     else fetch(addr/4, Hex_Util::decimal_to_hex(Register[breg]));
     return true;
@@ -79,6 +82,7 @@ bool CPU::ST(int addr, int breg, int dreg) {/*
 
 bool CPU::LW(int addr, int breg, int dreg) {
     /*cache.write(addr/4, Hex_Util::decimal_to_hex(Register[breg]));*/
+    state->log->upIO();
     fetch(addr/4,Hex_Util::decimal_to_hex(Register[breg]));
     return true;
 }
