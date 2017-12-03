@@ -174,8 +174,7 @@ void MMU::return_pcb_to_disk(PCB *pcb) {
     int current_page;
     int current_offset;
     std::string add_string;
-
-    std::cout << std::to_string(pcb->total_size) << "\n";
+    
     for(int i = pc; i < pcb->total_size; i++){
         current_page = i / 4;
         if(std::get<2>(pcb->page_table[i/4])){
@@ -188,5 +187,4 @@ void MMU::return_pcb_to_disk(PCB *pcb) {
         }
     }
 
-    std::cout << "Finished\n";
 }
