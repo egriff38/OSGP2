@@ -16,6 +16,7 @@ bool CPU::Operate() {
             if(state->state == PCB::PAGE_FAULT)
                 --PC;
         }
+
         return true;
     }
 

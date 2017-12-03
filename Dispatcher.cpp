@@ -43,6 +43,9 @@ namespace Dispatcher {
                 if(current->state==PCB::COMPLETED){
                     std::cout << "Finishing PCB " << cpu->state->job_id << "\n";
                     m_log->appendLog(std::to_string(current->job_id), current->log->pull_met());
+                    mmu->return_pcb_to_disk(current);
+                    done_queue->push(current);
+
                     for(auto s : current->page_table)
                     {
                         if(std::get<2>(s.second)){
@@ -53,8 +56,6 @@ namespace Dispatcher {
                             mmu->free_ram_frames->push(temp_int_pointer);
                         }
                     }
-                    done_queue->push(current);
-
                 }
                 else if(current->state==PCB::IO_BLOCKED || current->state == PCB::PAGE_FAULT){
                //     std::cout << "Unloading job " << current->job_id << "\n";

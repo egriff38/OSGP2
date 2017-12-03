@@ -67,6 +67,7 @@ public:
     M_queue<int*> *free_ram_frames;
     int usedFrames;
     void dumpDisk();
+    void return_pcb_to_disk(PCB *pcb);
 };
 
 struct blocking_info { //stored here because all classes that use it have MMU access

@@ -160,3 +160,27 @@ void MMU::print_disk_map(bool page_mode) {
         disk->dumpDisk();
         disk_mutex.unlock();
     }
+
+void MMU::return_pcb_to_disk(PCB *pcb) {
+    int pc = pcb->job_size + pcb->in_buf_size;
+    int current_ram_address;
+    int current_disk_address;
+    int current_page;
+    int current_offset;
+    std::string add_string;
+
+    std::cout << std::to_string(pcb->total_size) << "\n";
+    for(int i = pc; i < pcb->total_size; i++){
+        current_page = i / 4;
+        if(std::get<2>(pcb->page_table[i/4])){
+         ram_mutex.lock();
+            add_string = ram->read(std::get<1>(pcb->page_table[i/4]) + i % 4);
+            ram_mutex.unlock();
+            disk_mutex.lock();
+         disk->write(std::get<0>(pcb->page_table[i/4]) + i % 4,add_string);
+            disk_mutex.unlock();
+        }
+    }
+
+    std::cout << "Finished\n";
+}

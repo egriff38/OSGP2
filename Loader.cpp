@@ -66,9 +66,9 @@ PCB* Loader::strip_data_meta_data(PCB *pcb, std::string temp_data) {
     std::string buildString = "";
     temp_data = temp_data.substr(7, std::string::npos);
     std::vector<int> data = Hex_Util::parseIntsFromString(temp_data);
-    pcb->in_buf_size = data[0];
-    pcb->out_buf_size = data[1];
-    pcb->temp_buf_size = data[2];
+    pcb->in_buf_size = data[1];
+    pcb->out_buf_size = data[2];
+    pcb->temp_buf_size = data[3]; // For some reason the code allocates from 1 to 3
     pcb->total_size = pcb->job_size + pcb->in_buf_size + pcb->out_buf_size + pcb->temp_buf_size;
     return pcb;
 }
