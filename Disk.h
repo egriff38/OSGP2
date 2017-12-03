@@ -21,11 +21,14 @@
  * getSize const returns the value of SIZE */
 
 #include <iostream>
+#include <fstream>
+
 
 const static int SIZE = 2048;
 class Disk {
 private:
     std::string disk_data[SIZE];
+    std::ofstream ostrm {("../Logs/Disk.txt")};
 public:
 
     std::string read(int address);
@@ -34,6 +37,7 @@ public:
     Disk();
     ~Disk();
     static void testDisk();
+    void dumpDisk();
 };
 
 

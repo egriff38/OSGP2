@@ -66,6 +66,7 @@ public:
     void print_disk_map(bool s = true);
     M_queue<int*> *free_ram_frames;
     int usedFrames;
+    void dumpDisk();
 };
 
 struct blocking_info { //stored here because all classes that use it have MMU access
@@ -73,6 +74,8 @@ struct blocking_info { //stored here because all classes that use it have MMU ac
     int page_num;
     std::vector<std::string> data;
 };
+
+
 
 
 #endif //PHASE_2_MMU_H

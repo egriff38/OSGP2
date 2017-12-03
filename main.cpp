@@ -48,6 +48,7 @@ int main() {
   }
     main_log->publish();
     std::cout << done_queue->getSize() << " Finish";
+    mmu->dumpDisk();
 
     return 0;
 }

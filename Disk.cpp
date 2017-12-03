@@ -22,8 +22,20 @@ std::string Disk::read(int address) {
     return disk_data[address];
 }
 
+
 // Construct Disk and set size to global variable SIZE
 Disk::Disk() {
     for (int i = 0; i < SIZE; i++)
         disk_data[i] = "";
 }
+
+// Dumps Disk Data to Hex File
+void Disk::dumpDisk() {
+    for(int i = 0; i < 2048; i++){
+        ostrm << disk_data[i] << "\n";
+    }
+
+    ostrm.close();
+
+}
+

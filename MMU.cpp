@@ -147,10 +147,16 @@ int MMU::get_disk_frame(int page_num, const PCB *p) {
 }
 
 void MMU::print_disk_map(bool page_mode) {
-    for(int i = 0; i < disk_frame_map->size(); i++) {
+    for (int i = 0; i < disk_frame_map->size(); i++) {
         if (page_mode)
             std::cout << "PAGE #" << i << " " << Hex_Util::bool_to_string(disk_frame_map->at(i)) << "\n";
         else
             std::cout << disk_memory(i) << "\n";
     }
 }
+
+    void MMU::dumpDisk() {
+        disk_mutex.lock();
+        disk->dumpDisk();
+        disk_mutex.unlock();
+    }
