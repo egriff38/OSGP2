@@ -31,11 +31,10 @@ Disk::Disk() {
 
 // Dumps Disk Data to Hex File
 void Disk::dumpDisk() {
+    ostrm << "Disk Dump\n";
     for(int i = 0; i < 2048; i++){
         ostrm << disk_data[i] << "\n";
     }
-
     ostrm.close();
-
 }
 

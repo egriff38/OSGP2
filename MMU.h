@@ -67,6 +67,7 @@ public:
     M_queue<int*> *free_ram_frames;
     int usedFrames;
     void dumpDisk();
+    void dumpRam();
     void return_pcb_to_disk(PCB *pcb);
 };
 

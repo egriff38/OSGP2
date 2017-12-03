@@ -161,6 +161,12 @@ void MMU::print_disk_map(bool page_mode) {
         disk_mutex.unlock();
     }
 
+void MMU::dumpRam() {
+        ram_mutex.lock();
+        ram->dumpRam();
+        ram_mutex.unlock();
+    }
+
 void MMU::return_pcb_to_disk(PCB *pcb) {
     int pc = pcb->job_size + pcb->in_buf_size;
     int current_ram_address;

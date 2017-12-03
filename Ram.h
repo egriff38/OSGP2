@@ -17,17 +17,20 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 
 class Ram
 {
     public:
-        std::string read(int address);
+    std::ofstream ostrm {("../Logs/Ram.txt")};
+    std::string read(int address);
         void write(int address, std::string data);
         void write(int address, std::vector<std::string> s);
         const static int SIZE = 1024;
         Ram();
         ~Ram();
         static void testRam();
+        void dumpRam();
 
     private:
         std::string ram_data[SIZE];

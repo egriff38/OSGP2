@@ -29,6 +29,14 @@ void Ram::write(int address, std::vector<std::string> data) {
     }
 }
 
+void Ram::dumpRam() {
+    ostrm << "Ram Dump\n";
+    for(int i = 0; i < 1024; i++){
+        ostrm << this->ram_data[i] << "\n";
+    }
+    ostrm.close();
+}
+
 Ram::Ram() {
     for (int i = 0; i < SIZE; i++)
         ram_data[i] = "0";
